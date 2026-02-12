@@ -1,9 +1,12 @@
-import type { Metadata } from 'next';
 import './globals.css';
-import Navbar from '../components/layout/Navbar';
-import Footer from '../components/layout/Footer';
-import SplashScreenDark from '../components/ui/SplashScreenDark';
-import AnimatedLayout from './AnimatedLayout';
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap'
+});
 
 export const metadata: Metadata = {
   title: 'Digital Marketing Services | XYZ Digital Marketing Firm',
@@ -12,15 +15,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body>
-        <AnimatedLayout>
-          <SplashScreenDark />
-          <Navbar />
-          {children}
-          <Footer />
-        </AnimatedLayout>
-      </body>
+    <html lang="en" className={inter.variable}>
+      <body>{children}</body>
     </html>
   );
 }
