@@ -41,7 +41,7 @@ const config: Config = {
         heading: ['Space Grotesk', 'sans-serif']
       },
       boxShadow: {
-        glow: '0 0 40px hsl(var(--primary) / 0.35)'
+        glow: '0 0 30px hsl(var(--primary) / 0.35)'
       }
     }
   },

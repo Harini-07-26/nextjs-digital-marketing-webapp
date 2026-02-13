@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Zap } from 'lucide-react';
+import Image from 'next/image';
 
 const navLinks = ['Features', 'Solutions', 'Resources', 'Pricing'];
 
@@ -14,8 +14,8 @@ const Navbar = () => {
       <div className="container flex h-16 items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-2.5">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/20">
-            <Zap className="h-5 w-5 text-primary" />
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/40">
+            <Image src="/rocket.gif" alt="DIGI Logo" width={50} height={50} className="text-primary" unoptimized />
           </div>
           <span className="font-display text-lg font-bold tracking-tight text-foreground">DIGI</span>
         </div>

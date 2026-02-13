@@ -137,7 +137,6 @@
 .btn-primary-gradient:active {
   transform: translateY(0);
   filter: brightness(0.95);
-  color: #721378;
 }
 
 .btn-outline-dark {
@@ -157,4 +156,22 @@
   filter: brightness(1.05);
   box-shadow: 0 0 30px hsl(var(--primary) / 0.4);
   cursor: pointer;
+}
+
+.stat-value {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  color: #fff; /* gray-900 */
+}
+
+.stat-label {
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #6b7280; /* gray-500 */
 }
