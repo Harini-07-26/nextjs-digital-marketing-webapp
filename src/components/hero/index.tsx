@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Zap, ShieldCheck } from 'lucide-react';
 import Navbar from '../navbar';
 import FloatingCard from '../floating-card';
+import Image from 'next/image';
 
 export default function Hero() {
   const stats = [
@@ -16,6 +17,32 @@ export default function Hero() {
     <>
       <Navbar />
       <section className="relative min-h-screen overflow-hidden pt-28 pb-20">
+        {/* 🌌 Star Field */}
+        <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+          <div className="stars stars-sm" />
+          <div className="stars stars-md" />
+          <div className="stars stars-lg" />
+        </div>
+
+        {/* 🚀 Rocket Animation */}
+        <motion.div
+          initial={{ x: '-20vw', y: '30vh', rotate: -25, opacity: 0 }}
+          animate={{ x: '190vw', y: '-190vh', opacity: 1 }}
+          transition={{
+            duration: 8,
+            ease: 'linear',
+            repeat: Infinity,
+            repeatDelay: 1
+          }}
+          className="pointer-events-none absolute bottom-0 -left-40 z-0"
+        >
+          <div className="relative">
+            {/* Flame */}
+
+            <Image src="/hero-rocket.png" alt="Moving-Rocket" width={110} height={110} priority />
+          </div>
+        </motion.div>
+
         {/* Subtle background glow */}
         <div
           className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 h-[600px] w-[800px] rounded-full opacity-15 blur-[120px]"
