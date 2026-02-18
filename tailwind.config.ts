@@ -42,6 +42,18 @@ const config: Config = {
       },
       boxShadow: {
         glow: '0 0 30px hsl(var(--primary) / 0.35)'
+      },
+      keyframes: {
+        gradientX: {
+          '0%': { backgroundPosition: '0% 50%' },
+          '100%': { backgroundPosition: '100% 50%' }
+        }
+      },
+      animation: {
+        'gradient-x': 'gradientX 6s linear infinite'
+      },
+      backgroundSize: {
+        '200': '200% 200%'
       }
     }
   },
