@@ -1,4 +1,5 @@
 import ComparisonSection from '../components/comparison';
+import ContactSection from '../components/contact-section';
 import { CTA } from '../components/CTA';
 import { Features } from '../components/features';
 import { Footer } from '../components/footer';
@@ -31,6 +32,7 @@ const Index = () => {
         }
       />
       <CTA />
+      <ContactSection />
       <Footer />
     </div>
   );
