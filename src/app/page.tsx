@@ -4,14 +4,17 @@ import { Features } from '../components/features';
 import { Footer } from '../components/footer';
 import Hero from '../components/hero';
 import MarketInsights from '../components/market-insights';
+import Testimonials from '../components/testimonials';
 import TimeLineComponent from '../components/timeline';
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background mx-10 my-10">
       <Hero />
+      <Testimonials />
       <Features
         datatestId={'how-we-drive-growth-component'}
+        variant="light"
         title={'How We Drive Growth'}
         description={
           'Full-funnel marketing and creative services designed to acquire, convert, and retain your ideal customers at every stage of their journey.'
