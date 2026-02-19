@@ -1,11 +1,12 @@
 import { Shield, Zap, Globe, CreditCard, PieChart, Lock, ArrowRight } from 'lucide-react';
-import { ScrollReveal } from '../scroll-reveal';
 import { FC } from 'react';
+import { ScrollReveal } from '../scroll-reveal';
 
 interface IFeaturesProps {
-  datatestId: string;
   title: string;
   description: string;
+  variant?: 'dark' | 'light';
+  datatestId?: string;
 }
 
 const features = [
@@ -64,94 +65,105 @@ const features = [
   }
 ];
 
-export const Features: FC<IFeaturesProps> = ({ title, description }) => {
+export const Features: FC<IFeaturesProps> = ({ title, description, variant = 'dark', datatestId }) => {
+  const isLight = variant === 'light';
+
+  // Theme classes
+  const sectionBg = isLight ? 'bg-white' : 'bg-background';
+  const headingColor = isLight ? 'text-gray-900' : 'text-foreground';
+  const subtitleColor = isLight ? 'text-gray-500' : 'text-muted-foreground';
+  const cardBg = isLight
+    ? 'bg-gray-50/80 border-gray-200 hover:border-primary hover:shadow-lg'
+    : 'bg-card/60 backdrop-blur-md border-border hover:border-primary hover:shadow-[0_0_30px_hsl(var(--primary)_/_0.4)]';
+  const cardTitle = isLight ? 'text-gray-900' : 'text-foreground';
+  const cardDesc = isLight
+    ? 'text-gray-600 group-hover:text-gray-700'
+    : 'text-muted-foreground group-hover:text-foreground/80';
+  const metaText = isLight ? 'text-gray-500' : 'text-muted-foreground';
+  const metaText2 = isLight ? 'text-gray-400' : 'text-muted-foreground/70';
+  const hrColor = isLight ? 'border-gray-200' : 'border-border';
+  const ctaColor = isLight ? 'text-primary hover:text-primary/80' : 'text-primary hover:text-primary/80';
+  const topBarGradient = 'from-pink-500 via-purple-500 to-indigo-500';
+
   return (
-    <section id="features" className="py-24 bg-[#080809]">
+    <section datatest-id={datatestId} className={`py-24 ${sectionBg} transition-colors duration-300`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
         <div className="text-center mb-16">
           <ScrollReveal>
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">{title}</h2>
-            <p className="text-slate-400 text-lg max-w-2xl mx-auto">{description}</p>
+            <h2 className={`font-display text-3xl md:text-5xl font-bold ${headingColor} mb-4`}>{title}</h2>
+            <p className={`${subtitleColor} text-lg max-w-2xl mx-auto`}>{description}</p>
           </ScrollReveal>
         </div>
 
+        {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <ScrollReveal key={feature.title} delay={index * 0.1}>
               <div
-                className="
-          group relative h-full overflow-hidden
-          glass-dark p-8 rounded-2xl
-          border border-white/20
-          transition-all duration-300 ease-out
-          hover:border-[#8b5cf6]
-          hover:brightness-105
-          hover:shadow-[0_0_30px_hsl(var(--primary)_/_0.4)]
-          will-change-transform
-        "
+                className={`
+                  group relative h-full overflow-hidden
+                  p-8 rounded-2xl border 
+                  transition-all duration-300 ease-out
+                  will-change-transform
+                  hover:brightness-105
+                  ${cardBg}
+                `}
               >
+                {/* Top gradient bar on hover */}
                 <span
-                  className="
-      absolute top-0 left-0 h-1 w-full
-      bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500
-      scale-x-0 origin-left
-      group-hover:scale-x-100
-      transition-transform duration-500 ease-out
-    "
+                  className={`
+                    absolute top-0 left-0 h-1 w-full
+                    bg-gradient-to-r ${topBarGradient}
+                    scale-x-0 origin-left
+                    group-hover:scale-x-100
+                    transition-transform duration-500 ease-out
+                  `}
                 />
+
                 {/* Shine sweep */}
                 <span
-                  className="
-            pointer-events-none absolute inset-0
-            -translate-x-full
-            bg-gradient-to-r from-transparent via-white/10 to-transparent
-            transition-transform duration-900
-          "
+                  className={`
+                    pointer-events-none absolute inset-0
+                    -translate-x-full
+                    bg-gradient-to-r from-transparent ${isLight ? 'via-black/5' : 'via-white/10'} to-transparent
+                    group-hover:translate-x-full
+                    transition-transform duration-700
+                  `}
                 />
 
                 {/* Icon */}
                 <div
-                  className={`
-            relative z-10 mb-6 w-fit p-3 rounded-xl
-            transition-all duration-300
-            group-hover:-translate-y-1
-            group-hover:scale-110
-            group-hover:shadow-[0_0_25px_rgba(99,102,241,0.5)]
-          `}
+                  className="relative border border-blue-100/35 group-hover:bg-amber-200/40
+                  group-hover:shadow-[0_0_25px_rgba(99,102,241,0.5)]
+                  z-10 mb-6 w-fit p-3 rounded-xl transition-all duration-300 group-hover:-translate-y-1 group-hover:scale-110"
                   style={{ '--hover-bg': feature.bg } as React.CSSProperties}
                 >
                   <feature.icon
-                    className={`h-6 w-6 ${feature.color} transition-transform duration-300 group-hover:rotate-6`}
+                    className={`h-6 w-6  ${feature.color} transition-transform duration-300 group-hover:rotate-6`}
                   />
                 </div>
 
                 {/* Title */}
-                <h3
-                  className="
-            relative z-10 text-xl font-bold text-white mb-3
-            transition-colors duration-300
-            group-hover:text-white
-          "
-                >
-                  {feature.title}
-                </h3>
+                <h3 className={`relative z-10 text-xl font-bold ${cardTitle} mb-3 font-display`}>{feature.title}</h3>
 
                 {/* Description */}
-                <p
-                  className="
-            relative z-10 text-slate-400 leading-relaxed
-            transition-all duration-300
-            group-hover:text-slate-300
-            
-          "
-                >
+                <p className={`relative z-10 leading-relaxed transition-all duration-300 ${cardDesc}`}>
                   {feature.description}
                 </p>
-                <hr className="my-4 text-gray-800" />
-                <p className="text-slate-400  text-md transition-colors my-1">{feature?.desc1}</p>
-                <p className="text-gray-500  text-md transition-colors">{feature?.desc2}</p>
-                <div className="mt-3 hover:text-blue-500 cursor-pointer inline-flex items-center gap-2">
-                  Get Started <ArrowRight className="h-4 w-4 hover:text-blue-500" />
+
+                {(feature.desc1 || feature.desc2) && (
+                  <>
+                    <hr className={`my-4 ${hrColor}`} />
+                    {feature.desc1 && <p className={`${metaText} text-sm transition-colors my-1`}>{feature.desc1}</p>}
+                    {feature.desc2 && <p className={`${metaText2} text-sm transition-colors`}>{feature.desc2}</p>}
+                  </>
+                )}
+
+                <div
+                  className={`mt-3 ${ctaColor} cursor-pointer inline-flex items-center gap-2 text-sm font-semibold transition-colors duration-300`}
+                >
+                  Get Started <ArrowRight className="h-4 w-4" />
                 </div>
               </div>
             </ScrollReveal>
@@ -161,3 +173,5 @@ export const Features: FC<IFeaturesProps> = ({ title, description }) => {
     </section>
   );
 };
+
+export default Features;

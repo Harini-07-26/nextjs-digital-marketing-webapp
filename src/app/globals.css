@@ -116,7 +116,7 @@
 }
 
 .btn-primary-gradient {
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--hero-gradient-end)));
 
   color: #ffffff;
   font-weight: 600;
