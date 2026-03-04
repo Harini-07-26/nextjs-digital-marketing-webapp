@@ -80,7 +80,7 @@ const ProductShowcase = () => {
           <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-16 md:w-24 bg-gradient-to-r from-background to-transparent" />
           <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-16 md:w-24 bg-gradient-to-l from-background to-transparent" />
 
-          <div className="flex gap-5 px-8 md:px-16 overflow-x-auto scrollbar-hide pb-4 snap-x snap-mandatory">
+          <div className="flex gap-5 px-8 md:px-16 pb-4 snap-x snap-mandatory">
             {products.map((product) => (
               <motion.div
                 key={product.id}
