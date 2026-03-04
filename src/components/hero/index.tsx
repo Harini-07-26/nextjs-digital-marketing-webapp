@@ -5,6 +5,8 @@ import { ArrowRight, Zap, ShieldCheck } from 'lucide-react';
 import Navbar from '../navbar';
 import FloatingCard from '../floating-card';
 import Image from 'next/image';
+import TypingTextMotion from '../typing-text-motion';
+import TypingHeadingOnScroll from '../typing-text-motion';
 
 export default function Hero() {
   const stats = [
@@ -15,7 +17,7 @@ export default function Hero() {
 
   return (
     <>
-      <Navbar />
+      
       <section className="relative min-h-screen overflow-hidden pt-28 pb-20">
         {/* 🌌 Star Field */}
         <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
@@ -68,14 +70,16 @@ export default function Hero() {
               </motion.div>
 
               {/* Heading */}
-              <motion.h1
+              {/* <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="mt-8 font-display text-5xl font-bold leading-[1.1] tracking-tight sm:text-6xl lg:text-7xl"
               >
                 The Future of <span className="gradient-text">Digital Finance</span>
-              </motion.h1>
+              </motion.h1> */}
+
+              <TypingHeadingOnScroll textBefore="The Future of" textGradient="Digital Finance" />
 
               {/* Subtitle */}
               <motion.p
