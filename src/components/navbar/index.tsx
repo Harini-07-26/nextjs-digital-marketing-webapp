@@ -2,8 +2,14 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 
-const navLinks = ['Features', 'Solutions', 'Resources', 'Pricing'];
+const navLinks = [
+  { id: 1, href: '/features', label: 'Features' },
+  { id: 2, href: '/solutions', label: 'Solutions' },
+  { id: 3, href: '/resources', label: 'Resources' },
+  { id: 4, href: '/pricing', label: 'Pricing' }
+];
 
 const Navbar = () => {
   return (
@@ -25,9 +31,9 @@ const Navbar = () => {
         {/* Center Nav */}
         <nav className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
-            <a key={link} href="#" className="nav-link">
-              {link}
-            </a>
+            <Link key={link?.id} href={link?.href} className="nav-link">
+              {link?.label}
+            </Link>
           ))}
         </nav>
 
