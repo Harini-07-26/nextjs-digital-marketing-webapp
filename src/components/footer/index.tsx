@@ -5,7 +5,7 @@ import { ScrollReveal } from '../scroll-reveal';
 
 export function Footer() {
   return (
-    <footer className="bg-[#050505] border-t border-white/5 pt-16 pb-8">
+    <footer className="bg-secondary/40 border-t border-border pt-16 pb-8 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
@@ -14,44 +14,44 @@ export function Footer() {
                 <div className="p-2 bg-primary rounded-lg group-hover:rotate-12 transition-transform">
                   <Rocket className="h-5 w-5 text-primary-foreground" />
                 </div>
-                <span className="text-xl font-bold tracking-tighter text-white">DIGI</span>
+                <span className="text-xl font-bold tracking-tighter text-foreground">DIGI</span>
               </Link>
               <p className="text-slate-400 max-w-xs mb-6">
                 Empowering the next generation of digital finance with secure, fast, and transparent solutions.
               </p>
               <div className="flex gap-4">
-                <a href="#" className="p-2 glass rounded-full text-slate-400 hover:text-white transition-colors">
+                <a href="#" className="p-2 glass rounded-full text-slate-400 hover:text-foreground transition-colors">
                   <Twitter className="h-4 w-4" />
                 </a>
-                <a href="#" className="p-2 glass rounded-full text-slate-400 hover:text-white transition-colors">
+                <a href="#" className="p-2 glass rounded-full text-slate-400 hover:text-foreground transition-colors">
                   <Github className="h-4 w-4" />
                 </a>
-                <a href="#" className="p-2 glass rounded-full text-slate-400 hover:text-white transition-colors">
+                <a href="#" className="p-2 glass rounded-full text-slate-400 hover:text-foreground transition-colors">
                   <Linkedin className="h-4 w-4" />
                 </a>
               </div>
             </div>
 
             <div>
-              <h3 className="text-white font-semibold mb-4">Product</h3>
+              <h3 className="text-foreground font-semibold mb-4">Product</h3>
               <ul className="space-y-2">
                 <li>
-                  <a href="#" className="text-slate-400 hover:text-white text-sm transition-colors">
+                  <a href="#" className="text-slate-400 hover:text-foreground text-sm transition-colors">
                     Features
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-slate-400 hover:text-white text-sm transition-colors">
+                  <a href="#" className="text-slate-400 hover:text-foreground text-sm transition-colors">
                     Security
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-slate-400 hover:text-white text-sm transition-colors">
+                  <a href="#" className="text-slate-400 hover:text-foreground text-sm transition-colors">
                     Mobile App
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-slate-400 hover:text-white text-sm transition-colors">
+                  <a href="#" className="text-slate-400 hover:text-foreground text-sm transition-colors">
                     Pricing
                   </a>
                 </li>
@@ -59,25 +59,25 @@ export function Footer() {
             </div>
 
             <div>
-              <h3 className="text-white font-semibold mb-4">Company</h3>
+              <h3 className="text-foreground font-semibold mb-4">Company</h3>
               <ul className="space-y-2">
                 <li>
-                  <a href="#" className="text-slate-400 hover:text-white text-sm transition-colors">
+                  <a href="#" className="text-slate-400 hover:text-foreground text-sm transition-colors">
                     About
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-slate-400 hover:text-white text-sm transition-colors">
+                  <a href="#" className="text-slate-400 hover:text-foreground text-sm transition-colors">
                     Careers
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-slate-400 hover:text-white text-sm transition-colors">
+                  <a href="#" className="text-slate-400 hover:text-foreground text-sm transition-colors">
                     Blog
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-slate-400 hover:text-white text-sm transition-colors">
+                  <a href="#" className="text-slate-400 hover:text-foreground text-sm transition-colors">
                     Press
                   </a>
                 </li>
@@ -85,25 +85,25 @@ export function Footer() {
             </div>
 
             <div>
-              <h3 className="text-white font-semibold mb-4">Support</h3>
+              <h3 className="text-foreground font-semibold mb-4">Support</h3>
               <ul className="space-y-2">
                 <li>
-                  <a href="#" className="text-slate-400 hover:text-white text-sm transition-colors">
+                  <a href="#" className="text-slate-400 hover:text-foreground text-sm transition-colors">
                     Help Center
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-slate-400 hover:text-white text-sm transition-colors">
+                  <a href="#" className="text-slate-400 hover:text-foreground text-sm transition-colors">
                     Contact
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-slate-400 hover:text-white text-sm transition-colors">
+                  <a href="#" className="text-slate-400 hover:text-foreground text-sm transition-colors">
                     Status
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-slate-400 hover:text-white text-sm transition-colors">
+                  <a href="#" className="text-slate-400 hover:text-foreground text-sm transition-colors">
                     Security
                   </a>
                 </li>
@@ -111,18 +111,18 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="border-t border-border/50 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-slate-500 text-xs text-center md:text-left">
               © {new Date().getFullYear()} DIGI Financial Inc. All rights reserved.
             </p>
             <div className="flex gap-6">
-              <a href="#" className="text-slate-500 hover:text-white text-xs transition-colors">
+              <a href="#" className="text-slate-500 hover:text-foreground text-xs transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="text-slate-500 hover:text-white text-xs transition-colors">
+              <a href="#" className="text-slate-500 hover:text-foreground text-xs transition-colors">
                 Terms of Service
               </a>
-              <a href="#" className="text-slate-500 hover:text-white text-xs transition-colors">
+              <a href="#" className="text-slate-500 hover:text-foreground text-xs transition-colors">
                 Cookie Policy
               </a>
             </div>

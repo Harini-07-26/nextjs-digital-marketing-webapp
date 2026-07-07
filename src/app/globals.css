@@ -24,8 +24,21 @@
     --primary-foreground: 0 0% 100%;
   }
 
+  :root.light {
+    --background: 220 33% 97%;
+    --foreground: 228 25% 10%;
+    --card: 0 0% 100%;
+    --primary: 265 90% 55%;
+    --secondary: 220 20% 94%;
+    --muted: 220 15% 90%;
+    --border: 220 15% 86%;
+    --hero-gradient-start: 265 90% 50%;
+    --hero-gradient-end: 290 80% 60%;
+    --primary-foreground: 0 0% 100%;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground transition-colors duration-300;
   }
 }
 
@@ -184,6 +197,12 @@
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-name: star-move, star-twinkle;
+  transition: opacity 0.3s ease;
+}
+
+:root.light .stars {
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* ⭐ Small stars */
