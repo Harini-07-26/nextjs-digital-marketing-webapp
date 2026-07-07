@@ -51,7 +51,7 @@ const industries = [
 
 const IndustriesWeServe = () => {
   return (
-    <section className="bg-black py-20">
+    <section className="bg-background py-20 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6">
         {/* Heading */}
         <h2 className="text-center text-4xl font-bold text-foreground">
