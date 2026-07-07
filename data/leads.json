@@ -1,0 +1,38 @@
+[
+  {
+    "id": "e8e9ce16-801e-49bb-8ede-4a7e04f4a09a",
+    "email": "test@example.com",
+    "firstName": "Test",
+    "lastName": "User",
+    "company": "Acme",
+    "phone": "123456",
+    "createdAt": "2026-07-07T09:13:58.627Z"
+  },
+  {
+    "id": "6302942a-761b-475d-8e90-3e62e818a41a",
+    "email": "harithangavel26@gmail.com",
+    "firstName": "Harini",
+    "lastName": "Thangavel",
+    "company": "Xpandify Harry integrations",
+    "phone": "+919655732956",
+    "createdAt": "2026-07-07T09:15:51.403Z"
+  },
+  {
+    "id": "066d8d6a-3680-40f7-95c6-4c92bc1f3d5b",
+    "email": "hsddsd@dzfs.sdf",
+    "firstName": "",
+    "lastName": "",
+    "company": "",
+    "phone": "",
+    "createdAt": "2026-07-07T09:27:33.074Z"
+  },
+  {
+    "id": "ba4c30b5-93bb-411a-a3e4-af4dc62bec6b",
+    "email": "dfd@sdf.dsf",
+    "firstName": "Harini",
+    "lastName": "T",
+    "company": "Byju's",
+    "phone": "+919655732956",
+    "createdAt": "2026-07-07T09:32:51.242Z"
+  }
+]

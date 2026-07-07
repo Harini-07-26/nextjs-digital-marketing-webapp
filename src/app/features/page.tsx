@@ -2,7 +2,7 @@ import FeaturesPage from '@/src/components/features-page';
 
 const FeaturesPageComponent = () => {
   return (
-    <div>
+    <div className="min-h-screen bg-background mx-10">
       <FeaturesPage />
     </div>
   );
