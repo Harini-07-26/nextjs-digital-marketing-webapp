@@ -36,17 +36,17 @@ export function Footer() {
               <h3 className="text-foreground font-semibold mb-4">Product</h3>
               <ul className="space-y-2">
                 <li>
-                  <a href="#" className="text-slate-400 hover:text-foreground text-sm transition-colors">
+                  <a href="/features" className="text-slate-400 hover:text-foreground text-sm transition-colors">
                     Features
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-slate-400 hover:text-foreground text-sm transition-colors">
+                  <a href="/security" className="text-slate-400 hover:text-foreground text-sm transition-colors">
                     Security
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-slate-400 hover:text-foreground text-sm transition-colors">
+                  <a href="/mobile-app" className="text-slate-400 hover:text-foreground text-sm transition-colors">
                     Mobile App
                   </a>
                 </li>

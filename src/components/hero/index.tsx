@@ -17,7 +17,6 @@ export default function Hero() {
 
   return (
     <>
-      
       <section className="relative min-h-screen overflow-hidden pt-28 pb-20">
         {/* 🌌 Star Field */}
         <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
@@ -26,10 +25,15 @@ export default function Hero() {
           <div className="stars stars-lg" />
         </div>
 
-        {/* 🚀 Rocket Animation */}
+        {/* 🚀 Rocket Animation (Realistic Gravity Turn Trajectory) */}
         <motion.div
-          initial={{ x: '-20vw', y: '30vh', rotate: -25, opacity: 0 }}
-          animate={{ x: '190vw', y: '-190vh', opacity: 1 }}
+          initial={{ x: '-10vw', y: '45vh', rotate: -38, opacity: 0 }}
+          animate={{
+            x: ['-10vw', '-5vw', '15vw', '50vw', '105vw', '170vw'],
+            y: ['45vh', '25vh', '-5vh', '-50vh', '-100vh', '-140vh'],
+            rotate: [-38, -31, -11, 3, 14, 25],
+            opacity: [0, 1, 1, 1, 1, 0]
+          }}
           transition={{
             duration: 8,
             ease: 'linear',
@@ -39,7 +43,36 @@ export default function Hero() {
           className="pointer-events-none absolute bottom-0 -left-40 z-0"
         >
           <div className="relative">
-            {/* Flame */}
+            {/* 🔥 Flickering Thruster Flame */}
+            <motion.div
+              animate={{
+                scaleY: [1, 1.3, 0.9, 1.2, 1],
+                scaleX: [1, 1.1, 0.95, 1.05, 1],
+                opacity: [0.8, 1, 0.75, 0.95, 0.8]
+              }}
+              transition={{
+                duration: 0.15,
+                repeat: Infinity,
+                ease: 'easeInOut'
+              }}
+              className="absolute -bottom-7 -left-7 -z-10 origin-top-right"
+              style={{
+                transform: 'rotate(625deg)'
+              }}
+            >
+              {/* Outer hot flame */}
+              {/* <div
+                className="h-14 w-5 rounded-b-full bg-gradient-to-t from-red-600 via-orange-500 to-yellow-300 blur-[1.5px] filter drop-shadow-[0_0_10px_rgba(249,115,22,0.8)]"
+                style={{ transform: 'rotate(925deg)' }}
+              /> */}
+              {/* Inner bright yellow flame */}
+              <div className="absolute inset-x-1 top-0 h-9 rounded-b-full bg-yellow-300 blur-[0.5px]" />
+              {/* Hot white engine core */}
+              <div className="absolute inset-x-2 top-0 h-5 rounded-b-full bg-white opacity-95" />
+            </motion.div>
+
+            {/* 🌌 Engine Glow Aura */}
+            <div className="absolute -bottom-5 -left-5 -z-20 h-12 w-12 rounded-full bg-orange-500/25 blur-md animate-pulse" />
 
             <Image src="/hero-rocket.png" alt="Moving-Rocket" width={110} height={110} priority />
           </div>
