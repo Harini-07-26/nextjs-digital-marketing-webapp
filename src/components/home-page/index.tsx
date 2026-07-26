@@ -3,6 +3,7 @@ import ComparisonSection from '../comparison';
 import ContactSection from '../contact-section';
 import { CTA } from '../CTA';
 import DevelopmentProcess from '../development-process';
+import FAQSection from '../Faq';
 import Features from '../features';
 import Hero from '../hero';
 import IndustriesWeServe from '../industries-serving';
@@ -39,6 +40,7 @@ const HomePage = () => {
         }
       />
       <CTA />
+      <FAQSection />
       <ContactSection />
     </div>
   );
