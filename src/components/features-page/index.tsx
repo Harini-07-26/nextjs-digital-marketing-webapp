@@ -268,8 +268,7 @@ const FeaturesPage = () => {
       <Features
         title="Services inside the platform"
         description="From paid social to CRO — every capability plugs into the same dashboard."
-        variant="dark"
-      />
+        variant="dark" features={undefined} />
 
       {/* WORKFLOW */}
       <section className="py-20">

@@ -26,40 +26,70 @@ import { ScrollReveal } from '@/src/components/scroll-reveal';
 
 const goals = [
   {
-    id: 'lead-gen',
-    title: 'B2B & Enterprise Lead Gen',
+    id: 'seo',
+    title: 'SEO (Search Engine Optimization)',
     icon: Target,
     metric: '+310% pipeline growth',
-    desc: 'Target key decision makers and fill your pipeline with highly qualified marketing and sales opportunities.',
-    highlights: ['Account-Based Marketing (ABM)', 'Intent data activation', 'Multichannel outreach pipelines', 'CRM & marketing ops sync'],
-    cta: 'Scale my pipeline'
+    desc: 'Improve your search visibility with data-driven SEO strategies that increase rankings, attract qualified traffic, and generate sustainable business growth through technical optimization, content improvements, and ongoing performance monitoring.',
+    highlights: ['Technical SEO', 'On-Page & Off-Page SEO', 'Local & Ecommerce SEO', 'Keyword Research & Content Optimization', 'Link Building, Schema & SEO Audits'],
+    cta: 'Scale pipeline'
   },
   {
-    id: 'ecommerce',
-    title: 'High-Scale E-Commerce Growth',
+    id: 'ppc',
+    title: 'Pay-Per-Click (PPC) Advertising',
     icon: ShoppingCart,
     metric: '4.5x average ROAS',
-    desc: 'Scale direct-to-consumer sales and lifetime value with data-driven creative and performance ads.',
-    highlights: ['Dynamic creative optimization (DCO)', 'Retention & lifecycle SMS/Email', 'Multi-touch performance modeling', 'Conversion rate optimization (CRO)'],
-    cta: 'Boost online sales'
+    desc: 'Drive instant traffic and high-quality leads with optimized PPC campaigns across major advertising platforms. We continuously refine targeting, bidding, and creatives to maximize conversions while reducing advertising costs.',
+    highlights: ['Google & Bing Ads', 'Search, Display & Shopping Ads', 'YouTube & Performance Max Campaigns', 'Remarketing & Audience Targeting', 'Landing Page & Conversion Optimization'],
+    cta: 'Maximize ROAS'
   },
   {
-    id: 'brand',
-    title: 'Brand Dominance & Authority',
+    id: 'smm',
+    title: 'Social Media Marketing',
     icon: Sparkles,
     metric: '12M+ organic impressions',
-    desc: 'Establish your brand as an industry leader through viral organic campaigns and creator partnerships.',
-    highlights: ['Creator & UGC curation', 'SEO topical authority builds', 'PR & earned media strategies', 'Social media engagement loops'],
-    cta: 'Command industry attention'
+    desc: 'Strengthen your brand with engaging social media campaigns that increase reach, build customer relationships, and drive measurable business results through strategic content and paid advertising.',
+    highlights: ['Content Creation & Scheduling', 'Community Management', 'Paid Social Advertising', 'Performance Analytics & Reporting', 'Multi-Platform Growth Strategy'],
+    cta: 'Amplify reach'
   },
   {
-    id: 'app-growth',
-    title: 'App Installs & Engagement',
+    id: 'content-marketing',
+    title: 'Content Marketing',
     icon: Smartphone,
     metric: '62% lower Cost-Per-Install',
-    desc: 'Acquire high-intent mobile users and maximize retention with deep-linking & optimized landing flows.',
-    highlights: ['App Store Optimization (ASO)', 'Paid user acquisition strategies', 'In-app event optimization (AEO)', 'Lifecycle push notification flows'],
-    cta: 'Drive app installs'
+    desc: 'Build trust and attract customers with valuable content that improves search visibility, educates audiences, and positions your business as an industry authority across digital channels.',
+    highlights: ['Blog & Website Content', 'Landing Pages & Copywriting', 'Case Studies & Whitepapers', 'Email Campaigns & Newsletters', 'Product Descriptions & Industry Guides'],
+    cta: 'Amplify thought leadership'
+  },
+  {
+    id: 'geo-aeo',
+    title: 'AI Search Optimization (GEO & AEO)',
+    icon: Globe,
+    metric: 'Targeted reach to 5M+ professionals',
+    desc: 'Increase your brand visibility across AI-powered search platforms by creating structured, authoritative content optimized for answer engines, voice search, semantic search, and AI-driven discovery.',
+    highlights: [
+      'AI Search Optimization',
+      'Answer & Voice Search',
+      'Featured Snippet Optimization',
+      'Entity & Semantic SEO',
+      'Citation & Knowledge Panel Optimization'
+    ],
+    cta: 'Dominate AI Search'
+  },
+  {
+    id: 'web-design',
+    title: 'Web Design & Conversion Optimization',
+    icon: Globe,
+    metric: 'Targeted reach to 5M+ professionals',
+    desc: 'Create fast, responsive websites designed to deliver exceptional user experiences, improve engagement, and convert visitors into qualified leads through modern design and optimization.',
+    highlights: [
+      'UI/UX Design',
+      'Corporate & Ecommerce Websites',
+      'Landing Page Development',
+      'Website Speed & Mobile Optimization',
+      'CRO & A/B Testing'
+    ],
+    cta: 'Drive conversions'
   }
 ];
 
@@ -182,21 +212,19 @@ const SolutionsPage = () => {
             <div className="inline-flex rounded-full border border-border bg-secondary/80 p-1.5">
               <button
                 onClick={() => setActiveTab('goals')}
-                className={`rounded-full px-6 py-2.5 text-sm font-semibold transition-all duration-300 ${
-                  activeTab === 'goals'
-                    ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/25'
-                    : 'text-muted-foreground hover:text-foreground'
-                }`}
+                className={`rounded-full px-6 py-2.5 text-sm font-semibold transition-all duration-300 ${activeTab === 'goals'
+                  ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/25'
+                  : 'text-muted-foreground hover:text-foreground'
+                  }`}
               >
                 By Business Goal
               </button>
               <button
                 onClick={() => setActiveTab('industries')}
-                className={`rounded-full px-6 py-2.5 text-sm font-semibold transition-all duration-300 ${
-                  activeTab === 'industries'
-                    ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/25'
-                    : 'text-muted-foreground hover:text-foreground'
-                }`}
+                className={`rounded-full px-6 py-2.5 text-sm font-semibold transition-all duration-300 ${activeTab === 'industries'
+                  ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/25'
+                  : 'text-muted-foreground hover:text-foreground'
+                  }`}
               >
                 By Industry Vertical
               </button>
@@ -290,17 +318,15 @@ const SolutionsPage = () => {
                         key={ind.id}
                         onClick={() => setHoveredIndustry(ind.id)}
                         onMouseEnter={() => setHoveredIndustry(ind.id)}
-                        className={`w-full text-left flex items-center justify-between p-5 rounded-2xl border transition-all duration-300 ${
-                          isActive
-                            ? 'bg-card border-primary/50 shadow-md shadow-primary/5'
-                            : 'bg-card/30 border-border/60 hover:bg-card/50'
-                        }`}
+                        className={`w-full text-left flex items-center justify-between p-5 rounded-2xl border transition-all duration-300 ${isActive
+                          ? 'bg-card border-primary/50 shadow-md shadow-primary/5'
+                          : 'bg-card/30 border-border/60 hover:bg-card/50'
+                          }`}
                       >
                         <div className="flex items-center gap-4">
                           <div
-                            className={`flex h-10 w-10 items-center justify-center rounded-lg border transition-colors ${
-                              isActive ? 'bg-primary/20 border-primary text-primary' : 'bg-secondary border-border text-muted-foreground'
-                            }`}
+                            className={`flex h-10 w-10 items-center justify-center rounded-lg border transition-colors ${isActive ? 'bg-primary/20 border-primary text-primary' : 'bg-secondary border-border text-muted-foreground'
+                              }`}
                           >
                             <IndIcon className="h-5 w-5" />
                           </div>

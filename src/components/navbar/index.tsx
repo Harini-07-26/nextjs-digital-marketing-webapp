@@ -67,7 +67,7 @@ const Navbar = () => {
             <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/40">
               <Image src="/rocket.gif" alt="DIGI Logo" width={50} height={50} className="text-primary" unoptimized />
             </div>
-            <span className="font-display text-lg font-bold tracking-tight text-foreground">DIGI</span>
+            <span className="font-display text-lg font-bold tracking-tight text-foreground">Growth Voice</span>
           </Link>
 
           {/* Center Nav */}
@@ -78,7 +78,7 @@ const Navbar = () => {
               </Link>
             ))}
 
-            <button
+            {/* <button
               type="button"
               onClick={toggleAiMenu}
               className={`nav-link inline-flex items-center gap-1 cursor-pointer ${aiMenuOpen ? 'text-primary' : ''}`}
@@ -89,7 +89,7 @@ const Navbar = () => {
               <ChevronDown
                 className={`h-4 w-4 transition-transform duration-200 ${aiMenuOpen ? 'rotate-180' : ''}`}
               />
-            </button>
+            </button> */}
 
             {navLinks.slice(2).map((link) => (
               <Link key={link.id} href={link.href} className="nav-link" onClick={closeAiMenu}>
@@ -119,7 +119,7 @@ const Navbar = () => {
         </div>
       </motion.header>
 
-      <AiDevelopmentMegaMenu isOpen={aiMenuOpen} onClose={closeAiMenu} />
+      {/* <AiDevelopmentMegaMenu isOpen={aiMenuOpen} onClose={closeAiMenu} /> */}
     </>
   );
 };

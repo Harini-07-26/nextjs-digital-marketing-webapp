@@ -26,7 +26,7 @@ const TypingHeadingOnScroll = ({ textBefore, textGradient }: ITypingTextProps) =
   }, [isInView, controls]);
 
   return (
-    <motion.h1
+    <motion.div
       className="mt-8 font-display text-5xl font-bold leading-[1.1] tracking-tight sm:text-6xl lg:text-7xl"
       initial="hidden"
       animate="visible"
@@ -55,9 +55,9 @@ const TypingHeadingOnScroll = ({ textBefore, textGradient }: ITypingTextProps) =
           {char}
         </motion.span>
       ))}
-
+      <br />
       {/* Gradient text */}
-      <span className="gradient-text px-3">
+      <span className="gradient-text text-4xl">
         {textGradient.split("").map((char, i) => (
           <motion.span
             key={`gradient-${i}`}
@@ -70,7 +70,7 @@ const TypingHeadingOnScroll = ({ textBefore, textGradient }: ITypingTextProps) =
           </motion.span>
         ))}
       </span>
-    </motion.h1>
+    </motion.div>
   );
 }
 
