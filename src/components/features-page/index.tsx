@@ -24,6 +24,7 @@ import {
 } from 'lucide-react';
 import { ScrollReveal } from '@/src/components/scroll-reveal';
 import Features from '@/src/components/features';
+import { featuresData } from '../common/common-data';
 
 const heroStats = [
   { value: '3.4x', label: 'Avg. ROAS' },
@@ -268,8 +269,7 @@ const FeaturesPage = () => {
       <Features
         title="Services inside the platform"
         description="From paid social to CRO — every capability plugs into the same dashboard."
-        variant="dark"
-      />
+        variant="dark" features={featuresData} />
 
       {/* WORKFLOW */}
       <section className="py-20">

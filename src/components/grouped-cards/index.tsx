@@ -26,7 +26,7 @@ const IndustryCard = ({ name, icon: Icon }: Props) => {
           transition-colors
         "
       >
-        <Icon className="h-7 w-7 text-yellow-400" />
+        <Icon className="h-7 w-7 text-white" />
       </div>
 
       {/* Title */}

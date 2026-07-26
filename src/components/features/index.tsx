@@ -7,65 +7,12 @@ interface IFeaturesProps {
   description: string;
   variant?: 'dark' | 'light';
   datatestId?: string;
+  features: any;
+  showCTAButton?: boolean;
 }
 
-const features = [
-  {
-    title: 'Paid Social',
-    description:
-      'Strategic campaigns across Meta (Instagram, Facebook), TikTok, Pinterest, Snapchat, and Reddit that turn scrollers into customers with thumb-stopping creative.',
-    icon: Globe,
-    desc1: 'Tools: Meta Ads Manager, TikTok Ads, Pinterest Ads, Reddit Ads',
-    desc2: 'Perfect for: D2C brands, App installs, Lead generation',
-    color: 'text-blue-400',
-    bg: 'bg-red-200/20'
-  },
-  {
-    title: 'Creative Production',
-    description:
-      'Performance-driven creative that converts. From UGC to motion graphics and video production, we produce content designed to perform.',
-    icon: Shield,
-    desc1: 'Services: Video Production, Photography, UGC, Motion graphics',
-    desc2: 'Perfect for: Social content, Product shoots, Brand campaigns',
-    color: 'text-emerald-400',
-    bg: 'bg-emerald-400/10'
-  },
-  {
-    title: 'Paid Search & PPC',
-    description: 'Capture high-intent demand with Google Ads strategies built for efficiency and scale.',
-    icon: Zap,
-    desc1: 'Tools: Google Ads, Microsoft Ads, Apple Search Ads',
-    desc2: 'Perfect for: High-intent keywords, App installs, Local services',
-    color: 'text-indigo-400',
-    bg: 'bg-indigo-400/10'
-  },
-  {
-    title: 'Email, CRM & CRO',
-    description:
-      'Automated flows and campaigns that nurture leads and maximise customer lifetime value, plus conversion rate optimisation to turn more visitors into customers.',
-    icon: PieChart,
-    desc1: 'Tools: Klaviyo, Customer.io, Mailchimp, HubSpot, ActiveCampaign',
-    desc2: 'Perfect for: E-commerce retention, Lead nurturing, CRO, Newsletters',
-    color: 'text-purple-400',
-    bg: 'bg-purple-400/10'
-  },
-  {
-    title: 'Digital Cards',
-    description: 'Generate virtual cards instantly for secure online shopping and subscriptions.',
-    icon: CreditCard,
-    color: 'text-pink-400',
-    bg: 'bg-pink-400/10'
-  },
-  {
-    title: 'Vault Storage',
-    description: 'Secure your long-term assets in cold storage vaults with time-delayed withdrawals.',
-    icon: Lock,
-    color: 'text-amber-400',
-    bg: 'bg-amber-400/10'
-  }
-];
 
-export const Features: FC<IFeaturesProps> = ({ title, description, variant = 'dark', datatestId }) => {
+export const Features: FC<IFeaturesProps> = ({ title, description, variant = 'dark', datatestId, features, showCTAButton = false }) => {
   const isLight = variant === 'light';
 
   // Theme classes
@@ -98,7 +45,7 @@ export const Features: FC<IFeaturesProps> = ({ title, description, variant = 'da
 
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
+          {features.map((feature: any, index: number) => (
             <ScrollReveal key={feature.title} delay={index * 0.1}>
               <div
                 className={`
@@ -159,12 +106,13 @@ export const Features: FC<IFeaturesProps> = ({ title, description, variant = 'da
                     {feature.desc2 && <p className={`${metaText2} text-sm transition-colors`}>{feature.desc2}</p>}
                   </>
                 )}
-
-                <div
-                  className={`mt-3 ${ctaColor} cursor-pointer inline-flex items-center gap-2 text-sm font-semibold transition-colors duration-300`}
-                >
-                  Get Started <ArrowRight className="h-4 w-4" />
-                </div>
+                {
+                  showCTAButton && <div
+                    className={`mt-3 ${ctaColor} cursor-pointer inline-flex items-center gap-2 text-sm font-semibold transition-colors duration-300`}
+                  >
+                    Get Started <ArrowRight className="h-4 w-4" />
+                  </div>
+                }
               </div>
             </ScrollReveal>
           ))}
