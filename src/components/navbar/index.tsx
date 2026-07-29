@@ -70,11 +70,25 @@ const Navbar = () => {
       >
         <div className="container flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5" onClick={() => { closeAiMenu(); closeMobileMenu(); }}>
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/40">
-              <Image src="/rocket.gif" alt="Growth Voice Logo" width={50} height={50} className="text-primary" unoptimized />
+          <Link
+            href="/"
+            className="flex items-center gap-2.5"
+            onClick={() => {
+              closeAiMenu();
+              closeMobileMenu();
+            }}
+          >
+            <div className="flex h-full w-full items-center justify-center rounded-lg bg-transparent">
+              <Image
+                src="/logo.png"
+                alt="Growth Voice Logo"
+                width={200}
+                height={200}
+                className="text-primary"
+                unoptimized
+              />
             </div>
-            <span className="font-display text-lg font-bold tracking-tight text-foreground">Growth Voice</span>
+            {/* <span className="font-display text-lg font-bold tracking-tight text-foreground">Growth Voice</span> */}
           </Link>
 
           {/* Desktop Nav */}
@@ -99,9 +113,6 @@ const Navbar = () => {
                 <Moon className="h-4 w-4 text-indigo-600 fill-indigo-600/10" />
               )}
             </button>
-            <a href="#" className="nav-link hidden sm:block">
-              Log in
-            </a>
             <button className="btn-primary-gradient text-xs sm:text-sm px-4 sm:px-6 py-2.5 sm:py-3">Get Started</button>
 
             {/* Mobile Hamburger Toggle */}
@@ -157,10 +168,7 @@ const Navbar = () => {
                   >
                     Log in
                   </a>
-                  <button
-                    onClick={closeMobileMenu}
-                    className="btn-primary-gradient w-full py-3 text-sm font-semibold"
-                  >
+                  <button onClick={closeMobileMenu} className="btn-primary-gradient w-full py-3 text-sm font-semibold">
                     Get Started Now
                   </button>
                 </div>
@@ -174,4 +182,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

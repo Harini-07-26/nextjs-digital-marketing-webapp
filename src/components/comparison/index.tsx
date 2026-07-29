@@ -48,8 +48,12 @@ const ComparisonSection = () => {
             <div className="rounded-2xl bg-card/90 backdrop-blur-md overflow-hidden">
               {/* Table header */}
               <div className="grid grid-cols-3 border-b border-border px-3 sm:px-6 py-4 gap-2">
-                <span className="text-[11px] sm:text-xs font-semibold tracking-widest text-muted-foreground uppercase">Capability</span>
-                <span className="text-center text-xs sm:text-sm font-semibold text-muted-foreground">Traditional Agency</span>
+                <span className="text-[11px] sm:text-xs font-semibold tracking-widest text-muted-foreground uppercase">
+                  Capability
+                </span>
+                <span className="text-center text-xs sm:text-sm font-semibold text-muted-foreground">
+                  Traditional Agency
+                </span>
                 <span className="text-center font-display text-xs sm:text-sm font-bold text-primary">Growth Voice</span>
               </div>
 
@@ -77,7 +81,7 @@ const ComparisonSection = () => {
         </motion.div>
 
         {/* CTA Banner */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
@@ -94,11 +98,10 @@ const ComparisonSection = () => {
               </button>
             </div>
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );
 };
 
 export default ComparisonSection;
-

@@ -45,8 +45,6 @@ const industries = [
   { name: "Food & Beverages", icon: Utensils },
   { name: "Legal Services", icon: Scale },
   { name: "Sports", icon: Trophy },
-  { name: "Fitness", icon: Dumbbell },
-  { name: "Rentals", icon: Home },
 ];
 
 const IndustriesWeServe = () => {

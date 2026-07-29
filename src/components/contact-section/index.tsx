@@ -89,7 +89,9 @@ const ContactSection = () => {
                   <Zap className="h-5 w-5 text-amber-400" />
                   <span className="font-bold text-foreground">Book a Free Strategy Call</span>
                 </div>
-                <p className="text-muted-foreground mb-5">Schedule a 30-minute consultation to discuss your growth goals</p>
+                <p className="text-muted-foreground mb-5">
+                  Schedule a 30-minute consultation to discuss your growth goals
+                </p>
                 <button className="btn-primary-gradient inline-flex items-center gap-2 px-6 py-3 text-sm">
                   Book Your Slot <ArrowRight className="h-4 w-4" />
                 </button>
@@ -106,7 +108,7 @@ const ContactSection = () => {
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
                     <Mail className="h-4 w-4 text-primary" />
                   </div>
-                  <span className="text-foreground font-medium">hello@growthvoice.com</span>
+                  <span className="text-foreground font-medium">contact@growthvoice.in</span>
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">

@@ -6,39 +6,39 @@ import { ScrollReveal } from '../scroll-reveal';
 const steps = [
   {
     icon: Search,
-    title: 'Discovery & Requirement Analysis',
-    desc: 'We start with deep-dive workshops to understand your goals, audience, and technical constraints — then translate them into a crisp project scope and success metrics.',
-    tags: ['Workshops', 'Scope', 'KPIs']
+    title: 'Discovery & Strategy',
+    desc: 'We understand your business, audience, competitors, and goals to build a customised digital marketing strategy focused on measurable growth and long-term success.',
+    tags: ['Business Goals', 'Audience', 'Strategy']
   },
   {
     icon: Compass,
-    title: 'Research & Strategic Planning',
-    desc: 'Market research, competitor teardown, and channel modeling shape a data-backed roadmap that aligns growth strategy with product reality.',
-    tags: ['Market fit', 'Roadmap', 'Forecast']
+    title: 'Market Research',
+    desc: 'We analyse industry trends, customer behaviour, and competitor performance to uncover opportunities that help your brand stand out and attract the right audience.',
+    tags: ['Competitors', 'Keywords', 'Insights']
   },
   {
     icon: PenTool,
-    title: 'UI/UX Design & Architecture',
-    desc: 'Human-centered design paired with a scalable system architecture. Every screen and every service is built to grow with you.',
-    tags: ['Design system', 'Prototypes', 'Architecture']
+    title: 'Campaign Planning',
+    desc: 'Our team creates a data-driven marketing roadmap, selecting the right channels, content, budget, and timeline to maximise your return on investment.',
+    tags: ['Roadmap', 'Budget', 'Channels']
   },
   {
     icon: Code2,
-    title: 'Development & Integration',
-    desc: 'Modular, well-tested builds using modern stacks — shipped in tight sprints with continuous integration and full transparency.',
-    tags: ['Sprints', 'CI/CD', 'APIs']
+    title: 'Creative Development',
+    desc: 'We design compelling content, visuals, ad creatives, and landing pages that capture attention, strengthen your brand, and encourage customer engagement.',
+    tags: ['Content', 'Design', 'Copywriting']
   },
   {
     icon: ShieldCheck,
-    title: 'Testing & Quality Assurance',
-    desc: 'Automated and manual QA, performance audits, and security reviews eliminate regressions before a single user sees them.',
-    tags: ['QA', 'Security', 'Performance']
+    title: 'Campaign Execution',
+    desc: 'Your campaigns are launched across search engines, social media, email, and other digital channels with precision to reach your ideal customers effectively.',
+    tags: ['SEO', 'Social Media', 'Paid Ads']
   },
   {
     icon: Rocket,
-    title: 'Deployment & Launch',
-    desc: 'Zero-downtime rollout, observability from day one, and a launch playbook that keeps the momentum going long after go-live.',
-    tags: ['Launch', 'Monitoring', 'Support']
+    title: 'Optimisation & Reporting',
+    desc: 'We continuously monitor performance, optimise campaigns using real-time insights, and provide transparent reports to improve results and maximise business growth.',
+    tags: ['Analytics', 'Monitoring', 'Optimisation']
   }
 ];
 
@@ -186,13 +186,13 @@ const DevelopmentProcess = () => {
         <ScrollReveal delay={0.1}>
           <div className="mx-auto mt-16 flex max-w-3xl flex-col items-center justify-between gap-4 rounded-2xl border border-border bg-card/60 p-6 backdrop-blur md:flex-row">
             <div>
-              <p className="font-display text-lg font-semibold text-foreground">Ready to kick off phase one?</p>
+              <p className="font-display text-lg font-semibold text-foreground">Start Growing Your Brand Today</p>
               <p className="text-sm text-muted-foreground">
                 Book a discovery call and get a tailored roadmap within a week.
               </p>
             </div>
             <button className="btn-primary-gradient inline-flex items-center gap-2 text-sm">
-              Start discovery <ArrowRight className="h-4 w-4" />
+              Grow Your Business Today <ArrowRight className="h-4 w-4" />
             </button>
           </div>
         </ScrollReveal>
