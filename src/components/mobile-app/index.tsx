@@ -3,8 +3,6 @@
 import { motion } from 'framer-motion';
 import { Smartphone, Bell, Fingerprint, Wifi, Zap, BarChart3, Apple, Play, Star, ArrowRight } from 'lucide-react';
 import { ScrollReveal } from '../scroll-reveal';
-import Navbar from '../navbar';
-import { Footer } from '../footer';
 
 const features = [
   {
@@ -40,8 +38,6 @@ const reviews = [
 const MobileApp = () => {
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
-
       {/* Hero */}
       <section className="relative overflow-hidden pt-32 pb-20">
         <div className="absolute inset-0 -z-10">

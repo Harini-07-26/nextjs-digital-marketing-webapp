@@ -32,24 +32,24 @@ const steps = [
 
 export default function TimeLineComponent() {
   return (
-    <section className="my-5 bg-background">
-      <div className="container">
+    <section className="py-20 bg-background transition-colors duration-300">
+      <div className="container px-4 sm:px-6">
         {/* Heading */}
-        <div className="mx-auto mb-10 max-w-3xl text-center">
-          <h2 className="text-4xl md:text-6xl font-bold text-white">How We Work</h2>
-          <p className="text-slate-400 text-lg mb-0 max-w-2xl mx-auto mt-6">
+        <div className="mx-auto mb-14 max-w-3xl text-center">
+          <h2 className="text-3xl md:text-5xl font-bold font-display text-foreground">How We Work</h2>
+          <p className="text-muted-foreground text-base md:text-lg mb-0 max-w-2xl mx-auto mt-4">
             A proven framework that delivers consistent, measurable results through data-driven strategy.
           </p>
         </div>
 
         {/* Timeline */}
         <div className="relative">
-          {/* Connecting Line */}
-          <div className="absolute left-0 right-0 top-[34px] mx-auto h-[2px] max-w-6xl bg-gradient-to-r from-[#6366f1] via-pink-500  to-[#8b5cf6]" />
+          {/* Connecting Line (Desktop) */}
+          <div className="hidden md:block absolute left-0 right-0 top-[32px] mx-auto h-[2px] max-w-5xl bg-gradient-to-r from-primary via-fuchsia-500 to-indigo-500" />
 
-          <div className="grid grid-cols-1 gap-16 md:grid-cols-5">
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-5 md:gap-6">
             {steps.map((item) => (
-              <div key={item.step} className="relative text-center">
+              <div key={item.step} className="relative text-center flex flex-col items-center">
                 {/* Dangling Number */}
                 <motion.div
                   whileHover={{
@@ -59,14 +59,14 @@ export default function TimeLineComponent() {
                     duration: 0.9,
                     ease: 'easeInOut'
                   }}
-                  className="relative z-10 mx-auto flex h-16 w-16 origin-top items-center justify-center rounded-full bg-gradient-to-br from-fuchsia-600 to-blue-300 text-xl font-bold text-white shadow-lg hover:shadow-[0_0_30px_rgba(236,72,153,0.7)]"
+                  className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-primary to-[hsl(var(--hero-gradient-end))] text-xl font-bold text-white shadow-lg hover:shadow-[0_0_30px_hsl(var(--primary)_/_0.6)]"
                 >
                   {item.step}
                 </motion.div>
 
                 {/* Content */}
-                <h3 className="mt-6 text-xl font-semibold">{item.title}</h3>
-                <p className="max-w-lg text-lg leading-relaxed text-muted-foreground mt-2">{item.desc}</p>
+                <h3 className="mt-5 text-xl font-semibold font-display text-foreground">{item.title}</h3>
+                <p className="text-sm leading-relaxed text-muted-foreground mt-2 max-w-xs">{item.desc}</p>
               </div>
             ))}
           </div>

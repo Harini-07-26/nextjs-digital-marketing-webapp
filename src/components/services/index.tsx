@@ -130,7 +130,7 @@ const ServicesSection: FC = () => {
   const activeCategory = categories.find((c) => c.id === activeTab)!;
 
   return (
-    <section className="py-24 bg-fuchsia-300/25">
+    <section className="py-24 bg-background transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground text-center mb-4">Our Services</h2>
@@ -141,13 +141,13 @@ const ServicesSection: FC = () => {
 
         {/* Tabs */}
         <ScrollReveal delay={0.1}>
-          <div className="flex flex-wrap justify-center gap-3 mb-10">
+          <div className="flex flex-nowrap sm:flex-wrap overflow-x-auto justify-start sm:justify-center gap-3 pb-2 mb-10 no-scrollbar">
             {categories.map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => setActiveTab(cat.id)}
                 className={`
-                  flex items-center gap-2 px-5 py-3 cursor-pointer rounded-xl border text-sm font-semibold transition-all duration-300
+                  flex items-center gap-2 px-5 py-3 shrink-0 cursor-pointer rounded-xl border text-sm font-semibold transition-all duration-300
                   ${
                     activeTab === cat.id
                       ? 'bg-primary text-primary-foreground border-primary shadow-lg shadow-primary/25'

@@ -4,17 +4,17 @@ import { motion } from 'framer-motion';
 import { CheckCircle2 } from 'lucide-react';
 import Image from 'next/image';
 
-const cryptos = [
-  { symbol: 'B', name: 'Bitcoin', status: 'Trending', price: '$64,231', color: 'bg-orange-500' },
-  { symbol: 'E', name: 'Ethereum', status: 'Trending', price: '$3,412', color: 'bg-blue-500' },
-  { symbol: 'S', name: 'Solana', status: 'Trending', price: '$145', color: 'bg-purple-500' }
+const metrics = [
+  { symbol: 'SEO', name: 'Search Visibility', status: 'Active Growth', metric: '+320%', color: 'bg-primary' },
+  { symbol: 'PPC', name: 'Blended ROAS', status: 'High Yield', metric: '4.8x', color: 'bg-fuchsia-500' },
+  { symbol: 'CRO', name: 'Conversion Rate', status: 'Optimized', metric: '+180%', color: 'bg-purple-600' }
 ];
 
 const features = [
-  'AI-driven portfolio rebalancing',
-  'Custom price alert notifications',
-  'Institutional grade research reports',
-  '24/7 market monitoring'
+  'AI-driven campaign budget optimization',
+  'Multi-touch revenue attribution modeling',
+  'Real-time competitor market teardowns',
+  '24/7 automated conversion monitoring'
 ];
 
 const MarketInsights = () => {
@@ -35,46 +35,46 @@ const MarketInsights = () => {
           >
             {/* Header */}
             <div className="flex items-center justify-between mb-6">
-              <h3 className="font-display text-xl font-bold">Market Trends</h3>
-              <span className="rounded-full bg-green-500/15 px-3 py-1 text-xs font-semibold text-green-400">
-                +12.5%
+              <h3 className="font-display text-xl font-bold text-foreground">Marketing Performance</h3>
+              <span className="rounded-full bg-emerald-500/15 border border-emerald-500/30 px-3 py-1 text-xs font-semibold text-emerald-500">
+                +24.8% MoM
               </span>
             </div>
 
-            {/* Crypto rows */}
+            {/* Performance rows */}
             <div className="space-y-3">
-              {cryptos.map((crypto, i) => (
+              {metrics.map((item, i) => (
                 <motion.div
-                  key={crypto.name}
+                  key={item.name}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.2 + i * 0.15 }}
-                  whileHover={{ scale: 1.02, backgroundColor: 'hsl(228 20% 14%)' }}
-                  className="flex items-center justify-between rounded-xl border border-border bg-card p-4 transition-colors cursor-pointer"
+                  whileHover={{ scale: 1.02 }}
+                  className="flex items-center justify-between rounded-xl border border-border bg-card p-4 transition-colors hover:bg-secondary/60 cursor-pointer"
                 >
                   <div className="flex items-center gap-3">
                     <div
-                      className={`flex h-10 w-10 items-center justify-center rounded-full ${crypto.color} text-white font-bold text-sm`}
+                      className={`flex h-10 w-10 items-center justify-center rounded-full ${item.color} text-white font-bold text-xs`}
                     >
-                      {crypto.symbol}
+                      {item.symbol}
                     </div>
                     <div>
-                      <p className="font-semibold text-foreground">{crypto.name}</p>
-                      <span>
+                      <p className="font-semibold text-foreground">{item.name}</p>
+                      <div className="flex items-center gap-2">
                         <Image
                           src={'/trend.gif'}
                           className="bg-transparent"
                           alt=""
-                          height={35}
-                          width={35}
+                          height={20}
+                          width={20}
                           unoptimized
-                        />{' '}
-                        <p className="text-xs text-muted-foreground">{crypto.status}</p>{' '}
-                      </span>
+                        />
+                        <p className="text-xs text-muted-foreground">{item.status}</p>
+                      </div>
                     </div>
                   </div>
-                  <p className="font-display font-bold text-foreground">{crypto.price}</p>
+                  <p className="font-display font-bold text-primary">{item.metric}</p>
                 </motion.div>
               ))}
             </div>
@@ -87,13 +87,12 @@ const MarketInsights = () => {
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
           >
-            <h2 className="font-display text-4xl font-bold leading-tight sm:text-5xl">
+            <h2 className="font-display text-4xl font-bold leading-tight sm:text-5xl text-foreground">
               Stay ahead with <span className="gradient-text">real-time insights</span>
             </h2>
 
             <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted-foreground">
-              Our proprietary AI engine analyzes millions of data points every second to give you the most accurate
-              market predictions and personalized financial advice.
+              Our proprietary marketing engine analyzes channel data to deliver hyper-targeted campaigns and maximum ROI for your business.
             </p>
 
             <ul className="mt-8 space-y-4">
@@ -119,3 +118,4 @@ const MarketInsights = () => {
 };
 
 export default MarketInsights;
+

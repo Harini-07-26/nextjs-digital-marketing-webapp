@@ -289,7 +289,7 @@ export default function Hero() {
               ))}
             </span>
           </h1>
-          <div className='grid grid-cols-2 gap-6 mt-10 container'>
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 container px-4 sm:px-6'>
 
             {goals.map((goal, idx) => {
               const Icon = goal.icon;

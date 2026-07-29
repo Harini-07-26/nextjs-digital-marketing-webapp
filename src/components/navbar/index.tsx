@@ -1,22 +1,24 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Sun, Moon, ChevronDown } from 'lucide-react';
+import { Sun, Moon, Menu, X, ChevronRight } from 'lucide-react';
 import AiDevelopmentMegaMenu from './ai-development-mega-menu';
 
 const navLinks = [
   { id: 1, href: '/features', label: 'Features' },
   { id: 2, href: '/solutions', label: 'Solutions' },
   { id: 4, href: '/resources', label: 'Resources' },
-  { id: 5, href: '/pricing', label: 'Pricing' }
+  { id: 5, href: '/mobile-app', label: 'Mobile App' },
+  { id: 6, href: '/security', label: 'Security' }
 ];
 
 const Navbar = () => {
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
   const [aiMenuOpen, setAiMenuOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme') as 'dark' | 'light' | null;
@@ -29,12 +31,16 @@ const Navbar = () => {
   }, []);
 
   const closeAiMenu = useCallback(() => setAiMenuOpen(false), []);
+  const closeMobileMenu = useCallback(() => setMobileMenuOpen(false), []);
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') closeAiMenu();
+      if (e.key === 'Escape') {
+        closeAiMenu();
+        closeMobileMenu();
+      }
     };
-    if (aiMenuOpen) {
+    if (aiMenuOpen || mobileMenuOpen) {
       document.addEventListener('keydown', handleEscape);
       document.body.style.overflow = 'hidden';
     }
@@ -42,7 +48,7 @@ const Navbar = () => {
       document.removeEventListener('keydown', handleEscape);
       document.body.style.overflow = '';
     };
-  }, [aiMenuOpen, closeAiMenu]);
+  }, [aiMenuOpen, mobileMenuOpen, closeAiMenu, closeMobileMenu]);
 
   const toggleTheme = () => {
     const newTheme = theme === 'dark' ? 'light' : 'dark';
@@ -52,6 +58,7 @@ const Navbar = () => {
   };
 
   const toggleAiMenu = () => setAiMenuOpen((prev) => !prev);
+  const toggleMobileMenu = () => setMobileMenuOpen((prev) => !prev);
 
   return (
     <>
@@ -59,39 +66,20 @@ const Navbar = () => {
         initial={{ y: -30, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="fixed top-0 left-0 right-0 px-1 py-1 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl"
+        className="fixed top-0 left-0 right-0 px-2 sm:px-4 py-1 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl"
       >
         <div className="container flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5" onClick={closeAiMenu}>
+          <Link href="/" className="flex items-center gap-2.5" onClick={() => { closeAiMenu(); closeMobileMenu(); }}>
             <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/40">
-              <Image src="/rocket.gif" alt="DIGI Logo" width={50} height={50} className="text-primary" unoptimized />
+              <Image src="/rocket.gif" alt="Growth Voice Logo" width={50} height={50} className="text-primary" unoptimized />
             </div>
             <span className="font-display text-lg font-bold tracking-tight text-foreground">Growth Voice</span>
           </Link>
 
-          {/* Center Nav */}
+          {/* Desktop Nav */}
           <nav className="hidden items-center gap-8 md:flex">
-            {navLinks.slice(0, 2).map((link) => (
-              <Link key={link.id} href={link.href} className="nav-link" onClick={closeAiMenu}>
-                {link.label}
-              </Link>
-            ))}
-
-            {/* <button
-              type="button"
-              onClick={toggleAiMenu}
-              className={`nav-link inline-flex items-center gap-1 cursor-pointer ${aiMenuOpen ? 'text-primary' : ''}`}
-              aria-expanded={aiMenuOpen}
-              aria-haspopup="true"
-            >
-              AI Development
-              <ChevronDown
-                className={`h-4 w-4 transition-transform duration-200 ${aiMenuOpen ? 'rotate-180' : ''}`}
-              />
-            </button> */}
-
-            {navLinks.slice(2).map((link) => (
+            {navLinks.map((link) => (
               <Link key={link.id} href={link.href} className="nav-link" onClick={closeAiMenu}>
                 {link.label}
               </Link>
@@ -99,7 +87,7 @@ const Navbar = () => {
           </nav>
 
           {/* Right Actions */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             <button
               onClick={toggleTheme}
               className="p-2.5 rounded-xl bg-secondary/40 border border-border/80 text-foreground hover:bg-secondary transition-all duration-300 flex items-center justify-center cursor-pointer"
@@ -114,14 +102,76 @@ const Navbar = () => {
             <a href="#" className="nav-link hidden sm:block">
               Log in
             </a>
-            <button className="btn-primary-gradient text-sm">Get Started</button>
+            <button className="btn-primary-gradient text-xs sm:text-sm px-4 sm:px-6 py-2.5 sm:py-3">Get Started</button>
+
+            {/* Mobile Hamburger Toggle */}
+            <button
+              onClick={toggleMobileMenu}
+              className="p-2.5 rounded-xl bg-secondary/40 border border-border/80 text-foreground md:hidden flex items-center justify-center cursor-pointer"
+              aria-label="Toggle Navigation Menu"
+            >
+              {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
           </div>
         </div>
       </motion.header>
 
-      {/* <AiDevelopmentMegaMenu isOpen={aiMenuOpen} onClose={closeAiMenu} /> */}
+      {/* Mobile Navigation Drawer */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-0 top-16 z-40 bg-black/60 backdrop-blur-sm md:hidden"
+              onClick={closeMobileMenu}
+              aria-hidden="true"
+            />
+
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.25 }}
+              className="fixed left-0 right-0 top-16 z-50 border-b border-border bg-background/95 p-6 backdrop-blur-2xl md:hidden shadow-2xl"
+            >
+              <nav className="flex flex-col gap-3">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.id}
+                    href={link.href}
+                    onClick={closeMobileMenu}
+                    className="flex items-center justify-between rounded-xl border border-border/50 bg-card/40 px-4 py-3.5 text-base font-medium text-foreground transition-all hover:bg-secondary"
+                  >
+                    <span>{link.label}</span>
+                    <ChevronRight className="h-4 w-4 text-muted-foreground" />
+                  </Link>
+                ))}
+                <div className="pt-2 flex flex-col gap-3">
+                  <a
+                    href="#"
+                    onClick={closeMobileMenu}
+                    className="w-full text-center rounded-xl border border-border px-4 py-3 text-sm font-semibold text-foreground hover:bg-secondary"
+                  >
+                    Log in
+                  </a>
+                  <button
+                    onClick={closeMobileMenu}
+                    className="btn-primary-gradient w-full py-3 text-sm font-semibold"
+                  >
+                    Get Started Now
+                  </button>
+                </div>
+              </nav>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </>
   );
 };
 
 export default Navbar;
+
