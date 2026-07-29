@@ -40,6 +40,7 @@ export const Features: FC<IFeaturesProps> = ({ title, description, datatestId, f
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature: any, index: number) => (
+          {features.map((feature: any, index: number) => (
             <ScrollReveal key={feature.title} delay={index * 0.1}>
               <div
                 className={`

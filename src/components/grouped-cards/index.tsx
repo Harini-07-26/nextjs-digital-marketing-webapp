@@ -1,4 +1,4 @@
-import { LucideIcon } from "lucide-react";
+import { LucideIcon } from 'lucide-react';
 
 interface Props {
   name: string;
@@ -30,12 +30,9 @@ const IndustryCard = ({ name, icon: Icon }: Props) => {
       </div>
 
       {/* Title */}
-      <p className="mt-4 text-sm font-medium text-foreground group-hover:text-primary transition-colors">
-        {name}
-      </p>
+      <p className="mt-4 text-sm font-medium text-foreground group-hover:text-primary transition-colors">{name}</p>
     </div>
   );
-}
+};
 
 export default IndustryCard;
-
