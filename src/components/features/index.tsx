@@ -11,13 +11,13 @@ interface IFeaturesProps {
   showCTAButton?: boolean;
 }
 
-
 export const Features: FC<IFeaturesProps> = ({ title, description, datatestId, features, showCTAButton = false }) => {
   // Theme classes using semantic variables
   const sectionBg = 'bg-background';
   const headingColor = 'text-foreground';
   const subtitleColor = 'text-muted-foreground';
-  const cardBg = 'bg-card/60 backdrop-blur-md border-border hover:border-primary/50 hover:shadow-[0_0_30px_hsl(var(--primary)_/_0.25)]';
+  const cardBg =
+    'bg-card/60 backdrop-blur-md border-border hover:border-primary/50 hover:shadow-[0_0_30px_hsl(var(--primary)_/_0.25)]';
   const cardTitle = 'text-foreground';
   const cardDesc = 'text-muted-foreground group-hover:text-foreground/90';
   const metaText = 'text-muted-foreground';
@@ -39,7 +39,6 @@ export const Features: FC<IFeaturesProps> = ({ title, description, datatestId, f
 
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature: any, index: number) => (
           {features.map((feature: any, index: number) => (
             <ScrollReveal key={feature.title} delay={index * 0.1}>
               <div
@@ -101,13 +100,13 @@ export const Features: FC<IFeaturesProps> = ({ title, description, datatestId, f
                     {feature.desc2 && <p className={`${metaText2} text-sm transition-colors`}>{feature.desc2}</p>}
                   </>
                 )}
-                {
-                  showCTAButton && <div
+                {showCTAButton && (
+                  <div
                     className={`mt-3 ${ctaColor} cursor-pointer inline-flex items-center gap-2 text-sm font-semibold transition-colors duration-300`}
                   >
                     Get Started <ArrowRight className="h-4 w-4" />
                   </div>
-                }
+                )}
               </div>
             </ScrollReveal>
           ))}
