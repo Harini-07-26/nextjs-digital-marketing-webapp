@@ -1,5 +1,5 @@
 import ProductShowcase from '../animated-cards';
-import { featuresData } from '../common/common-data';
+import { featuresData, newUpdatedFeaturesData } from '../common/common-data';
 import ComparisonSection from '../comparison';
 import ContactSection from '../contact-section';
 import { CTA } from '../CTA';
@@ -23,7 +23,7 @@ const HomePage = () => {
       <DevelopmentProcess />
       <Testimonials />
       <Features
-        features={featuresData}
+        features={newUpdatedFeaturesData}
         datatestId={'how-we-drive-growth-component'}
         variant="light"
         title={'How We Drive Growth'}
