@@ -303,7 +303,7 @@ export default function Hero() {
               >
                 <span className="announcement-badge">
                   <span className="glow-dot" />
-                  Growth Voice Growth Voice
+                  Growth Voice
                 </span>
               </motion.div>
 
@@ -317,10 +317,6 @@ export default function Hero() {
                 The Future of <span className="gradient-text">Digital Finance</span>
               </motion.h1> */}
 
-              <TypingHeadingOnScroll
-                textBefore="Digital Marketing Agency"
-                textGradient="That Drives Real Business Growth"
-              />
               <TypingHeadingOnScroll
                 textBefore="Digital Marketing Agency"
                 textGradient="That Drives Real Business Growth"
@@ -351,9 +347,7 @@ export default function Hero() {
               >
                 <div className="btn-primary-gradient inline-flex items-center gap-2">
                   Get Free Marketing Consultation <ArrowRight className="h-4 w-4" />
-                  Get Free Marketing Consultation <ArrowRight className="h-4 w-4" />
                 </div>
-                <button className="btn-outline-dark">Grow Your Business Today</button>
                 <button className="btn-outline-dark">Grow Your Business Today</button>
               </motion.div>
 
