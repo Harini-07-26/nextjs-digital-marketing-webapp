@@ -11,25 +11,19 @@ interface IFeaturesProps {
   showCTAButton?: boolean;
 }
 
-
-export const Features: FC<IFeaturesProps> = ({ title, description, variant = 'dark', datatestId, features, showCTAButton = false }) => {
-  const isLight = variant === 'light';
-
-  // Theme classes
-  const sectionBg = isLight ? 'bg-white' : 'bg-background';
-  const headingColor = isLight ? 'text-gray-900' : 'text-foreground';
-  const subtitleColor = isLight ? 'text-gray-500' : 'text-muted-foreground';
-  const cardBg = isLight
-    ? 'bg-gray-50/80 border-gray-200 hover:border-primary hover:shadow-lg'
-    : 'bg-card/60 backdrop-blur-md border-border hover:border-primary hover:shadow-[0_0_30px_hsl(var(--primary)_/_0.4)]';
-  const cardTitle = isLight ? 'text-gray-900' : 'text-foreground';
-  const cardDesc = isLight
-    ? 'text-gray-600 group-hover:text-gray-700'
-    : 'text-muted-foreground group-hover:text-foreground/80';
-  const metaText = isLight ? 'text-gray-500' : 'text-muted-foreground';
-  const metaText2 = isLight ? 'text-gray-400' : 'text-muted-foreground/70';
-  const hrColor = isLight ? 'border-gray-200' : 'border-border';
-  const ctaColor = isLight ? 'text-primary hover:text-primary/80' : 'text-primary hover:text-primary/80';
+export const Features: FC<IFeaturesProps> = ({ title, description, datatestId, features, showCTAButton = false }) => {
+  // Theme classes using semantic variables
+  const sectionBg = 'bg-background';
+  const headingColor = 'text-foreground';
+  const subtitleColor = 'text-muted-foreground';
+  const cardBg =
+    'bg-card/60 backdrop-blur-md border-border hover:border-primary/50 hover:shadow-[0_0_30px_hsl(var(--primary)_/_0.25)]';
+  const cardTitle = 'text-foreground';
+  const cardDesc = 'text-muted-foreground group-hover:text-foreground/90';
+  const metaText = 'text-muted-foreground';
+  const metaText2 = 'text-muted-foreground/70';
+  const hrColor = 'border-border';
+  const ctaColor = 'text-primary hover:text-primary/80';
   const topBarGradient = 'from-pink-500 via-purple-500 to-indigo-500';
 
   return (
@@ -73,7 +67,7 @@ export const Features: FC<IFeaturesProps> = ({ title, description, variant = 'da
                   className={`
                     pointer-events-none absolute inset-0
                     -translate-x-full
-                    bg-gradient-to-r from-transparent ${isLight ? 'via-black/5' : 'via-white/10'} to-transparent
+                    bg-gradient-to-r from-transparent to-transparent
                     group-hover:translate-x-full
                     transition-transform duration-700
                   `}
@@ -106,13 +100,13 @@ export const Features: FC<IFeaturesProps> = ({ title, description, variant = 'da
                     {feature.desc2 && <p className={`${metaText2} text-sm transition-colors`}>{feature.desc2}</p>}
                   </>
                 )}
-                {
-                  showCTAButton && <div
+                {showCTAButton && (
+                  <div
                     className={`mt-3 ${ctaColor} cursor-pointer inline-flex items-center gap-2 text-sm font-semibold transition-colors duration-300`}
                   >
                     Get Started <ArrowRight className="h-4 w-4" />
                   </div>
-                }
+                )}
               </div>
             </ScrollReveal>
           ))}

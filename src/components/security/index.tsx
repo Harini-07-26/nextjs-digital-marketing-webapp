@@ -13,7 +13,6 @@ import {
   ArrowRight,
   CheckCircle2
 } from 'lucide-react';
-import Navbar from '../navbar';
 import { ScrollReveal } from '../scroll-reveal';
 
 const pillars = [
@@ -61,7 +60,6 @@ const certifications = ['SOC 2 Type II', 'ISO 27001', 'GDPR', 'HIPAA', 'PCI DSS'
 const SecurityComponent = () => {
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
 
       {/* Hero */}
       <section className="relative overflow-hidden pt-32 pb-20">

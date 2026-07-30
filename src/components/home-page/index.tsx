@@ -19,7 +19,7 @@ const HomePage = () => {
       <Hero />
       <IndustriesWeServe />
       <ServicesSection />
-      <ProductShowcase />
+      {/* <ProductShowcase /> */}
       <DevelopmentProcess />
       <Testimonials />
       <Features
@@ -32,17 +32,17 @@ const HomePage = () => {
         }
       />
       <ComparisonSection />
-      <MarketInsights />
-      <TimeLineComponent />
-      <Features
+      {/* <MarketInsights /> */}
+      {/* <TimeLineComponent /> */}
+      {/* <Features
         features={featuresData}
         datatestId={'industries-we-serve-component'}
         title={'Industries We Serve'}
         description={
           'Specialist expertise across diverse sectors, with tailored strategies and deep understanding of each industry’s unique challenges.'
         }
-      />
-      <CTA />
+      /> */}
+      {/* <CTA /> */}
       <FAQSection />
       <ContactSection />
     </div>

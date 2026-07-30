@@ -82,11 +82,11 @@ const ProductShowcase = () => {
           <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-16 md:w-24 bg-gradient-to-r from-background to-transparent" />
           <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-16 md:w-24 bg-gradient-to-l from-background to-transparent" />
 
-          <div className="flex gap-5 px-8 md:px-16 pb-4 snap-x snap-mandatory">
+          <div className="flex gap-5 px-4 md:px-16 pb-4 snap-x snap-mandatory overflow-x-auto no-scrollbar">
             {products.map((product) => (
               <motion.div
                 key={product.id}
-                className="relative shrink-0 w-[300px] md:w-[380px] h-[460px] md:h-[520px] rounded-2xl overflow-hidden cursor-pointer snap-center group"
+                className="relative shrink-0 w-[280px] sm:w-[320px] md:w-[380px] h-[420px] md:h-[520px] rounded-2xl overflow-hidden cursor-pointer snap-center group"
                 whileHover={{ scale: 1.03 }}
                 transition={{ duration: 0.3 }}
                 onClick={() => setSelected(product)}
@@ -128,14 +128,14 @@ const ProductShowcase = () => {
       <AnimatePresence>
         {selected && (
           <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelected(null)}
           >
             <motion.div
-              className="relative w-[95vw] max-w-5xl h-[85vh] max-h-[600px] bg-card rounded-2xl overflow-hidden flex flex-col md:flex-row"
+              className="relative w-full max-w-5xl max-h-[90vh] md:h-[85vh] md:max-h-[600px] bg-card border border-border rounded-2xl overflow-y-auto md:overflow-hidden flex flex-col md:flex-row shadow-2xl"
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}

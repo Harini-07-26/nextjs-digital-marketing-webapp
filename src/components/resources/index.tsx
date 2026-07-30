@@ -23,7 +23,6 @@ import {
   Target,
   Zap
 } from 'lucide-react';
-import Navbar from '@/src/components/navbar';
 import { ScrollReveal } from '@/src/components/scroll-reveal';
 
 const categories = [
@@ -103,7 +102,6 @@ const upcoming = [
 const Resources = () => {
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
 
       {/* HERO — search-forward library entry */}
       <section className="relative overflow-hidden pt-32 pb-20">
