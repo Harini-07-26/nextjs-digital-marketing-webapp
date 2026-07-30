@@ -11,8 +11,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Digital Marketing Services | XYZ Digital Marketing Firm',
-  description: 'Result-driven digital marketing agency helping businesses grow online.'
+  title: 'Growth Voice | Best Digital Marketing Company in India',
+  description:
+    'Transform your business with India’s most awarded performance marketing agency. 500+ clients, 12 years, 10x ROI. Get your free strategy session now.'
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
