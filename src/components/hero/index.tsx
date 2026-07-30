@@ -13,10 +13,6 @@ import {
   Sparkles,
   Target
 } from 'lucide-react';
-import Navbar from '../navbar';
-import FloatingCard from '../floating-card';
-import Image from 'next/image';
-import TypingTextMotion from '../typing-text-motion';
 import TypingHeadingOnScroll from '../typing-text-motion';
 import Features from '../features';
 import { whybusinessChoose } from '../home-page/data';
@@ -338,61 +334,65 @@ export default function Hero() {
             </span>
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 container px-4 sm:px-6">
-            {goals.map((goal, idx) => {
-              const Icon = goal.icon;
-              return (
-                <ScrollReveal key={goal.id} delay={idx * 0.1}>
-                  <div className="relative group overflow-hidden rounded-3xl border border-border bg-card/40 p-8 hover:bg-card/70 hover:border-primary/40 transition-all duration-300 backdrop-blur-md flex flex-col justify-between h-full min-h-[380px]">
-                    <div
-                      className="absolute -top-12 -right-12 h-32 w-32 rounded-full opacity-0 group-hover:opacity-10 transition-opacity duration-500 blur-2xl"
-                      style={{ backgroundColor: 'hsl(var(--primary))' }}
-                    />
-                    <div>
-                      {/* Card Header */}
-                      <div className="flex items-center justify-between">
-                        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 border border-primary/20 text-primary">
-                          <Icon className="h-6 w-6" />
-                        </div>
-                        <span className="rounded-full bg-primary/15 border border-primary/20 px-3 py-1 text-xs font-semibold text-primary">
-                          {goal.metric}
-                        </span>
-                      </div>
-
-                      {/* Card Content */}
-                      <h3 className="mt-6 font-display text-2xl font-bold text-foreground">{goal.title}</h3>
-                      <p className="mt-3 text-muted-foreground text-sm leading-relaxed">{goal.desc}</p>
-
-                      {/* Highlights */}
-                      <div className="mt-6 space-y-2.5">
-                        {goal.highlights.map((highlight, index) => (
-                          <div key={index} className="flex items-center gap-2.5">
-                            <CheckCircle2 className="h-4 w-4 shrink-0 text-primary" />
-                            <span className="text-xs text-foreground/80">{highlight}</span>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 container px-4 sm:px-6">
+              {goals.map((goal, idx) => {
+                const Icon = goal.icon;
+                return (
+                  <ScrollReveal key={goal.id} delay={idx * 0.1}>
+                    <div className="relative group overflow-hidden rounded-3xl border border-border bg-card/40 p-8 hover:bg-card/70 hover:border-primary/40 transition-all duration-300 backdrop-blur-md flex flex-col justify-between h-full min-h-[380px]">
+                      <div
+                        className="absolute -top-12 -right-12 h-32 w-32 rounded-full opacity-0 group-hover:opacity-10 transition-opacity duration-500 blur-2xl"
+                        style={{ backgroundColor: 'hsl(var(--primary))' }}
+                      />
+                      <div>
+                        {/* Card Header */}
+                        <div className="flex items-center justify-between">
+                          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 border border-primary/20 text-primary">
+                            <Icon className="h-6 w-6" />
                           </div>
-                        ))}
+                          <span className="rounded-full bg-primary/15 border border-primary/20 px-3 py-1 text-xs font-semibold text-primary">
+                            {goal.metric}
+                          </span>
+                        </div>
+
+                        {/* Card Content */}
+                        <h3 className="mt-6 font-display text-2xl font-bold text-foreground">{goal.title}</h3>
+                        <p className="mt-3 text-muted-foreground text-sm leading-relaxed">{goal.desc}</p>
+                        <h3 className="mt-6 font-display text-2xl font-bold text-foreground">{goal.title}</h3>
+                        <p className="mt-3 text-muted-foreground text-sm leading-relaxed">{goal.desc}</p>
+
+                        {/* Highlights */}
+                        <div className="mt-6 space-y-2.5">
+                          {goal.highlights.map((highlight, index) => (
+                            <div key={index} className="flex items-center gap-2.5">
+                              <CheckCircle2 className="h-4 w-4 shrink-0 text-primary" />
+                              <span className="text-xs text-foreground/80">{highlight}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Card Footer Button */}
+                      <div className="mt-8">
+                        <button className="w-full btn-outline-dark py-2.5 text-xs font-semibold inline-flex items-center justify-center gap-2 group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300">
+                          {goal.cta} <ArrowUpRight className="h-3.5 w-3.5" />
+                        </button>
                       </div>
                     </div>
-
-                    {/* Card Footer Button */}
-                    <div className="mt-8">
-                      <button className="w-full btn-outline-dark py-2.5 text-xs font-semibold inline-flex items-center justify-center gap-2 group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300">
-                        {goal.cta} <ArrowUpRight className="h-3.5 w-3.5" />
-                      </button>
-                    </div>
-                  </div>
-                </ScrollReveal>
-              );
-            })}
+                  </ScrollReveal>
+                );
+              })}
+            </div>
           </div>
-        </div>
 
-        <Features
-          variant="dark"
-          title="Why Businesses Choose GrowthVoice"
-          description="Thousands of marketing agencies promise results. We focus on delivering measurable business outcomes."
-          datatestId="why-businesses-choose-growthvoice"
-          features={whybusinessChoose}
-        />
+          <Features
+            variant="dark"
+            title="Why Businesses Choose GrowthVoice"
+            description="Thousands of marketing agencies promise results. We focus on delivering measurable business outcomes."
+            datatestId="why-businesses-choose-growthvoice"
+            features={whybusinessChoose}
+          />
+        </div>
       </section>
     </>
   );
