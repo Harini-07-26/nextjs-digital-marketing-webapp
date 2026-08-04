@@ -1,15 +1,17 @@
 'use client';
 import { ReactNode } from 'react';
 import { motion } from 'framer-motion';
+import { cn } from '@/src/utils';
 
 interface ScrollRevealProps {
   children: ReactNode;
   width?: 'fit-content' | '100%';
   delay?: number;
   direction?: 'up' | 'down' | 'left' | 'right';
+  className?: string;
 }
 
-export function ScrollReveal({ children, width = '100%', delay = 0, direction = 'up' }: ScrollRevealProps) {
+export function ScrollReveal({ children, width = '100%', delay = 0, direction = 'up', className }: ScrollRevealProps) {
   const directions = {
     up: { y: 40 },
     down: { y: -40 },
@@ -20,6 +22,7 @@ export function ScrollReveal({ children, width = '100%', delay = 0, direction = 
   return (
     <div style={{ position: 'relative', width, overflow: 'visible' }}>
       <motion.div
+        className={cn(className)}
         variants={{
           hidden: {
             opacity: 0,
