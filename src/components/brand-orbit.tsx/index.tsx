@@ -1,165 +1,213 @@
-import { useState } from 'react';
+import { useState, type ComponentType } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
+import {
+  SiGoogle,
+  SiGoogleanalytics,
+  SiGooglesearchconsole,
+  SiGoogletagmanager,
+  SiGooglegemini,
+  SiSemrush,
+  SiFacebook,
+  SiInstagram,
+  SiX,
+  SiPinterest,
+  SiReddit,
+  SiMedium,
+  SiMailchimp,
+  SiHubspot,
+  SiClaude
+} from 'react-icons/si';
+import { FaLinkedin } from 'react-icons/fa6';
+import OpenAIIcon from '../icons/Open-Ai';
+import BingIcon from '../icons/Bing';
+import CanvaIcon from '../icons/Canva';
 
 type Brand = {
   name: string;
   short: string;
-  followers: string;
+  category: string;
   tagline: string;
   color: string;
+  Icon?: ComponentType<{ className?: string }>;
 };
 
 const innerBrands: Brand[] = [
   {
-    name: 'Avalanche',
-    short: 'A',
-    followers: '1.2M Followers',
-    tagline: 'The fastest smart contracts platform',
-    color: '0 84% 55%'
+    name: 'Google',
+    short: 'G',
+    category: 'Search & Ads',
+    tagline: 'Search, Ads and the whole growth ecosystem',
+    color: '217 89% 55%',
+    Icon: SiGoogle
   },
   {
-    name: 'Polygon',
-    short: 'P',
-    followers: '2.1M Followers',
-    tagline: 'The value layer of the internet',
-    color: '265 90% 60%'
+    name: 'Google Analytics 4',
+    short: 'GA4',
+    category: 'Analytics',
+    tagline: 'Event-based analytics and conversion tracking',
+    color: '33 95% 55%',
+    Icon: SiGoogleanalytics
   },
   {
-    name: 'Ronin',
-    short: 'R',
-    followers: '270.7K Followers',
-    tagline: 'Ronin is THE blockchain forged for gamers',
-    color: '228 12% 22%'
+    name: 'Google Search Console',
+    short: 'GSC',
+    category: 'SEO',
+    tagline: 'Index coverage, queries and search performance',
+    color: '210 90% 52%',
+    Icon: SiGooglesearchconsole
   },
   {
-    name: 'Rarible',
-    short: 'R',
-    followers: '410K Followers',
-    tagline: 'Create, sell and collect digital items',
-    color: '250 70% 55%'
+    name: 'Google Tag Manager',
+    short: 'GTM',
+    category: 'Tracking',
+    tagline: 'Tag deployment without touching the codebase',
+    color: '205 85% 50%',
+    Icon: SiGoogletagmanager
   },
   {
-    name: 'NEAR',
-    short: 'N',
-    followers: '1.5M Followers',
-    tagline: 'Blockchain built for usability',
-    color: '160 60% 35%'
+    name: 'Bing',
+    short: 'B',
+    category: 'Search',
+    tagline: 'Microsoft search reach and Bing Webmaster Tools',
+    color: '190 90% 40%',
+    Icon: BingIcon
   },
   {
-    name: 'Chex',
-    short: 'C',
-    followers: '88K Followers',
-    tagline: 'On-chain rewards for real players',
-    color: '80 90% 55%'
+    name: 'Semrush',
+    short: 'SR',
+    category: 'SEO Suite',
+    tagline: 'Keyword research and competitive intelligence',
+    color: '20 95% 55%',
+    Icon: SiSemrush
   },
   {
-    name: 'Tezos',
-    short: 'T',
-    followers: '620K Followers',
-    tagline: 'Energy-efficient smart contracts',
-    color: '215 90% 55%'
+    name: 'Ahrefs',
+    short: 'AH',
+    category: 'SEO Suite',
+    tagline: 'Backlink analysis and content gap discovery',
+    color: '215 80% 55%'
   },
   {
-    name: 'Jade',
-    short: 'J',
-    followers: '154K Followers',
-    tagline: 'Green finance for web3 natives',
-    color: '150 80% 45%'
+    name: 'Screaming Frog',
+    short: 'SF',
+    category: 'Technical SEO',
+    tagline: 'Deep site crawls and technical SEO audits',
+    color: '150 60% 40%'
+  },
+  {
+    name: 'Microsoft Clarity',
+    short: 'MC',
+    category: 'Behaviour',
+    tagline: 'Heatmaps and session recordings, free forever',
+    color: '260 80% 60%'
+  },
+  {
+    name: 'HubSpot',
+    short: 'HS',
+    category: 'CRM',
+    tagline: 'CRM, lifecycle marketing and automation',
+    color: '14 90% 58%',
+    Icon: SiHubspot
   }
 ];
 
 const outerBrands: Brand[] = [
   {
-    name: 'Axie Infinity',
-    short: 'AX',
-    followers: '980K Followers',
-    tagline: "The world's most popular web3 game",
-    color: '20 90% 55%'
+    name: 'Facebook',
+    short: 'F',
+    category: 'Social Ads',
+    tagline: 'Meta ads at scale with pixel-perfect tracking',
+    color: '221 85% 50%',
+    Icon: SiFacebook
   },
   {
-    name: 'XGEN',
-    short: 'XG',
-    followers: '76K Followers',
-    tagline: 'Next generation gaming guild',
-    color: '100 80% 50%'
+    name: 'Instagram',
+    short: 'IG',
+    category: 'Social',
+    tagline: 'Creative-first campaigns and creator collabs',
+    color: '330 80% 55%',
+    Icon: SiInstagram
   },
   {
-    name: 'Pirate Nation',
-    short: 'PN',
-    followers: '212K Followers',
-    tagline: 'A fully on-chain RPG adventure',
-    color: '200 80% 55%'
+    name: 'LinkedIn',
+    short: 'IN',
+    category: 'B2B',
+    tagline: 'Account-based marketing for B2B pipelines',
+    color: '201 100% 35%',
+    Icon: FaLinkedin
   },
   {
-    name: 'Kraken',
-    short: 'K',
-    followers: '3.1M Followers',
-    tagline: 'Trade crypto with confidence',
-    color: '18 85% 55%'
-  },
-  {
-    name: 'Wemix',
-    short: 'W',
-    followers: '540K Followers',
-    tagline: 'Gaming-first blockchain ecosystem',
-    color: '0 0% 90%'
-  },
-  {
-    name: 'Nakamoto',
-    short: 'NK',
-    followers: '132K Followers',
-    tagline: 'Culture-first crypto community',
-    color: '330 80% 55%'
-  },
-  {
-    name: 'Sui',
-    short: 'S',
-    followers: '1.8M Followers',
-    tagline: 'A high performance L1 for builders',
-    color: '195 90% 55%'
-  },
-  {
-    name: 'Stellar',
-    short: 'ST',
-    followers: '760K Followers',
-    tagline: 'Move money across borders instantly',
-    color: '270 80% 65%'
-  },
-  {
-    name: 'Pundi',
-    short: 'PU',
-    followers: '94K Followers',
-    tagline: 'Payments for the on-chain economy',
-    color: '175 80% 50%'
-  },
-  {
-    name: 'XSwap',
+    name: 'X (Twitter)',
     short: 'X',
-    followers: '61K Followers',
-    tagline: 'Cross-chain liquidity, simplified',
-    color: '0 0% 15%'
+    category: 'Social',
+    tagline: 'Real-time community building and reach',
+    color: '0 0% 12%',
+    Icon: SiX
   },
   {
-    name: 'Honeycomb',
-    short: 'H',
-    followers: '48K Followers',
-    tagline: 'Infrastructure for web3 games',
-    color: '40 95% 55%'
+    name: 'Pinterest',
+    short: 'P',
+    category: 'Discovery',
+    tagline: 'Visual discovery that drives commerce intent',
+    color: '351 78% 46%',
+    Icon: SiPinterest
   },
   {
-    name: 'Pudgy',
-    short: 'PG',
-    followers: '1.1M Followers',
-    tagline: 'Memes, merch and good vibes',
-    color: '220 60% 70%'
+    name: 'Reddit',
+    short: 'R',
+    category: 'Community',
+    tagline: 'Niche communities and authentic conversations',
+    color: '16 100% 50%',
+    Icon: SiReddit
   },
   {
-    name: 'Bitstack',
-    short: 'B',
-    followers: '39K Followers',
-    tagline: 'Stack sats automatically',
-    color: '228 12% 25%'
+    name: 'Medium',
+    short: 'M',
+    category: 'Content',
+    tagline: 'Long-form thought leadership distribution',
+    color: '0 0% 10%',
+    Icon: SiMedium
+  },
+  {
+    name: 'Mailchimp',
+    short: 'MC',
+    category: 'Email',
+    tagline: 'Lifecycle email campaigns and automations',
+    color: '48 95% 55%',
+    Icon: SiMailchimp
+  },
+  {
+    name: 'Canva',
+    short: 'CV',
+    category: 'Design',
+    tagline: 'Fast, on-brand creative production',
+    color: '186 90% 45%',
+    Icon: CanvaIcon
+  },
+  {
+    name: 'ChatGPT',
+    short: 'AI',
+    category: 'AI',
+    tagline: 'AI copy, ideation and workflow acceleration',
+    color: '165 60% 40%',
+    Icon: OpenAIIcon
+  },
+  {
+    name: 'Gemini',
+    short: 'GM',
+    category: 'AI',
+    tagline: 'Multimodal AI for research and creative',
+    color: '225 85% 60%',
+    Icon: SiGooglegemini
+  },
+  {
+    name: 'Claude',
+    short: 'CL',
+    category: 'AI',
+    tagline: 'Reasoning-heavy AI for strategy and analysis',
+    color: '22 65% 55%',
+    Icon: SiClaude
   }
 ];
 
@@ -190,6 +238,7 @@ const Ring = ({
       const x = Math.cos(angle) * radius;
       const y = Math.sin(angle) * radius;
       const isActive = selected?.name === brand.name;
+      const Icon = brand.Icon;
       return (
         <div
           key={brand.name}
@@ -210,19 +259,19 @@ const Ring = ({
                 className={`flex items-center justify-center rounded-full font-display font-bold text-primary-foreground transition-all duration-300 ${
                   isActive
                     ? 'scale-110 opacity-100'
-                    : 'opacity-60 grayscale hover:scale-110 hover:opacity-100 hover:grayscale-0'
+                    : 'opacity-70 grayscale hover:scale-110 hover:opacity-100 hover:grayscale-0'
                 }`}
                 style={{
                   width: size,
                   height: size,
-                  fontSize: size * 0.36,
+                  fontSize: size * (brand.short.length > 2 ? 0.26 : 0.34),
                   background: `linear-gradient(140deg, hsl(${brand.color}), hsl(${brand.color} / 0.65))`,
                   boxShadow: isActive ? `0 0 26px hsl(${brand.color} / 0.7)` : '0 6px 18px hsl(228 40% 2% / 0.6)'
                 }}
               >
-                {brand.short}
+                {Icon ? <Icon className="h-1/2 w-1/2" /> : brand.short}
               </span>
-              <span className="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md border border-border bg-card px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-foreground opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+              <span className="pointer-events-none absolute -top-8 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-md border border-border bg-card px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-foreground opacity-0 transition-opacity duration-200 group-hover:opacity-100">
                 {brand.name}
               </span>
             </button>
@@ -241,7 +290,7 @@ const BrandOrbit = () => {
       <div className="container relative">
         <div className="flex justify-center">
           <span className="announcement-badge text-[11px] font-bold uppercase tracking-[0.25em] text-foreground">
-            Brands we've worked with
+            Tools & platforms we work with
           </span>
         </div>
 
@@ -277,8 +326,8 @@ const BrandOrbit = () => {
                   transition={{ duration: 0.3 }}
                   className="pointer-events-auto"
                 >
-                  <h3 className="font-display text-3xl font-bold text-foreground">{selected.name}</h3>
-                  <p className="mt-1 text-sm font-semibold text-muted-foreground">{selected.followers}</p>
+                  <h3 className="font-display text-2xl font-bold text-foreground">{selected.name}</h3>
+                  <p className="mt-1 text-sm font-semibold text-muted-foreground">{selected.category}</p>
                   <p className="mt-2 text-sm leading-snug text-muted-foreground">{selected.tagline}</p>
                   <div className="mt-4 flex items-center justify-center gap-2">
                     <a
@@ -287,13 +336,6 @@ const BrandOrbit = () => {
                     >
                       <X className="h-3.5 w-3.5" /> Profile
                     </a>
-                    <button
-                      type="button"
-                      onClick={() => setSelected(null)}
-                      className="rounded-lg border border-border px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
-                    >
-                      Close
-                    </button>
                   </div>
                 </motion.div>
               ) : (
@@ -307,7 +349,7 @@ const BrandOrbit = () => {
                   <p className="font-display text-4xl font-bold gradient-text">2.5B+</p>
                   <p className="mt-1 font-display text-2xl font-bold text-foreground">Impressions</p>
                   <p className="mx-auto mt-3 max-w-[220px] text-sm text-muted-foreground">
-                    Click on our clients logo to see what kind of brands we work with.
+                    Click on a platform logo to see how we use it in your growth stack.
                   </p>
                 </motion.div>
               )}
