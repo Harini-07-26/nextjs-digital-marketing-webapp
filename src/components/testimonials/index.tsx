@@ -69,7 +69,7 @@ const StarRating = ({ count }: { count: number }) => (
 
 const Testimonials = () => {
   return (
-    <section className="py-24 overflow-hidden bg-gradient-to-br from-blue-500/10 via-pink-500/10 to-purple-500/10">
+    <section id="testimonials" className="py-24 overflow-hidden bg-gradient-to-br from-green-500/10 via-emerald-500/10 to-teal-500/10 scroll-mt-20">
       <div className="container mb-14">
         <ScrollReveal>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-center text-foreground">

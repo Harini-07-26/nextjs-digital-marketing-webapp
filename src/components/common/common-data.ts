@@ -39,8 +39,8 @@ export const featuresData = [
     icon: Zap,
     desc1: 'Tools: Google Ads, Microsoft Ads, Apple Search Ads',
     desc2: 'Perfect for: High-intent keywords, App installs, Local services',
-    color: 'text-indigo-400',
-    bg: 'bg-indigo-400/10'
+    color: 'text-teal-400',
+    bg: 'bg-teal-400/10'
   },
   {
     title: 'Email, CRM & CRO',
@@ -49,8 +49,8 @@ export const featuresData = [
     icon: PieChart,
     desc1: 'Tools: Klaviyo, Customer.io, Mailchimp, HubSpot, ActiveCampaign',
     desc2: 'Perfect for: E-commerce retention, Lead nurturing, CRO, Newsletters',
-    color: 'text-purple-400',
-    bg: 'bg-purple-400/10'
+    color: 'text-green-400',
+    bg: 'bg-green-400/10'
   },
   {
     title: 'Digital Cards',
@@ -96,8 +96,8 @@ export const newUpdatedFeaturesData = [
     icon: BarChart3,
     desc1: 'Platforms: Google Ads, YouTube Ads, Display Network, Performance Max',
     desc2: 'Perfect for: Lead Generation, Sales, App Promotion, Local Services',
-    color: 'text-purple-400',
-    bg: 'bg-purple-400/10'
+    color: 'text-emerald-400',
+    bg: 'bg-emerald-400/10'
   },
   {
     title: 'Content & Creative',

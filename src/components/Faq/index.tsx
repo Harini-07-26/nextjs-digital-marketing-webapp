@@ -158,7 +158,7 @@ const FAQSection = () => {
                   <div>
                     <p className="text-sm text-muted-foreground">Your Growth, Our Mission</p>
                     <p className="font-display text-xl font-bold text-foreground">24/7 Service</p>
-                    <p className="text-sm text-muted-foreground">(000) 000-0000</p>
+                    <p className="text-sm text-muted-foreground">+91 99947 18546</p>
                   </div>
                 </div>
               </div>

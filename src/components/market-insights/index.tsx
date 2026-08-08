@@ -6,8 +6,8 @@ import Image from 'next/image';
 
 const metrics = [
   { symbol: 'SEO', name: 'Search Visibility', status: 'Active Growth', metric: '+320%', color: 'bg-primary' },
-  { symbol: 'PPC', name: 'Blended ROAS', status: 'High Yield', metric: '4.8x', color: 'bg-fuchsia-500' },
-  { symbol: 'CRO', name: 'Conversion Rate', status: 'Optimized', metric: '+180%', color: 'bg-purple-600' }
+  { symbol: 'PPC', name: 'Blended ROAS', status: 'High Yield', metric: '4.8x', color: 'bg-emerald-500' },
+  { symbol: 'CRO', name: 'Conversion Rate', status: 'Optimized', metric: '+180%', color: 'bg-teal-600' }
 ];
 
 const features = [

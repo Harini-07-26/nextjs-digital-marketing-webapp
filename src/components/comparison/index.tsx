@@ -4,12 +4,36 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
 const comparisons = [
-  { feature: 'Campaign Setup', traditional: '2-4 weeks delay', growthVoice: 'Launched in 48 hrs' },
-  { feature: 'Attribution', traditional: 'Last-click only', growthVoice: 'Multi-touch AI attribution' },
-  { feature: 'Creative Asset Variety', traditional: '1-2 ad variants/mo', growthVoice: '30+ fresh variants/mo' },
-  { feature: 'Reporting', traditional: 'Monthly PDF summary', growthVoice: 'Real-time dashboard' },
-  { feature: 'ROAS Optimization', traditional: 'Manual weekly check', growthVoice: 'Automated 24/7 AI tuning' },
-  { feature: 'Account Lead', traditional: 'Junior account manager', growthVoice: 'Senior Growth Strategist' }
+  {
+    feature: 'Strategy',
+    traditional: 'One-size-fits-all',
+    growthVoice: 'Tailored growth strategy'
+  },
+  {
+    feature: 'SEO',
+    traditional: 'Basic optimisation',
+    growthVoice: 'Continuous search growth'
+  },
+  {
+    feature: 'Content',
+    traditional: 'Inconsistent content',
+    growthVoice: 'Content built to convert'
+  },
+  {
+    feature: 'Paid Ads',
+    traditional: 'Set and monitor',
+    growthVoice: 'Test, optimise & scale'
+  },
+  {
+    feature: 'Lead Generation',
+    traditional: 'Traffic focused',
+    growthVoice: 'Quality lead focused'
+  },
+  {
+    feature: 'Optimisation',
+    traditional: 'Occasional changes',
+    growthVoice: 'Continuous optimisation'
+  }
 ];
 
 const ComparisonSection = () => {

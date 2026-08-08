@@ -11,7 +11,7 @@ export function Footer() {
         <ScrollReveal>
           <div className="flex flex-row align-center justify-center  mb-12">
             <div className="col-span-2 lg:col-span-2">
-              <Link href="/" className="flex items-center gap-2 mb-6 group">
+              <Link href="/" className="flex items-center gap-2 mb-6 group justify-center">
                 <Image
                   src="/logo.png"
                   alt="Growth Voice Logo"
@@ -21,11 +21,11 @@ export function Footer() {
                   unoptimized
                 />
               </Link>
-              <p className="text-muted-foreground max-w-xs mb-6 text-sm leading-relaxed">
+              <p className="text-muted-foreground max-w-xs justify-center text-center mb-6 text-sm leading-relaxed">
                 Empowering businesses to grow online with data-driven digital marketing, creative strategy, and
                 performance optimization.
               </p>
-              <div className="flex gap-4">
+              <div className="flex gap-4 justify-center text-center">
                 <a
                   href="#"
                   className="p-2 rounded-full border border-border bg-card text-muted-foreground hover:text-primary transition-colors"

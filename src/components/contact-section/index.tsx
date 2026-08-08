@@ -69,7 +69,10 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="container mt-5 pt-5 py-24 bg-background transition-colors duration-300">
+    <section
+      id="contact"
+      className="container mt-5 pt-5 py-24 bg-background transition-colors duration-300 scroll-mt-20"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="mt-6 mb-6 font-display text-center text-3xl font-bold text-foreground md:text-5xl">
           Contact <span className="gradient-text">Us</span>
@@ -87,7 +90,7 @@ const ContactSection = () => {
                 }
               </p>
               {/* Strategy Call Card */}
-              <div className="bg-card border border-border rounded-2xl p-6 mb-10 max-w-lg shadow-lg">
+              {/* <div className="bg-card border border-border rounded-2xl p-6 mb-10 max-w-lg shadow-lg">
                 <div className="flex items-center gap-2 mb-2">
                   <Zap className="h-5 w-5 text-amber-400" />
                   <span className="font-bold text-foreground">Book a Free Strategy Call</span>
@@ -98,14 +101,14 @@ const ContactSection = () => {
                 <button className="btn-primary-gradient inline-flex items-center gap-2 px-6 py-3 text-sm">
                   Book Your Slot <ArrowRight className="h-4 w-4" />
                 </button>
-              </div>
+              </div> */}
               {/* Contact Info */}
               <div className="space-y-5">
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
                     <Phone className="h-4 w-4 text-primary" />
                   </div>
-                  <span className="text-foreground font-medium">0203 488 2548</span>
+                  <span className="text-foreground font-medium">+91 99947 18546</span>
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
@@ -207,7 +210,7 @@ const ContactSection = () => {
                     value={formData.phone}
                     onChange={(e) => handleChange('phone', e.target.value)}
                     className="input-field border border-border focus:border-primary focus:ring-1 focus:ring-primary bg-card/60 text-foreground placeholder:text-muted-foreground outline-none transition-all"
-                    placeholder="+44 20 7946 0192"
+                    placeholder="+91 98765 43210"
                   />
                 </div>
                 <button

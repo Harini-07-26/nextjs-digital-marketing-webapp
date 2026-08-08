@@ -5,14 +5,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Sun, Moon, Menu, X, ChevronRight } from 'lucide-react';
-import AiDevelopmentMegaMenu from './ai-development-mega-menu';
 
 const navLinks = [
-  { id: 1, href: '/features', label: 'Our Services' },
-  { id: 2, href: '/solutions', label: 'Why GrowthVoice' },
-  { id: 4, href: '/resources', label: 'Industries' },
-  { id: 5, href: '/mobile-app', label: 'Testimonials' },
-  { id: 6, href: '/security', label: 'Contact Us' }
+  { id: 1, href: '/#our-services', label: 'Our Services' },
+  { id: 2, href: '/#why-growthvoice', label: 'Why GrowthVoice' },
+  { id: 4, href: '/#industries', label: 'Industries' },
+  { id: 5, href: '/#testimonials', label: 'Testimonials' },
+  { id: 6, href: '/#contact', label: 'Contact Us' }
 ];
 
 const Navbar = () => {
@@ -102,7 +101,7 @@ const Navbar = () => {
 
           {/* Right Actions */}
           <div className="flex items-center gap-3">
-            <button
+            {/* <button
               onClick={toggleTheme}
               className="p-2.5 rounded-xl bg-secondary/40 border border-border/80 text-foreground hover:bg-secondary transition-all duration-300 flex items-center justify-center cursor-pointer"
               aria-label="Toggle Theme"
@@ -110,10 +109,15 @@ const Navbar = () => {
               {theme === 'dark' ? (
                 <Sun className="h-4 w-4 text-yellow-400 fill-yellow-400/10" />
               ) : (
-                <Moon className="h-4 w-4 text-indigo-600 fill-indigo-600/10" />
+                <Moon className="h-4 w-4 text-green-500 fill-green-500/10" />
               )}
-            </button>
-            <button className="btn-primary-gradient text-xs sm:text-sm px-4 sm:px-6 py-2.5 sm:py-3">Get Started</button>
+            </button> */}
+            <Link
+              href="/#contact"
+              className="btn-primary-gradient text-xs sm:text-sm px-4 sm:px-6 py-2.5 sm:py-3 inline-block"
+            >
+              Get Started
+            </Link>
 
             {/* Mobile Hamburger Toggle */}
             <button
@@ -168,9 +172,13 @@ const Navbar = () => {
                   >
                     Log in
                   </a>
-                  <button onClick={closeMobileMenu} className="btn-primary-gradient w-full py-3 text-sm font-semibold">
+                  <Link
+                    href="/#contact"
+                    onClick={closeMobileMenu}
+                    className="btn-primary-gradient w-full py-3 text-sm font-semibold text-center block"
+                  >
                     Get Started Now
-                  </button>
+                  </Link>
                 </div>
               </nav>
             </motion.div>

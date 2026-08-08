@@ -13,12 +13,11 @@ import {
   SiX,
   SiPinterest,
   SiReddit,
-  SiMedium,
   SiMailchimp,
   SiHubspot,
   SiClaude
 } from 'react-icons/si';
-import { FaLinkedin } from 'react-icons/fa6';
+import { FaLinkedin, FaMedium } from 'react-icons/fa6';
 import OpenAIIcon from '../icons/Open-Ai';
 import BingIcon from '../icons/Bing';
 import CanvaIcon from '../icons/Canva';
@@ -167,7 +166,7 @@ const outerBrands: Brand[] = [
     category: 'Content',
     tagline: 'Long-form thought leadership distribution',
     color: '0 0% 10%',
-    Icon: SiMedium
+    Icon: FaMedium
   },
   {
     name: 'Mailchimp',
@@ -329,14 +328,6 @@ const BrandOrbit = () => {
                   <h3 className="font-display text-2xl font-bold text-foreground">{selected.name}</h3>
                   <p className="mt-1 text-sm font-semibold text-muted-foreground">{selected.category}</p>
                   <p className="mt-2 text-sm leading-snug text-muted-foreground">{selected.tagline}</p>
-                  <div className="mt-4 flex items-center justify-center gap-2">
-                    <a
-                      href="#"
-                      className="inline-flex items-center gap-2 rounded-lg bg-secondary px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:bg-muted"
-                    >
-                      <X className="h-3.5 w-3.5" /> Profile
-                    </a>
-                  </div>
                 </motion.div>
               ) : (
                 <motion.div

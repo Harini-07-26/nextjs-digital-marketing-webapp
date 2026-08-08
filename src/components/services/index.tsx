@@ -77,9 +77,9 @@ const categories = [
     label: 'Web Development',
     icon: '🖥',
     iconColor: 'text-white',
-    iconBg: 'bg-indigo-600',
+    iconBg: 'bg-emerald-600',
     items: [
-      { title: 'Landing Pages', icon: Layout, color: 'text-indigo-400' },
+      { title: 'Landing Pages', icon: Layout, color: 'text-emerald-400' },
       { title: 'E-Commerce Sites', icon: ShoppingCart, color: 'text-green-400' },
       { title: 'Custom Web Apps', icon: Code, color: 'text-cyan-400' },
       { title: 'CMS Development', icon: Server, color: 'text-purple-400' },
@@ -115,7 +115,7 @@ const categories = [
     items: [
       { title: 'Brand Identity', icon: PenTool, color: 'text-pink-400' },
       { title: 'Social Media Graphics', icon: Image, color: 'text-purple-400' },
-      { title: 'Print Design', icon: Layers, color: 'text-indigo-400' },
+      { title: 'Print Design', icon: Layers, color: 'text-teal-400' },
       { title: 'Packaging Design', icon: Palette, color: 'text-yellow-400' },
       { title: 'Motion Graphics', icon: Play, color: 'text-red-400' },
       { title: 'Infographics', icon: BarChart3, color: 'text-green-400' },
@@ -130,7 +130,7 @@ const ServicesSection: FC = () => {
   const activeCategory = categories.find((c) => c.id === activeTab)!;
 
   return (
-    <section className="py-24 bg-background transition-colors duration-300">
+    <section id="services-detail" className="py-24 bg-background transition-colors duration-300 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground text-center mb-4">Our Services</h2>
@@ -174,7 +174,7 @@ const ServicesSection: FC = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.3 }}
-            className="rounded-2xl border border-border bg-gradient-to-br from-blue-500/10 via-pink-500/10 to-purple-500/10 p-8"
+            className="rounded-2xl border border-border bg-gradient-to-br from-green-500/10 via-emerald-500/10 to-teal-500/10 p-8"
           >
             {/* Header */}
             <div className="flex items-center justify-between mb-8">

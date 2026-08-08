@@ -13,7 +13,18 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'Growth Voice | Best Digital Marketing Company in India',
   description:
-    'Transform your business with India’s most awarded performance marketing agency. 500+ clients, 12 years, 10x ROI. Get your free strategy session now.'
+    'Transform your business with India’s most awarded performance marketing agency. 500+ clients, 12 years, 10x ROI. Get your free strategy session now.',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1
+    }
+  }
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
