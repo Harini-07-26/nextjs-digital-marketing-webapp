@@ -101,7 +101,7 @@ const Navbar = () => {
 
           {/* Right Actions */}
           <div className="flex items-center gap-3">
-            <button
+            {/* <button
               onClick={toggleTheme}
               className="p-2.5 rounded-xl bg-secondary/40 border border-border/80 text-foreground hover:bg-secondary transition-all duration-300 flex items-center justify-center cursor-pointer"
               aria-label="Toggle Theme"
@@ -109,9 +109,9 @@ const Navbar = () => {
               {theme === 'dark' ? (
                 <Sun className="h-4 w-4 text-yellow-400 fill-yellow-400/10" />
               ) : (
-                <Moon className="h-4 w-4 text-indigo-600 fill-indigo-600/10" />
+                <Moon className="h-4 w-4 text-green-500 fill-green-500/10" />
               )}
-            </button>
+            </button> */}
             <Link
               href="/#contact"
               className="btn-primary-gradient text-xs sm:text-sm px-4 sm:px-6 py-2.5 sm:py-3 inline-block"

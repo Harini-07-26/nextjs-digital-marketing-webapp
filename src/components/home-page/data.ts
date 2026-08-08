@@ -22,16 +22,16 @@ export const whybusinessChoose = [
         description:
             'Stay informed with comprehensive performance reports covering traffic, keyword rankings, leads, conversions, advertising performance, and return on investment.',
         icon: Zap,
-        color: 'text-indigo-400',
-        bg: 'bg-indigo-400/10'
+        color: 'text-teal-400',
+        bg: 'bg-teal-400/10'
     },
     {
         title: 'Experienced Marketing Specialists',
         description:
             'Our team brings expertise across SEO, PPC, content marketing, social media, AI search optimization, branding, analytics, and web development to deliver measurable results.',
         icon: PieChart,
-        color: 'text-purple-400',
-        bg: 'bg-purple-400/10'
+        color: 'text-green-400',
+        bg: 'bg-green-400/10'
     },
     {
         title: 'Performance-Focused Growth',

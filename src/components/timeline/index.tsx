@@ -45,7 +45,7 @@ export default function TimeLineComponent() {
         {/* Timeline */}
         <div className="relative">
           {/* Connecting Line (Desktop) */}
-          <div className="hidden md:block absolute left-0 right-0 top-[32px] mx-auto h-[2px] max-w-5xl bg-gradient-to-r from-primary via-fuchsia-500 to-indigo-500" />
+          <div className="hidden md:block absolute left-0 right-0 top-[32px] mx-auto h-[2px] max-w-5xl bg-gradient-to-r from-primary via-emerald-500 to-teal-500" />
 
           <div className="grid grid-cols-1 gap-10 md:grid-cols-5 md:gap-6">
             {steps.map((item) => (

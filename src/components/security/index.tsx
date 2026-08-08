@@ -75,7 +75,7 @@ const SecurityComponent = () => {
               </div>
               <h1 className="font-display text-4xl md:text-6xl font-bold tracking-tight text-foreground">
                 Built with{' '}
-                <span className="bg-gradient-to-r from-primary via-fuchsia-400 to-amber-300 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-primary via-emerald-400 to-teal-300 bg-clip-text text-transparent">
                   bank-grade security
                 </span>{' '}
                 at the core.

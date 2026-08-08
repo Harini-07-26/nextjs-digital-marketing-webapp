@@ -24,7 +24,7 @@ export const Features: FC<IFeaturesProps> = ({ title, description, datatestId, f
   const metaText2 = 'text-muted-foreground/70';
   const hrColor = 'border-border';
   const ctaColor = 'text-primary hover:text-primary/80';
-  const topBarGradient = 'from-pink-500 via-purple-500 to-indigo-500';
+  const topBarGradient = 'from-green-400 via-emerald-500 to-teal-500';
 
   return (
     <section datatest-id={datatestId} className={`py-24 ${sectionBg} transition-colors duration-300`}>

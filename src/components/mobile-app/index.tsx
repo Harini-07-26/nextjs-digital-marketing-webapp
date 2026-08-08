@@ -41,7 +41,7 @@ const MobileApp = () => {
       {/* Hero */}
       <section className="relative overflow-hidden pt-32 pb-20">
         <div className="absolute inset-0 -z-10">
-          <div className="absolute right-1/3 top-1/4 h-96 w-96 rounded-full bg-fuchsia-500/20 blur-[120px]" />
+          <div className="absolute right-1/3 top-1/4 h-96 w-96 rounded-full bg-emerald-500/20 blur-[120px]" />
           <div className="absolute left-1/4 bottom-0 h-72 w-72 rounded-full bg-primary/20 blur-[100px]" />
         </div>
 
@@ -54,7 +54,7 @@ const MobileApp = () => {
               </div>
               <h1 className="font-display text-4xl md:text-6xl font-bold tracking-tight text-foreground">
                 Your business,{' '}
-                <span className="bg-gradient-to-r from-primary via-fuchsia-400 to-amber-300 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-primary via-emerald-400 to-teal-300 bg-clip-text text-transparent">
                   in your pocket.
                 </span>
               </h1>
@@ -107,7 +107,7 @@ const MobileApp = () => {
               <motion.div
                 animate={{ y: [0, -14, 0] }}
                 transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-                className="relative h-[560px] w-[280px] rounded-[44px] border-[10px] border-foreground/90 bg-gradient-to-br from-slate-900 to-slate-800 shadow-[0_40px_100px_-20px_rgba(139,92,246,0.5)]"
+                className="relative h-[560px] w-[280px] rounded-[44px] border-[10px] border-foreground/90 bg-gradient-to-br from-slate-900 to-slate-800 shadow-[0_40px_100px_-20px_rgba(34,197,94,0.5)]"
               >
                 <div className="absolute left-1/2 top-2 h-5 w-24 -translate-x-1/2 rounded-full bg-black/80" />
                 <div className="h-full w-full overflow-hidden rounded-[32px] bg-gradient-to-br from-background via-background to-primary/10 p-5 pt-10">
@@ -119,7 +119,7 @@ const MobileApp = () => {
                     <div className="h-8 w-8 rounded-full bg-primary/30" />
                   </div>
 
-                  <div className="mt-5 rounded-2xl bg-gradient-to-br from-primary/30 to-fuchsia-500/20 p-4">
+                  <div className="mt-5 rounded-2xl bg-gradient-to-br from-primary/30 to-emerald-500/20 p-4">
                     <div className="text-[10px] text-foreground/70">Portfolio</div>
                     <div className="font-display text-2xl font-bold text-foreground">$284,193</div>
                     <div className="mt-1 text-[10px] text-emerald-300">+ 12.4% this week</div>
@@ -239,7 +239,7 @@ const MobileApp = () => {
       <section className="py-20">
         <div className="container">
           <ScrollReveal>
-            <div className="relative overflow-hidden rounded-3xl border border-border/60 bg-gradient-to-br from-primary/20 via-card/60 to-fuchsia-500/10 p-10 md:p-14 text-center">
+            <div className="relative overflow-hidden rounded-3xl border border-border/60 bg-gradient-to-br from-primary/20 via-card/60 to-emerald-500/10 p-10 md:p-14 text-center">
               <h3 className="font-display text-3xl md:text-4xl font-bold text-foreground">
                 Ready to take DIGI everywhere?
               </h3>

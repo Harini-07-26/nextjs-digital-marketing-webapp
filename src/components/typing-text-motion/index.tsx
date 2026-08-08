@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { motion, useAnimation, useInView } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { motion, useAnimation, useInView } from 'framer-motion';
+import { useEffect, useRef } from 'react';
 
 interface ITypingTextProps {
   textBefore: string;
@@ -12,16 +12,15 @@ const TypingHeadingOnScroll = ({ textBefore, textGradient }: ITypingTextProps) =
   const ref = useRef<HTMLHeadingElement | null>(null);
   const controls = useAnimation();
   const isInView = useInView(ref, {
-    margin: "-100px",
-    once: false, // 👈 allow replay
+    margin: '-100px',
+    once: false // 👈 allow replay
   });
-
 
   useEffect(() => {
     if (isInView) {
-      controls.start("visible");
+      controls.start('visible');
     } else {
-      controls.start("hidden"); // 👈 reset when out of view
+      controls.start('hidden'); // 👈 reset when out of view
     }
   }, [isInView, controls]);
 
@@ -38,18 +37,18 @@ const TypingHeadingOnScroll = ({ textBefore, textGradient }: ITypingTextProps) =
           transition: {
             duration: 0.6,
             delay: 0.2,
-            staggerChildren: 0.05,
-          },
-        },
+            staggerChildren: 0.05
+          }
+        }
       }}
     >
       {/* Normal text */}
-      {textBefore.split("").map((char, i) => (
+      {textBefore.split('').map((char, i) => (
         <motion.span
           key={`normal-${i}`}
           variants={{
             hidden: { opacity: 0 },
-            visible: { opacity: 1 },
+            visible: { opacity: 1 }
           }}
         >
           {char}
@@ -58,12 +57,12 @@ const TypingHeadingOnScroll = ({ textBefore, textGradient }: ITypingTextProps) =
       <br />
       {/* Gradient text */}
       <span className="gradient-text text-4xl">
-        {textGradient.split("").map((char, i) => (
+        {textGradient.split('').map((char, i) => (
           <motion.span
             key={`gradient-${i}`}
             variants={{
               hidden: { opacity: 0 },
-              visible: { opacity: 1 },
+              visible: { opacity: 1 }
             }}
           >
             {char}
@@ -72,6 +71,6 @@ const TypingHeadingOnScroll = ({ textBefore, textGradient }: ITypingTextProps) =
       </span>
     </motion.div>
   );
-}
+};
 
 export default TypingHeadingOnScroll;
