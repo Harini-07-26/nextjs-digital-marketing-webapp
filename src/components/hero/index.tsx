@@ -320,7 +320,7 @@ export default function Hero() {
         <BrandOrbit />
 
         {/* our services */}
-        <div className="pt-8">
+        <div id="our-services" className="pt-8 scroll-mt-20">
           <h1 className="text-3xl font-bold font-display text-center mt-10">
             Our Digital Marketing Services
             <span className="gradient-text mx-2">
@@ -386,13 +386,15 @@ export default function Hero() {
           </div>
         </div>
 
-        <Features
-          variant="dark"
-          title="Why Businesses Choose GrowthVoice"
-          description="Thousands of marketing agencies promise results. We focus on delivering measurable business outcomes."
-          datatestId="why-businesses-choose-growthvoice"
-          features={whybusinessChoose}
-        />
+        <div id="why-growthvoice" className="scroll-mt-20">
+          <Features
+            variant="dark"
+            title="Why Businesses Choose GrowthVoice"
+            description="Thousands of marketing agencies promise results. We focus on delivering measurable business outcomes."
+            datatestId="why-businesses-choose-growthvoice"
+            features={whybusinessChoose}
+          />
+        </div>
       </section>
     </>
   );

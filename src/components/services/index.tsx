@@ -130,7 +130,7 @@ const ServicesSection: FC = () => {
   const activeCategory = categories.find((c) => c.id === activeTab)!;
 
   return (
-    <section className="py-24 bg-background transition-colors duration-300">
+    <section id="services-detail" className="py-24 bg-background transition-colors duration-300 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground text-center mb-4">Our Services</h2>

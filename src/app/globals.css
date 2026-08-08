@@ -37,6 +37,11 @@
     --primary-foreground: 0 0% 100%;
   }
 
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
   body {
     @apply bg-background text-foreground transition-colors duration-300;
   }
