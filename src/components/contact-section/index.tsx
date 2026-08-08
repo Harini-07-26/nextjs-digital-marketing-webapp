@@ -69,9 +69,12 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-background transition-colors duration-300">
+    <section id="contact" className="container mt-5 pt-5 py-24 bg-background transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <h2 className="mt-6 mb-6 font-display text-center text-3xl font-bold text-foreground md:text-5xl">
+          Contact <span className="gradient-text">Us</span>
+        </h2>
+        <div className="grid grid-cols-1 py-12 lg:grid-cols-2 gap-16">
           {/* Left Side */}
           <ScrollReveal>
             <div>

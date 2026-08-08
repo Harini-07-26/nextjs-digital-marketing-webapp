@@ -66,7 +66,7 @@ const FAQSection = () => {
               FAQs
             </span>
             <h2 className="mt-5 font-display text-3xl font-bold text-foreground md:text-5xl">
-              Question? <span className="gradient-text">Look here.</span>
+              Question? <span className="gradient-text">Look here</span>
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
               Everything you need to know about working with DIGI. Can't find the answer? Our team is online.

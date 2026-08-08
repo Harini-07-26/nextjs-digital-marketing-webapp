@@ -107,14 +107,17 @@ const DevelopmentProcess = () => {
                     </div>
                   </div>
 
-                  {/* Card */}
-                  <ScrollReveal delay={i * 0.05}>
+                  {/* Card — place an empty spacer on the opposite side so the card lands in the correct column */}
+                  {!isLeft && <div aria-hidden className="hidden lg:block" />}
+
+                  <ScrollReveal
+                    delay={i * 0.05}
+                    direction={isLeft ? 'right' : 'left'}
+                  >
                     <motion.div
                       whileHover={{ y: -4 }}
                       transition={{ type: 'spring', stiffness: 200, damping: 20 }}
-                      className={`group relative overflow-hidden rounded-3xl border border-border bg-card/70 p-7 backdrop-blur-xl md:p-8 ${
-                        isLeft ? 'lg:mr-auto lg:w-[92%]' : 'lg:col-start-2 lg:ml-auto lg:w-[92%]'
-                      }`}
+                      className="group relative overflow-hidden rounded-3xl border border-border bg-card/70 p-7 backdrop-blur-xl md:p-8"
                     >
                       {/* Rotating gradient border on hover */}
                       <div
@@ -176,6 +179,9 @@ const DevelopmentProcess = () => {
                       </div>
                     </motion.div>
                   </ScrollReveal>
+
+                  {/* Spacer on the right for left-side cards (keeps the card in col 1) */}
+                  {isLeft && <div aria-hidden className="hidden lg:block" />}
                 </div>
               );
             })}

@@ -8,11 +8,11 @@ import { Sun, Moon, Menu, X, ChevronRight } from 'lucide-react';
 import AiDevelopmentMegaMenu from './ai-development-mega-menu';
 
 const navLinks = [
-  { id: 1, href: '/features', label: 'Features' },
-  { id: 2, href: '/solutions', label: 'Solutions' },
-  { id: 4, href: '/resources', label: 'Resources' },
-  { id: 5, href: '/mobile-app', label: 'Mobile App' },
-  { id: 6, href: '/security', label: 'Security' }
+  { id: 1, href: '/features', label: 'Our Services' },
+  { id: 2, href: '/solutions', label: 'Why GrowthVoice' },
+  { id: 4, href: '/resources', label: 'Industries' },
+  { id: 5, href: '/mobile-app', label: 'Testimonials' },
+  { id: 6, href: '/security', label: 'Contact Us' }
 ];
 
 const Navbar = () => {

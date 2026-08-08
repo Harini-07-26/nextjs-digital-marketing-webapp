@@ -21,6 +21,7 @@ import TypingHeadingOnScroll from '../typing-text-motion';
 import Features from '../features';
 import { whybusinessChoose } from '../home-page/data';
 import { ScrollReveal } from '../scroll-reveal';
+import BrandOrbit from '../brand-orbit.tsx';
 
 export default function Hero() {
   const stats = [
@@ -314,26 +315,9 @@ export default function Hero() {
             </div>
 
             {/* Right Floating Cards */}
-            <div className="relative hidden h-[400px] lg:block">
-              <FloatingCard
-                icon={Zap}
-                label="Transaction Speed"
-                value="Near Instant"
-                iconColor="text-primary"
-                delay={0}
-                className="absolute top-16 left-0"
-              />
-              <FloatingCard
-                icon={ShieldCheck}
-                label="Security Level"
-                value="Military Grade"
-                iconColor="text-green-500"
-                delay={0.2}
-                className="absolute top-44 right-0"
-              />
-            </div>
           </div>
         </div>
+        <BrandOrbit />
 
         {/* our services */}
         <div className="pt-8">
@@ -409,28 +393,6 @@ export default function Hero() {
           datatestId="why-businesses-choose-growthvoice"
           features={whybusinessChoose}
         />
-
-        {/* Trusted bar */}
-        {/* <motion.div
-        {/* <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1 }}
-          className="container mt-24"
-        >
-          <div className="border-t border-border pt-12">
-            <p className="text-center text-lg font-bold tracking-[0.25em] text-muted-foreground uppercase">
-              Trusted by industry leaders worldwide
-            </p>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-10 sm:gap-16">
-              {['Coinbase', 'Binance', 'Stripe', 'Revolut', 'Gemini'].map((name) => (
-                <span key={name} className="font-display text-xl font-bold italic gradient-text sm:text-2xl">
-                  {name}
-                </span>
-              ))}
-            </div>
-          </div>
-        </motion.div> */}
       </section>
     </>
   );
