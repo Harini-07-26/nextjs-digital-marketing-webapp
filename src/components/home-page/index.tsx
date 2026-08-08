@@ -18,11 +18,11 @@ const HomePage = () => {
     <div>
       <Hero />
       <IndustriesWeServe />
-      <ServicesSection />
+      {/* <ServicesSection /> */}
       {/* <ProductShowcase /> */}
       <DevelopmentProcess />
       <Testimonials />
-      <Features
+      {/* <Features
         features={newUpdatedFeaturesData}
         datatestId={'how-we-drive-growth-component'}
         variant="light"
@@ -30,7 +30,7 @@ const HomePage = () => {
         description={
           'Full-funnel marketing and creative services designed to acquire, convert, and retain your ideal customers at every stage of their journey.'
         }
-      />
+      /> */}
       <ComparisonSection />
       {/* <MarketInsights /> */}
       {/* <TimeLineComponent /> */}

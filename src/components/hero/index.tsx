@@ -223,7 +223,7 @@ export default function Hero() {
 
   return (
     <>
-      <section className="relative min-h-screen overflow-hidden pt-28 pb-20">
+      <section className="relative min-h-screen align-center justify-center flex flex-col overflow-hidden pt-28 pb-20">
         {/* 🌌 Star Field */}
         <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
           <div className="stars stars-sm" />
@@ -234,28 +234,27 @@ export default function Hero() {
         <div
           className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 h-[600px] w-[800px] rounded-full opacity-15 blur-[120px]"
           style={{
-            background: 'radial-gradient(circle, hsl(265 90% 60%), transparent 70%)'
+            background: 'radial-gradient(circle, hsl(142 80% 40%), transparent 70%)'
           }}
         />
 
-        <div className="container relative">
-          <div className="grid gap-12 lg:grid-cols-[1fr_420px] lg:items-center">
-            {/* Left Content */}
-            <div className="max-w-2xl">
-              {/* Announcement */}
-              <motion.div
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-              >
-                <span className="announcement-badge">
-                  <span className="glow-dot" />
-                  Growth Voice
-                </span>
-              </motion.div>
+        <div className="relative container justify-center text-center overflow-hidden max-w-7xl">
+          {/* Left Content */}
+          <div className="flex flex-col justify-center text-center items-center">
+            {/* Announcement */}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <span className="announcement-badge">
+                <span className="glow-dot" />
+                Growth Voice
+              </span>
+            </motion.div>
 
-              {/* Heading */}
-              {/* <motion.h1
+            {/* Heading */}
+            {/* <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
@@ -264,60 +263,59 @@ export default function Hero() {
                 The Future of <span className="gradient-text">Digital Finance</span>
               </motion.h1> */}
 
-              <TypingHeadingOnScroll
-                textBefore="Digital Marketing Agency"
-                textGradient="That Drives Real Business Growth"
-              />
+            <TypingHeadingOnScroll
+              textBefore="Digital Marketing Agency"
+              textGradient="That Drives Real Business Growth"
+            />
 
-              {/* Subtitle */}
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.35 }}
-                className="mt-6 max-w-lg text-lg leading-relaxed text-muted-foreground"
-              >
-                At GrowthVoice, we help businesses increase online visibility, drive qualified traffic, generate leads,
-                and grow revenue with data-driven digital marketing strategies. From startups to enterprises, we create
-                customized campaigns backed by market research, competitor analysis, and performance insights to
-                maximize ROI. At GrowthVoice, we help businesses increase online visibility, drive qualified traffic,
-                generate leads, and grow revenue with data-driven digital marketing strategies. From startups to
-                enterprises, we create customized campaigns backed by market research, competitor analysis, and
-                performance insights to maximize ROI.
-              </motion.p>
+            {/* Subtitle */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.35 }}
+              className="mt-6 max-w-6xl text-lg leading-relaxed text-muted-foreground"
+            >
+              At GrowthVoice, we help businesses increase online visibility, drive qualified traffic, generate leads,
+              and grow revenue with data-driven digital marketing strategies. From startups to enterprises, we create
+              customized campaigns backed by market research, competitor analysis, and performance insights to maximize
+              ROI. At GrowthVoice, we help businesses increase online visibility, drive qualified traffic, generate
+              leads, and grow revenue with data-driven digital marketing strategies. From startups to enterprises, we
+              create customized campaigns backed by market research, competitor analysis, and performance insights to
+              maximize ROI.
+            </motion.p>
 
-              {/* CTAs */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-                className="mt-10 flex flex-wrap items-center gap-4"
-              >
-                <div className="btn-primary-gradient inline-flex items-center gap-2">
-                  Get Free Marketing Consultation <ArrowRight className="h-4 w-4" />
+            {/* CTAs */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="mt-10 flex flex-wrap items-center gap-4 justify-center items-center"
+            >
+              <div className="btn-primary-gradient inline-flex items-center gap-2">
+                Get Free Marketing Consultation <ArrowRight className="h-4 w-4" />
+              </div>
+              <button className="btn-outline-dark">Grow Your Business Today</button>
+            </motion.div>
+
+            {/* Stats */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.65 }}
+              className="mt-14 flex flex-wrap gap-6 justify-center items-center"
+            >
+              {stats.map((stat) => (
+                <div key={stat.label}>
+                  <p className="stat-value">{stat.value}</p>
+                  <p className="stat-label">{stat.label}</p>
                 </div>
-                <button className="btn-outline-dark">Grow Your Business Today</button>
-              </motion.div>
-
-              {/* Stats */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.65 }}
-                className="mt-14 flex flex-wrap gap-6"
-              >
-                {stats.map((stat) => (
-                  <div key={stat.label}>
-                    <p className="stat-value">{stat.value}</p>
-                    <p className="stat-label">{stat.label}</p>
-                  </div>
-                ))}
-              </motion.div>
-            </div>
-
-            {/* Right Floating Cards */}
+              ))}
+            </motion.div>
           </div>
+
+          {/* Right Floating Cards */}
         </div>
-        <BrandOrbit />
+        {/* <BrandOrbit /> */}
 
         {/* our services */}
         <div id="our-services" className="pt-8 scroll-mt-20">

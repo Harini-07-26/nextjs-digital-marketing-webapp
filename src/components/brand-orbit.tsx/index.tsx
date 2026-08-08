@@ -13,12 +13,11 @@ import {
   SiX,
   SiPinterest,
   SiReddit,
-  SiMedium,
   SiMailchimp,
   SiHubspot,
   SiClaude
 } from 'react-icons/si';
-import { FaLinkedin } from 'react-icons/fa6';
+import { FaLinkedin, FaMedium } from 'react-icons/fa6';
 import OpenAIIcon from '../icons/Open-Ai';
 import BingIcon from '../icons/Bing';
 import CanvaIcon from '../icons/Canva';
@@ -167,7 +166,7 @@ const outerBrands: Brand[] = [
     category: 'Content',
     tagline: 'Long-form thought leadership distribution',
     color: '0 0% 10%',
-    Icon: SiMedium
+    Icon: FaMedium
   },
   {
     name: 'Mailchimp',
