@@ -255,6 +255,8 @@ export default function Hero() {
 
             {/* Heading */}
             {/* <motion.h1
+            {/* Heading */}
+            {/* <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
@@ -262,12 +264,10 @@ export default function Hero() {
               >
                 The Future of <span className="gradient-text">Digital Finance</span>
               </motion.h1> */}
-
             <TypingHeadingOnScroll
               textBefore="Digital Marketing Agency"
               textGradient="That Drives Real Business Growth"
             />
-
             {/* Subtitle */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -283,7 +283,6 @@ export default function Hero() {
               create customized campaigns backed by market research, competitor analysis, and performance insights to
               maximize ROI.
             </motion.p>
-
             {/* CTAs */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -312,10 +311,7 @@ export default function Hero() {
               ))}
             </motion.div>
           </div>
-
-          {/* Right Floating Cards */}
         </div>
-        {/* <BrandOrbit /> */}
 
         {/* our services */}
         <div id="our-services" className="pt-12 scroll-mt-20">
