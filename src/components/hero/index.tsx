@@ -223,7 +223,7 @@ export default function Hero() {
 
   return (
     <>
-      <section className="relative min-h-screen align-center justify-center flex flex-col overflow-hidden pt-28 pb-20">
+      <section className="relative min-h-screen align-center justify-center flex flex-col overflow-hidden pt-28 pb-6">
         {/* 🌌 Star Field */}
         <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
           <div className="stars stars-sm" />
@@ -318,23 +318,16 @@ export default function Hero() {
         {/* <BrandOrbit /> */}
 
         {/* our services */}
-        <div id="our-services" className="pt-8 scroll-mt-20">
-          <h1 className="text-3xl font-bold font-display text-center mt-10">
-            Our Digital Marketing Services
-            <span className="gradient-text mx-2">
-              {'That Generate Measurable Results'.split('').map((char, i) => (
-                <motion.span
-                  key={`gradient-${i}`}
-                  variants={{
-                    hidden: { opacity: 0 },
-                    visible: { opacity: 1 }
-                  }}
-                >
-                  {char}
-                </motion.span>
-              ))}
-            </span>
-          </h1>
+        <div id="our-services" className="pt-12 scroll-mt-20">
+          <div className="justify-center items-center text-center">
+            <h2 className="mt-6 font-display text-3xl font-bold leading-tight text-foreground md:text-5xl mt-10 mb-4">
+              Our <span className="gradient-text">Services</span>
+            </h2>
+            <p className="mt-4 text-center text-muted-foreground max-w-4xl mx-auto text-lg leading-relaxed">
+              We combine strategy, creativity, and data to build digital experiences that strengthen your brand and
+              deliver meaningful business results.
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 container px-4 sm:px-6">
             {goals.map((goal, idx) => {
               const Icon = goal.icon;
@@ -384,10 +377,11 @@ export default function Hero() {
           </div>
         </div>
 
-        <div id="why-growthvoice" className="scroll-mt-20">
+        <div id="why-growthvoice" className="scroll-mt-8">
           <Features
             variant="dark"
-            title="Why Businesses Choose GrowthVoice"
+            title="Why Businesses Choose"
+            gradiantTitle="GrowthVoice"
             description="Thousands of marketing agencies promise results. We focus on delivering measurable business outcomes."
             datatestId="why-businesses-choose-growthvoice"
             features={whybusinessChoose}

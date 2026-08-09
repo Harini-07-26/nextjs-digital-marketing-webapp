@@ -38,7 +38,7 @@ const comparisons = [
 
 const ComparisonSection = () => {
   return (
-    <section className="relative py-24 overflow-hidden bg-background">
+    <section className="relative py-12 overflow-hidden bg-background">
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background via-secondary/10 to-background" />
 
       <div className="container relative px-4 sm:px-6">
@@ -50,11 +50,13 @@ const ComparisonSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
-          <span className="text-xs font-semibold tracking-[0.25em] text-primary uppercase">Why Choose Us</span>
-          <h2 className="mt-4 font-display text-3xl font-bold leading-tight sm:text-5xl text-foreground">
-            Not Your Average Marketing Agency
+          <span className="announcement-badge">
+            <span className="glow-dot" /> Why Choose Us
+          </span>
+          <h2 className="mt-4 font-display text-3xl font-bold leading-tight text-foreground md:text-5xl">
+            Not Your Average <span className="gradient-text">Marketing Agency</span>
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
+          <p className="text-lg mx-auto mt-4 max-w-xl text-muted-foreground">
             See how Growth Voice stacks up against traditional marketing agencies.
           </p>
         </motion.div>

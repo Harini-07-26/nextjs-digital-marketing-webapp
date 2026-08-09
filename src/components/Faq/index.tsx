@@ -47,7 +47,7 @@ const FAQSection = () => {
   };
 
   return (
-    <section id="faq" className="relative overflow-hidden py-24 bg-background">
+    <section id="faq" className="relative overflow-hidden py-14 bg-background">
       {/* Ambient background glow */}
       <div
         className="pointer-events-none absolute inset-0 opacity-30"
@@ -68,7 +68,7 @@ const FAQSection = () => {
             <h2 className="mt-5 font-display text-3xl font-bold text-foreground md:text-5xl">
               Question? <span className="gradient-text">Look here</span>
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
+            <p className="text-lg mx-auto mt-4 max-w-2xl text-muted-foreground">
               Everything you need to know about working with DIGI. Can't find the answer? Our team is online.
             </p>
           </ScrollReveal>
