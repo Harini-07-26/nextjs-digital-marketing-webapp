@@ -11,11 +11,6 @@ const navLinks = [
   { id: 2, href: '/#why-growthvoice', label: 'Why GrowthVoice' },
   { id: 4, href: '/#industries', label: 'Industries' },
   { id: 5, href: '/#testimonials', label: 'Testimonials' },
-  { id: 6, href: '/#contact', label: 'Contact Us' },
-  { id: 1, href: '/#our-services', label: 'Our Services' },
-  { id: 2, href: '/#why-growthvoice', label: 'Why GrowthVoice' },
-  { id: 4, href: '/#industries', label: 'Industries' },
-  { id: 5, href: '/#testimonials', label: 'Testimonials' },
   { id: 6, href: '/#contact', label: 'Contact Us' }
 ];
 

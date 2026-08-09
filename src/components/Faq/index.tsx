@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HelpCircle, MessageCircle, Phone, Plus, Minus } from 'lucide-react';
 
@@ -143,7 +144,9 @@ const FAQSection = () => {
                   <p className="mt-2 text-sm text-muted-foreground">
                     Our team will answer all your questions. We ensure a quick response.
                   </p>
-                  <button className="btn-primary-gradient mt-6 text-sm">Contact Us</button>
+                  <Link href="/#contact">
+                    <button className="btn-primary-gradient mt-6 text-sm">Contact Us</button>
+                  </Link>
                 </div>
               </div>
             </ScrollReveal>
