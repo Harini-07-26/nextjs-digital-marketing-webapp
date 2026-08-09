@@ -64,64 +64,60 @@ const Navbar = () => {
         initial={{ y: -30, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="fixed top-0 left-0 right-0 px-2 sm:px-4 py-1 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl"
+        className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/80 px-2 py-1 backdrop-blur-xl sm:px-4"
       >
-        <div className="container flex h-16 items-center justify-between">
+        <div className="relative flex min-h-[60px] items-center">
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-2.5"
+            className="
+        absolute left-1/2 top-1/2
+        -translate-x-1/2 -translate-y-1/2
+        flex items-center gap-2.5
+
+        md:static
+        md:translate-x-0
+        md:translate-y-0
+      "
             onClick={() => {
               closeAiMenu();
               closeMobileMenu();
             }}
           >
-            <div className="flex h-full w-full items-center justify-center rounded-lg bg-transparent">
-              <Image
-                src="/logo.png"
-                alt="Growth Voice Logo"
-                width={200}
-                height={200}
-                className="text-primary"
-                unoptimized
-              />
-            </div>
-            {/* <span className="font-display text-lg font-bold tracking-tight text-foreground">Growth Voice</span> */}
+            {/* Your existing logo */}
+            <Image
+              src="/logo.png"
+              alt="GrowthVoice"
+              width={190}
+              height={50}
+              priority
+              className="h-auto w-[170px] md:w-[190px]"
+            />
           </Link>
 
-          {/* Desktop Nav */}
-          <nav className="hidden items-center gap-8 md:flex">
+          {/* Desktop Navigation */}
+          <nav className="hidden flex-1 items-center justify-center gap-8 md:flex">
             {navLinks.map((link) => (
-              <Link key={link.id} href={link.href} className="nav-link" onClick={closeAiMenu}>
+              <Link key={link.id} href={link.href} className="nav-link whitespace-nowrap" onClick={closeAiMenu}>
                 {link.label}
               </Link>
             ))}
           </nav>
 
           {/* Right Actions */}
-          <div className="flex items-center gap-3">
-            {/* <button
-              onClick={toggleTheme}
-              className="p-2.5 rounded-xl bg-secondary/40 border border-border/80 text-foreground hover:bg-secondary transition-all duration-300 flex items-center justify-center cursor-pointer"
-              aria-label="Toggle Theme"
-            >
-              {theme === 'dark' ? (
-                <Sun className="h-4 w-4 text-yellow-400 fill-yellow-400/10" />
-              ) : (
-                <Moon className="h-4 w-4 text-green-500 fill-green-500/10" />
-              )}
-            </button> */}
+          <div className="ml-auto flex items-center gap-3">
+            {/* Desktop Get Started */}
             <Link
               href="/#contact"
-              className="btn-primary-gradient text-xs sm:text-sm px-4 sm:px-6 py-2.5 sm:py-3 inline-block"
+              className="btn-primary-gradient hidden px-4 py-2.5 text-xs sm:px-6 sm:py-3 sm:text-sm md:inline-block"
             >
               Get Started
             </Link>
 
-            {/* Mobile Hamburger Toggle */}
+            {/* Mobile Menu */}
             <button
               onClick={toggleMobileMenu}
-              className="p-2.5 rounded-xl bg-secondary/40 border border-border/80 text-foreground md:hidden flex items-center justify-center cursor-pointer"
+              className="flex cursor-pointer items-center justify-center rounded-xl border border-border/80 bg-secondary/40 p-2.5 text-foreground md:hidden"
               aria-label="Toggle Navigation Menu"
             >
               {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}

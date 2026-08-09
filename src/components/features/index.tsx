@@ -4,7 +4,7 @@ import { ScrollReveal } from '../scroll-reveal';
 
 interface IFeaturesProps {
   title: string;
-  gradiantTitle: string;
+  gradiantTitle?: string;
   description: string;
   variant?: 'dark' | 'light';
   datatestId?: string;
@@ -14,7 +14,7 @@ interface IFeaturesProps {
 
 export const Features: FC<IFeaturesProps> = ({
   title,
-  gradiantTitle,
+  gradiantTitle = '',
   description,
   datatestId,
   features,
