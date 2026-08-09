@@ -30,7 +30,7 @@ const IndustryCard = ({ name, icon: Icon }: Props) => {
       </div>
 
       {/* Title */}
-      <p className="mt-4 text-sm font-medium text-foreground group-hover:text-primary transition-colors">{name}</p>
+      <h3 className="mt-4 text-sm font-medium text-foreground group-hover:text-primary transition-colors">{name}</h3>
     </div>
   );
 };

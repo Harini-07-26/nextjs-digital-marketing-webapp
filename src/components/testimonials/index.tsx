@@ -5,52 +5,54 @@ import { ScrollReveal } from '../scroll-reveal';
 
 const testimonials = [
   {
-    badge: '+49% Sales Growth',
-    badgeColor: 'text-red-400 bg-red-400/15',
-    stars: 3,
-    quote:
-      "Devoured transformed our digital marketing. They don't just run ads, they become an extension of your team and genuinely care about driving results.",
-    name: 'Sarah Mitchell',
-    role: 'Marketing Director',
-    company: 'Luxe Figs • E-commerce'
-  },
-  {
-    badge: '10K+ Installs, -48% CPI',
-    badgeColor: 'text-yellow-400 bg-yellow-400/15',
-    stars: 5,
-    quote: "10k+ downloads and a 48% decrease in cost per install. The team's expertise in app marketing is unmatched.",
-    name: 'James Chen',
-    role: 'CEO',
-    company: 'Belong • FinTech App'
-  },
-  {
-    badge: '13.5M Views Generated',
+    badge: '+68% Qualified Leads',
     badgeColor: 'text-green-400 bg-green-400/15',
     stars: 5,
-    quote: 'They turned our TikTok into a vibrant hub, significantly boosting engagement. True social media wizards.',
-    name: 'Priya Kapoor',
-    role: 'Social Media Manager',
-    company: 'Go Ape UK • Hospitality'
+    quote:
+      'GrowthVoice completely changed the way we approach digital marketing. Their strategy brought us more qualified leads and gave us a clear path to sustainable growth.',
+    name: 'Ananya Sharma',
+    role: 'Marketing Head',
+    company: 'UrbanNest • Real Estate'
   },
   {
-    badge: '+120% ROI in 6 Months',
+    badge: '+52% Organic Traffic',
     badgeColor: 'text-blue-400 bg-blue-400/15',
     stars: 5,
     quote:
-      "Their data-driven approach doubled our return on ad spend. We've never seen this level of performance from any agency.",
-    name: 'Tom Bradley',
-    role: 'Head of Growth',
-    company: 'NovaPay • Fintech'
+      'Within a few months, we saw a significant improvement in our search visibility. The SEO team understood our industry and delivered results that actually translated into enquiries.',
+    name: 'Rahul Mehta',
+    role: 'Founder',
+    company: 'TechNova • SaaS'
   },
   {
-    badge: '3x Conversion Rate',
-    badgeColor: 'text-purple-400 bg-purple-400/15',
-    stars: 4,
+    badge: '2.4x More Leads',
+    badgeColor: 'text-yellow-400 bg-yellow-400/15',
+    stars: 5,
     quote:
-      'The CRO work alone tripled our checkout conversions. Combined with their paid strategy, results were outstanding.',
-    name: 'Elena Rossi',
-    role: 'COO',
-    company: 'StyleVault • Fashion'
+      'The team helped us completely rethink our paid advertising strategy. Our campaigns are now more focused, our leads have improved, and we finally understand where our budget is going.',
+    name: 'Priya Nair',
+    role: 'Growth Manager',
+    company: 'FinEdge • Financial Services'
+  },
+  {
+    badge: '+85% Social Engagement',
+    badgeColor: 'text-purple-400 bg-purple-400/15',
+    stars: 5,
+    quote:
+      'GrowthVoice brought a fresh perspective to our social media. From content ideas to campaign execution, everything feels more consistent and aligned with our brand.',
+    name: 'Karan Malhotra',
+    role: 'Brand Manager',
+    company: 'StyleCraft • Fashion & Lifestyle'
+  },
+  {
+    badge: '3x More Website Enquiries',
+    badgeColor: 'text-red-400 bg-red-400/15',
+    stars: 5,
+    quote:
+      'What impressed us most was their focus on business outcomes. They improved our website, campaigns, and messaging, resulting in a steady increase in genuine customer enquiries.',
+    name: 'Meera Iyer',
+    role: 'Business Director',
+    company: 'HomeAura • Interior Design'
   }
 ];
 
@@ -69,11 +71,17 @@ const StarRating = ({ count }: { count: number }) => (
 
 const Testimonials = () => {
   return (
-    <section id="testimonials" className="py-24 overflow-hidden bg-gradient-to-br from-green-500/10 via-emerald-500/10 to-teal-500/10 scroll-mt-20">
+    <section
+      id="testimonials"
+      className="py-24 overflow-hidden bg-gradient-to-br from-green-500/10 via-emerald-500/10 to-teal-500/10 scroll-mt-20"
+    >
       <div className="container mb-14">
         <ScrollReveal>
-          <h2 className="font-display text-3xl md:text-5xl font-bold text-center text-foreground">
+          {/* <h2 className="font-display text-3xl md:text-5xl font-bold text-center text-foreground">
             What Our Clients Say
+          </h2> */}
+          <h2 className="mt-6 font-display text-center text-3xl font-bold leading-tight text-foreground md:text-5xl">
+            Hear It From<span className="gradient-text"> Our Clients</span>
           </h2>
         </ScrollReveal>
       </div>

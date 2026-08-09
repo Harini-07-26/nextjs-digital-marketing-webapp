@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Sun, Moon, Menu, X, ChevronRight } from 'lucide-react';
+import { Menu, X, ChevronRight } from 'lucide-react';
 
 const navLinks = [
   { id: 1, href: '/#our-services', label: 'Our Services' },
@@ -15,14 +15,14 @@ const navLinks = [
 ];
 
 const Navbar = () => {
-  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
+  // const [theme, setTheme] = useState<'dark' | 'light'>('dark');
   const [aiMenuOpen, setAiMenuOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme') as 'dark' | 'light' | null;
     if (savedTheme) {
-      setTheme(savedTheme);
+      // setTheme(savedTheme);
       document.documentElement.classList.toggle('light', savedTheme === 'light');
     } else {
       document.documentElement.classList.remove('light');
@@ -49,14 +49,13 @@ const Navbar = () => {
     };
   }, [aiMenuOpen, mobileMenuOpen, closeAiMenu, closeMobileMenu]);
 
-  const toggleTheme = () => {
-    const newTheme = theme === 'dark' ? 'light' : 'dark';
-    setTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
-    document.documentElement.classList.toggle('light', newTheme === 'light');
-  };
+  // const toggleTheme = () => {
+  //   const newTheme = theme === 'dark' ? 'light' : 'dark';
+  //   setTheme(newTheme);
+  //   localStorage.setItem('theme', newTheme);
+  //   document.documentElement.classList.toggle('light', newTheme === 'light');
+  // };
 
-  const toggleAiMenu = () => setAiMenuOpen((prev) => !prev);
   const toggleMobileMenu = () => setMobileMenuOpen((prev) => !prev);
 
   return (

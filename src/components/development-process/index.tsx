@@ -72,7 +72,7 @@ const DevelopmentProcess = () => {
             <h2 className="mt-6 font-display text-3xl font-bold leading-tight text-foreground md:text-5xl">
               Our Development <span className="gradient-text">Process</span>
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
+            <p className="mt-4 text-center text-muted-foreground max-w-4xl mx-auto text-lg leading-relaxed">
               A structured, transparent, and results-driven workflow — from the first conversation to post-launch scale.
               Six phases engineered for quality, velocity, and long-term success.
             </p>
@@ -110,10 +110,7 @@ const DevelopmentProcess = () => {
                   {/* Card — place an empty spacer on the opposite side so the card lands in the correct column */}
                   {!isLeft && <div aria-hidden className="hidden lg:block" />}
 
-                  <ScrollReveal
-                    delay={i * 0.05}
-                    direction={isLeft ? 'right' : 'left'}
-                  >
+                  <ScrollReveal delay={i * 0.05} direction={isLeft ? 'right' : 'left'}>
                     <motion.div
                       whileHover={{ y: -4 }}
                       transition={{ type: 'spring', stiffness: 200, damping: 20 }}

@@ -20,48 +20,49 @@ import {
   Scale,
   Trophy,
   Dumbbell,
-  Home,
-} from "lucide-react";
-import IndustryCard from "../grouped-cards";
+  Home
+} from 'lucide-react';
+import IndustryCard from '../grouped-cards';
 
 const industries = [
-  { name: "Retail", icon: Store },
-  { name: "Real Estate", icon: Building2 },
-  { name: "Travel & Tourism", icon: Plane },
-  { name: "Healthcare", icon: HeartPulse },
-  { name: "Education", icon: GraduationCap },
-  { name: "E-Commerce", icon: ShoppingCart },
-  { name: "Startups", icon: Rocket },
-  { name: "Media", icon: Film },
-  { name: "Govt. & Public", icon: Landmark },
-  { name: "Nonprofits & NGOs", icon: HandHelping },
-  { name: "Logistics", icon: Truck },
-  { name: "Manufacturing", icon: Factory },
-  { name: "Finance", icon: Banknote },
-  { name: "On-Demand", icon: Clock },
-  { name: "Automotive", icon: Car },
-  { name: "Gaming", icon: Gamepad2 },
-  { name: "Advertising", icon: Megaphone },
-  { name: "Food & Beverages", icon: Utensils },
-  { name: "Legal Services", icon: Scale },
-  { name: "Sports", icon: Trophy },
+  { name: 'Retail', icon: Store },
+  { name: 'Real Estate', icon: Building2 },
+  { name: 'Travel & Tourism', icon: Plane },
+  { name: 'Healthcare', icon: HeartPulse },
+  { name: 'Education', icon: GraduationCap },
+  { name: 'E-Commerce', icon: ShoppingCart },
+  { name: 'Startups', icon: Rocket },
+  { name: 'Media', icon: Film },
+  { name: 'Govt. & Public', icon: Landmark },
+  { name: 'Nonprofits & NGOs', icon: HandHelping },
+  { name: 'Logistics', icon: Truck },
+  { name: 'Manufacturing', icon: Factory },
+  { name: 'Finance', icon: Banknote },
+  { name: 'On-Demand', icon: Clock },
+  { name: 'Automotive', icon: Car },
+  { name: 'Gaming', icon: Gamepad2 },
+  { name: 'Advertising', icon: Megaphone },
+  { name: 'Food & Beverages', icon: Utensils },
+  { name: 'Legal Services', icon: Scale },
+  { name: 'Sports', icon: Trophy }
 ];
 
 const IndustriesWeServe = () => {
   return (
-    <section id="industries" className="bg-background py-20 transition-colors duration-300 scroll-mt-20">
+    <section id="industries" className="bg-background py-20 transition-colors duration-300 scroll">
       <div className="max-w-7xl mx-auto px-6">
         {/* Heading */}
-        <h2 className="text-center text-4xl font-bold text-foreground">
-          Industries We Serve
+        {/* <h2 className="text-center text-4xl font-bold text-foreground">
+          Industries 
+        </h2> */}
+        <h2 className="mt-6 font-display text-center text-3xl font-bold leading-tight text-foreground md:text-5xl">
+          Industries We <span className="gradient-text">Serve</span>
         </h2>
 
         <p className="mt-4 text-center text-muted-foreground max-w-4xl mx-auto text-lg leading-relaxed">
-          We serve a diverse range of industries including retail, real estate,
-          travel & tourism, healthcare, education, e-commerce, startups, media,
-          government & public, nonprofits & NGOs, logistics, manufacturing,
-          finance, on-demand, automotive, gaming, advertising, food & beverages,
-          legal services, sports, fitness, and rentals.
+          We serve a diverse range of industries including retail, real estate, travel & tourism, healthcare, education,
+          e-commerce, startups, media, government & public, nonprofits & NGOs, logistics, manufacturing, finance,
+          on-demand, automotive, gaming, advertising, food & beverages, legal services, sports, fitness, and rentals.
         </p>
 
         {/* Grid */}
@@ -73,6 +74,6 @@ const IndustriesWeServe = () => {
       </div>
     </section>
   );
-}
+};
 
 export default IndustriesWeServe;
