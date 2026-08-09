@@ -4,6 +4,7 @@ import { ScrollReveal } from '../scroll-reveal';
 
 interface IFeaturesProps {
   title: string;
+  gradiantTitle?: string;
   description: string;
   variant?: 'dark' | 'light';
   datatestId?: string;
@@ -11,7 +12,14 @@ interface IFeaturesProps {
   showCTAButton?: boolean;
 }
 
-export const Features: FC<IFeaturesProps> = ({ title, description, datatestId, features, showCTAButton = false }) => {
+export const Features: FC<IFeaturesProps> = ({
+  title,
+  gradiantTitle = '',
+  description,
+  datatestId,
+  features,
+  showCTAButton = false
+}) => {
   // Theme classes using semantic variables
   const sectionBg = 'bg-background';
   const headingColor = 'text-foreground';
@@ -27,12 +35,14 @@ export const Features: FC<IFeaturesProps> = ({ title, description, datatestId, f
   const topBarGradient = 'from-green-400 via-emerald-500 to-teal-500';
 
   return (
-    <section datatest-id={datatestId} className={`py-24 ${sectionBg} transition-colors duration-300`}>
+    <section datatest-id={datatestId} className={`py-12 ${sectionBg} transition-colors duration-300`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
           <ScrollReveal>
-            <h2 className={`font-display text-3xl md:text-5xl font-bold ${headingColor} mb-4`}>{title}</h2>
+            <h2 className="mt-6 font-display text-3xl font-bold leading-tight text-foreground md:text-5xl mb-4">
+              {title} <span className="gradient-text">{gradiantTitle}</span>
+            </h2>
             <p className={`${subtitleColor} text-lg max-w-2xl mx-auto`}>{description}</p>
           </ScrollReveal>
         </div>

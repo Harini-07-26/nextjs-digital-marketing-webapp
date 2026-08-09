@@ -8,8 +8,13 @@ interface ITypingTextProps {
   textGradient: string;
 }
 
+const charVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 }
+};
+
 const TypingHeadingOnScroll = ({ textBefore, textGradient }: ITypingTextProps) => {
-  const ref = useRef<HTMLHeadingElement | null>(null);
+  const ref = useRef<HTMLDivElement | null>(null);
   const controls = useAnimation();
   const isInView = useInView(ref, {
     margin: '-100px',
@@ -25,51 +30,57 @@ const TypingHeadingOnScroll = ({ textBefore, textGradient }: ITypingTextProps) =
   }, [isInView, controls]);
 
   return (
-    <motion.div
-      className="mt-8 font-display text-5xl font-bold leading-[1.1] tracking-tight sm:text-6xl lg:text-7xl"
-      initial="hidden"
-      animate="visible"
-      variants={{
-        hidden: { opacity: 0, y: 20 },
-        visible: {
-          opacity: 1,
-          y: 0,
-          transition: {
-            duration: 0.6,
-            delay: 0.2,
-            staggerChildren: 0.05
+    <div ref={ref} className="mt-8 text-center">
+      {/* Heading — h1 */}
+      <motion.h1
+        className="font-display text-5xl font-bold leading-[1.1] tracking-tight sm:text-6xl lg:text-7xl"
+        initial="hidden"
+        animate={controls}
+        variants={{
+          hidden: { opacity: 0, y: 20 },
+          visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+              duration: 0.6,
+              delay: 0.2,
+              staggerChildren: 0.05
+            }
           }
-        }
-      }}
-    >
-      {/* Normal text */}
-      {textBefore.split('').map((char, i) => (
-        <motion.span
-          key={`normal-${i}`}
-          variants={{
-            hidden: { opacity: 0 },
-            visible: { opacity: 1 }
-          }}
-        >
-          {char}
-        </motion.span>
-      ))}
-      <br />
-      {/* Gradient text */}
-      <span className="gradient-text text-4xl">
-        {textGradient.split('').map((char, i) => (
-          <motion.span
-            key={`gradient-${i}`}
-            variants={{
-              hidden: { opacity: 0 },
-              visible: { opacity: 1 }
-            }}
-          >
+        }}
+      >
+        {textBefore.split('').map((char, i) => (
+          <motion.span key={`normal-${i}`} variants={charVariants}>
             {char}
           </motion.span>
         ))}
-      </span>
-    </motion.div>
+      </motion.h1>
+
+      {/* Subheading — p */}
+      <motion.p
+        className="gradient-text text-3xl sm:text-4xl font-semibold mt-2"
+        initial="hidden"
+        animate={controls}
+        variants={{
+          hidden: { opacity: 0, y: 20 },
+          visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+              duration: 0.6,
+              delay: 0.4,
+              staggerChildren: 0.04
+            }
+          }
+        }}
+      >
+        {textGradient.split('').map((char, i) => (
+          <motion.span key={`gradient-${i}`} variants={charVariants}>
+            {char}
+          </motion.span>
+        ))}
+      </motion.p>
+    </div>
   );
 };
 

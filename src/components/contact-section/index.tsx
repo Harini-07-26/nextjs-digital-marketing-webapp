@@ -74,16 +74,22 @@ const ContactSection = () => {
       className="container mt-5 pt-5 py-24 bg-background transition-colors duration-300 scroll-mt-20"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="mt-6 mb-6 font-display text-center text-3xl font-bold text-foreground md:text-5xl">
-          Contact <span className="gradient-text">Us</span>
-        </h2>
+        <div className="flex flex-col items-center gap-2 mb-6">
+          <span className="announcement-badge">
+            <span className="glow-dot" /> Contact Us
+          </span>
+          <h2 className="mt-3 font-display text-center text-3xl font-bold text-foreground md:text-5xl">
+            Contact <span className="gradient-text">Us</span>
+          </h2>
+          <p className="text-lg mx-auto mt-4 max-w-xl text-muted-foreground">Let’s turn your goals into growth</p>
+        </div>
         <div className="grid grid-cols-1 py-12 lg:grid-cols-2 gap-16">
           {/* Left Side */}
           <ScrollReveal>
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold font-display text-foreground mb-6 leading-tight">
+              <h3 className="text-2xl md:text-4xl font-bold font-display text-foreground mb-6 leading-tight">
                 {"Let's Build Something Great Together"}
-              </h2>
+              </h3>
               <p className="text-muted-foreground text-lg mb-10 max-w-lg">
                 {
                   "Ready to scale your brand with performance marketing that actually performs? Get in touch and let's discuss your growth goals."
