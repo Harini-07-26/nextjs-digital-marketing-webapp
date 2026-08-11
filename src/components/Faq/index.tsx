@@ -70,7 +70,7 @@ const FAQSection = () => {
               Question? <span className="gradient-text">Look here</span>
             </h2>
             <p className="text-lg mx-auto mt-4 max-w-2xl text-muted-foreground">
-              Everything you need to know about working with DIGI. Can't find the answer? Our team is online.
+              Everything you need to know about working with Growth Voice. Can't find the answer? Our team is online.
             </p>
           </ScrollReveal>
         </div>
