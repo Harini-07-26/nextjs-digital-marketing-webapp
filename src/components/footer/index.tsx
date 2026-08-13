@@ -8,7 +8,7 @@ export function Footer() {
   return (
     <footer className="bg-secondary/40 border-t border-border pt-16 pb-8 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <ScrollReveal>
+        <ScrollReveal variant="fade">
           <div className="flex flex-row align-center justify-center  mb-12">
             <div className="col-span-2 lg:col-span-2">
               <Link href="/" className="flex items-center gap-2 mb-6 group justify-center">

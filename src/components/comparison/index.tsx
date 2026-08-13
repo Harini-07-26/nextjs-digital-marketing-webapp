@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { ScrollReveal } from '../scroll-reveal';
 
 const comparisons = [
   {
@@ -43,71 +44,72 @@ const ComparisonSection = () => {
 
       <div className="container relative px-4 sm:px-6">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-14"
-        >
-          <span className="announcement-badge">
-            <span className="glow-dot" /> Why Choose Us
-          </span>
-          <h2 className="mt-4 font-display text-3xl font-bold leading-tight text-foreground md:text-5xl">
-            Not Your Average <span className="gradient-text">Marketing Agency</span>
-          </h2>
-          <p className="text-lg mx-auto mt-4 max-w-xl text-muted-foreground">
-            See how Growth Voice stacks up against traditional marketing agencies.
-          </p>
-        </motion.div>
+        <ScrollReveal variant="slide" direction="up">
+          <div className="text-center mb-14">
+            <span className="announcement-badge">
+              <span className="glow-dot" /> Why Choose Us
+            </span>
+            <h2 className="mt-4 font-display text-3xl font-bold leading-tight text-foreground md:text-5xl">
+              Not Your Average <span className="gradient-text">Marketing Agency</span>
+            </h2>
+            <p className="text-lg mx-auto mt-4 max-w-xl text-muted-foreground">
+              See how Growth Voice stacks up against traditional marketing agencies.
+            </p>
+          </div>
+        </ScrollReveal>
 
         {/* Table with animated border */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="mx-auto max-w-4xl"
-        >
-          {/* Animated border wrapper */}
-          <div className="animated-border-wrapper rounded-2xl p-[2px]">
-            <div className="rounded-2xl bg-card/90 backdrop-blur-md overflow-hidden">
-              {/* Table header */}
-              <div className="grid grid-cols-3 border-b border-border px-3 sm:px-6 py-4 gap-2">
-                <span className="text-[11px] sm:text-xs font-semibold tracking-widest text-muted-foreground uppercase">
-                  Capability
-                </span>
-                <span className="text-center text-xs sm:text-sm font-semibold text-muted-foreground">
-                  Traditional Agency
-                </span>
-                <span className="text-center font-display text-xs sm:text-sm font-bold text-primary">Growth Voice</span>
-              </div>
+        <ScrollReveal variant="slide" direction="left">
+          <div className="mx-auto max-w-4xl">
+            {/* Animated border wrapper */}
+            <div className="animated-border-wrapper rounded-2xl p-[2px]">
+              <div className="rounded-2xl bg-card/90 backdrop-blur-md overflow-hidden">
+                {/* Table header */}
+                <div className="grid grid-cols-3 border-b border-border px-3 sm:px-6 py-4 gap-2">
+                  <span className="text-[11px] sm:text-xs font-semibold tracking-widest text-muted-foreground uppercase">
+                    Capability
+                  </span>
+                  <span className="text-center text-xs sm:text-sm font-semibold text-muted-foreground">
+                    Traditional Agency
+                  </span>
+                  <span className="text-center font-display text-xs sm:text-sm font-bold text-primary">
+                    Growth Voice
+                  </span>
+                </div>
 
-              {/* Rows */}
-              {comparisons.map((row, i) => (
-                <motion.div
-                  key={row.feature}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.3 + i * 0.07 }}
-                  className="group grid grid-cols-3 items-center border-b border-border/60 px-3 sm:px-6 py-3.5 gap-2 transition-colors hover:bg-secondary/60"
-                >
-                  <span className="text-xs sm:text-sm font-semibold text-foreground">{row.feature}</span>
-                  <span className="text-center text-xs sm:text-sm text-muted-foreground">{row.traditional}</span>
-                  <div className="flex justify-center">
-                    <span className="rounded-lg bg-primary/15 border border-primary/30 px-2.5 sm:px-3 py-1 text-xs sm:text-sm font-semibold text-primary text-center">
-                      {row.growthVoice}
-                    </span>
-                  </div>
-                </motion.div>
-              ))}
+                {/* Rows */}
+                {comparisons.map((row, i) => (
+                  <ScrollReveal
+                    key={row.feature}
+                    variant="slide"
+                    direction={i % 2 === 0 ? 'right' : 'left'}
+                    delay={i * 0.06}
+                  >
+                    <div className="group grid grid-cols-3 items-center border-b border-border/60 px-3 sm:px-6 py-3.5 gap-2 transition-colors hover:bg-secondary/60">
+                      <span className="text-xs sm:text-sm font-semibold text-foreground">{row.feature}</span>
+                      <span className="text-center text-xs sm:text-sm text-muted-foreground">{row.traditional}</span>
+                      <div className="flex justify-center">
+                        <span className="rounded-lg bg-primary/15 border border-primary/30 px-2.5 sm:px-3 py-1 text-xs sm:text-sm font-semibold text-primary text-center">
+                          {row.growthVoice}
+                        </span>
+                      </div>
+                    </div>
+                  </ScrollReveal>
+                ))}
+              </div>
             </div>
           </div>
-        </motion.div>
+        </ScrollReveal>
+      </div>
+    </section>
+  );
+};
 
-        {/* CTA Banner */}
-        {/* <motion.div
+{
+  /* CTA Banner */
+}
+{
+  /* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
@@ -124,10 +126,7 @@ const ComparisonSection = () => {
               </button>
             </div>
           </div>
-        </motion.div> */}
-      </div>
-    </section>
-  );
-};
+        </motion.div> */
+}
 
 export default ComparisonSection;
