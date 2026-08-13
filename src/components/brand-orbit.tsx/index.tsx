@@ -13,14 +13,17 @@ import {
   SiX,
   SiPinterest,
   SiReddit,
+  SiMedium,
   SiMailchimp,
   SiHubspot,
   SiClaude
 } from 'react-icons/si';
-import { FaLinkedin, FaMedium } from 'react-icons/fa6';
+import { FaLinkedin } from 'react-icons/fa6';
 import OpenAIIcon from '../icons/Open-Ai';
 import BingIcon from '../icons/Bing';
 import CanvaIcon from '../icons/Canva';
+import AHrefsIcon from '../icons/AHrefs';
+import MSClarityIcon from '../icons/MSClarity';
 
 type Brand = {
   name: string;
@@ -85,7 +88,8 @@ const innerBrands: Brand[] = [
     short: 'AH',
     category: 'SEO Suite',
     tagline: 'Backlink analysis and content gap discovery',
-    color: '215 80% 55%'
+    color: '215 80% 55%',
+    Icon: AHrefsIcon
   },
   {
     name: 'Screaming Frog',
@@ -99,7 +103,8 @@ const innerBrands: Brand[] = [
     short: 'MC',
     category: 'Behaviour',
     tagline: 'Heatmaps and session recordings, free forever',
-    color: '260 80% 60%'
+    color: '260 80% 60%',
+    Icon: MSClarityIcon
   },
   {
     name: 'HubSpot',
@@ -141,7 +146,7 @@ const outerBrands: Brand[] = [
     short: 'X',
     category: 'Social',
     tagline: 'Real-time community building and reach',
-    color: '0 0% 12%',
+    color: '225 85% 60%',
     Icon: SiX
   },
   {
@@ -165,8 +170,8 @@ const outerBrands: Brand[] = [
     short: 'M',
     category: 'Content',
     tagline: 'Long-form thought leadership distribution',
-    color: '0 0% 10%',
-    Icon: FaMedium
+    color: '225 85% 60%',
+    Icon: SiMedium
   },
   {
     name: 'Mailchimp',
@@ -228,7 +233,7 @@ const Ring = ({
   selected: Brand | null;
 }) => (
   <motion.div
-    className="absolute inset-0"
+    className="pointer-events-none absolute inset-0"
     animate={{ rotate: reverse ? -360 : 360 }}
     transition={{ duration, ease: 'linear', repeat: Infinity }}
   >
@@ -251,7 +256,7 @@ const Ring = ({
             <button
               type="button"
               onClick={() => onSelect(brand)}
-              className="group relative block"
+              className="group pointer-events-auto relative block"
               aria-label={brand.name}
             >
               <span

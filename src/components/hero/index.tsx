@@ -313,6 +313,10 @@ export default function Hero() {
           </div>
         </div>
 
+        <div className="container mx-auto">
+          <BrandOrbit />
+        </div>
+
         {/* our services */}
         <div id="our-services" className="pt-12 scroll-mt-20">
           <div className="justify-center items-center text-center">
