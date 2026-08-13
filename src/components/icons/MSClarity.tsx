@@ -1,0 +1,13 @@
+import { ComponentProps } from 'react';
+
+type MSClarityIconProps = ComponentProps<'svg'>;
+
+export default function MSClarityIcon({ className, ...props }: MSClarityIconProps) {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 4H20V20H4V4Z" fill="#0078D4" />
+      <path d="M8 8H16V16H8V8Z" fill="white" />
+      <path d="M8 8L16 16" stroke="#0078D4" strokeWidth="2" />
+    </svg>
+  );
+}
