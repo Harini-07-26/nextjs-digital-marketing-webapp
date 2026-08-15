@@ -12,9 +12,11 @@ const HomePage = () => {
       <Hero />
       <IndustriesWeServe />
       {/* <ServicesSection /> */}
+      {/* <ServicesSection /> */}
       {/* <ProductShowcase /> */}
       <DevelopmentProcess />
       <Testimonials />
+      {/* <Features
       {/* <Features
         features={newUpdatedFeaturesData}
         datatestId={'how-we-drive-growth-component'}

@@ -159,22 +159,6 @@ const Navbar = () => {
                     <ChevronRight className="h-4 w-4 text-muted-foreground" />
                   </Link>
                 ))}
-                <div className="pt-2 flex flex-col gap-3">
-                  <a
-                    href="#"
-                    onClick={closeMobileMenu}
-                    className="w-full text-center rounded-xl border border-border px-4 py-3 text-sm font-semibold text-foreground hover:bg-secondary"
-                  >
-                    Log in
-                  </a>
-                  <Link
-                    href="/#contact"
-                    onClick={closeMobileMenu}
-                    className="btn-primary-gradient w-full py-3 text-sm font-semibold text-center block"
-                  >
-                    Get Started Now
-                  </Link>
-                </div>
               </nav>
             </motion.div>
           </>
