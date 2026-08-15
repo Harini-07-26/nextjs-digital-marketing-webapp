@@ -7,7 +7,7 @@ export function CTA() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-primary/10 blur-[120px] pointer-events-none" />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <ScrollReveal>
+        <ScrollReveal variant="clip-glow" glowEffect>
           <div className="rounded-3xl border border-border bg-card/70 backdrop-blur-xl p-8 md:p-16 text-center shadow-2xl">
             <h2 className="text-3xl md:text-5xl font-bold font-display text-foreground mb-6">
               Ready to scale your <br />

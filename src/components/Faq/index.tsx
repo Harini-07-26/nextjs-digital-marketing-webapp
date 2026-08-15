@@ -61,7 +61,7 @@ const FAQSection = () => {
       <div className="container relative">
         {/* Header */}
         <div className="mb-14 text-center">
-          <ScrollReveal>
+          <ScrollReveal variant="fade">
             <span className="announcement-badge">
               <HelpCircle className="h-4 w-4 text-primary" />
               FAQs
@@ -83,7 +83,7 @@ const FAQSection = () => {
               {faqs.map((faq, i) => {
                 const isOpen = openIndex === i;
                 return (
-                  <ScrollReveal key={faq.question} delay={i * 0.05}>
+                  <ScrollReveal key={faq.question} variant="fade" delay={i * 0.04}>
                     <div
                       className={`overflow-hidden rounded-2xl border transition-all duration-300 ${
                         isOpen
