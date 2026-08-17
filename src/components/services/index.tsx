@@ -35,7 +35,7 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-import { ScrollReveal } from '../scroll-reveal';
+import { ScrollReveal, ScrollRevealStagger } from '../scroll-reveal';
 
 const categories = [
   {
@@ -192,26 +192,22 @@ const ServicesSection: FC = () => {
             </div>
 
             {/* Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {activeCategory.items.map((item, i) => (
-                <motion.div
-                  key={item.title}
-                  initial={{ opacity: 0, y: 15 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: i * 0.05 }}
-                  className="group flex items-center justify-between p-4 rounded-xl border border-border bg-background/50 hover:border-primary/50 hover:bg-card transition-all duration-300 cursor-pointer"
-                >
-                  <div className="flex items-center gap-3">
-                    <item.icon className={`h-5 w-5 ${item.color}`} />
-                    <div>
-                      <p className="font-semibold text-foreground text-sm">{item.title}</p>
-                      <p className="text-xs text-muted-foreground">Learn more</p>
+            <ScrollRevealStagger staggerChildren={0.08} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {activeCategory.items.map((item) => (
+                <ScrollReveal key={item.title} variant="blur-up">
+                  <div className="group flex items-center justify-between p-4 rounded-xl border border-border bg-background/50 hover:border-primary/50 hover:bg-card transition-all duration-300 cursor-pointer">
+                    <div className="flex items-center gap-3">
+                      <item.icon className={`h-5 w-5 ${item.color}`} />
+                      <div>
+                        <p className="font-semibold text-foreground text-sm">{item.title}</p>
+                        <p className="text-xs text-muted-foreground">Learn more</p>
+                      </div>
                     </div>
+                    <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
                   </div>
-                  <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
-                </motion.div>
+                </ScrollReveal>
               ))}
-            </div>
+            </ScrollRevealStagger>
           </motion.div>
         </AnimatePresence>
       </div>

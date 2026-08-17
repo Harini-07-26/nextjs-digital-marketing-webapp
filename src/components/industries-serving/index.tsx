@@ -24,6 +24,8 @@ import {
 } from 'lucide-react';
 import IndustryCard from '../grouped-cards';
 
+import { ScrollReveal, ScrollRevealStagger } from '../scroll-reveal';
+
 const industries = [
   { name: 'Retail', icon: Store },
   { name: 'Real Estate', icon: Building2 },
@@ -51,26 +53,26 @@ const IndustriesWeServe = () => {
   return (
     <section id="industries" className="bg-background py-20 transition-colors duration-300 scroll">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Heading */}
-        {/* <h2 className="text-center text-4xl font-bold text-foreground">
-          Industries 
-        </h2> */}
-        <h2 className="mt-6 font-display text-center text-3xl font-bold leading-tight text-foreground md:text-5xl">
-          Industries We <span className="gradient-text">Serve</span>
-        </h2>
+        <ScrollReveal variant="blur-up">
+          <h2 className="mt-6 font-display text-center text-3xl font-bold leading-tight text-foreground md:text-5xl">
+            Industries We <span className="gradient-text">Serve</span>
+          </h2>
 
-        <p className="mt-4 text-center text-muted-foreground max-w-4xl mx-auto text-lg leading-relaxed">
-          We serve a diverse range of industries including retail, real estate, travel & tourism, healthcare, education,
-          e-commerce, startups, media, government & public, nonprofits & NGOs, logistics, manufacturing, finance,
-          on-demand, automotive, gaming, advertising, food & beverages, legal services, sports, fitness, and rentals.
-        </p>
+          <p className="mt-4 text-center text-muted-foreground max-w-4xl mx-auto text-lg leading-relaxed">
+            We serve a diverse range of industries including retail, real estate, travel & tourism, healthcare, education,
+            e-commerce, startups, media, government & public, nonprofits & NGOs, logistics, manufacturing, finance,
+            on-demand, automotive, gaming, advertising, food & beverages, legal services, sports, fitness, and rentals.
+          </p>
+        </ScrollReveal>
 
         {/* Grid */}
-        <div className="mt-14 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+        <ScrollRevealStagger staggerChildren={0.05} className="mt-14 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
           {industries.map((item) => (
-            <IndustryCard key={item.name} {...item} />
+            <ScrollReveal key={item.name} variant="blur-up">
+              <IndustryCard {...item} />
+            </ScrollReveal>
           ))}
-        </div>
+        </ScrollRevealStagger>
       </div>
     </section>
   );
