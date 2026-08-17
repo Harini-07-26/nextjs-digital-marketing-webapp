@@ -3,8 +3,6 @@
 import { motion } from 'framer-motion';
 import {
   ArrowRight,
-  Zap,
-  ShieldCheck,
   ArrowUpRight,
   CheckCircle2,
   Globe,
@@ -13,15 +11,13 @@ import {
   Sparkles,
   Target
 } from 'lucide-react';
-import Navbar from '../navbar';
-import FloatingCard from '../floating-card';
-import Image from 'next/image';
-import TypingTextMotion from '../typing-text-motion';
+
 import TypingHeadingOnScroll from '../typing-text-motion';
 import Features from '../features';
 import { whybusinessChoose } from '../home-page/data';
 import { ScrollReveal } from '../scroll-reveal';
 import BrandOrbit from '../brand-orbit.tsx';
+import Link from 'next/link';
 
 export default function Hero() {
   const stats = [
@@ -240,78 +236,77 @@ export default function Hero() {
 
         <div className="relative container justify-center text-center overflow-hidden max-w-7xl">
           {/* Left Content */}
-          <div className="flex flex-col justify-center text-center items-center">
-            {/* Announcement */}
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              <span className="announcement-badge">
-                <span className="glow-dot" />
-                Growth Voice
-              </span>
-            </motion.div>
+          <ScrollReveal variant="fade-scale" duration={0.9}>
+            <div className="flex flex-col justify-center text-center items-center">
+              {/* Announcement */}
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+              >
+                <span className="announcement-badge">
+                  <span className="glow-dot" />
+                  Growth Voice
+                </span>
+              </motion.div>
 
-            {/* Heading */}
-            {/* <motion.h1
-            {/* Heading */}
-            {/* <motion.h1
+              <TypingHeadingOnScroll
+                textBefore="Digital Marketing Agency"
+                textGradient="That Drives Real Business Growth"
+              />
+              {/* Subtitle */}
+              <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="mt-8 font-display text-5xl font-bold leading-[1.1] tracking-tight sm:text-6xl lg:text-7xl"
+                transition={{ duration: 0.6, delay: 0.35 }}
+                className="mt-6 max-w-6xl text-lg leading-relaxed text-muted-foreground"
               >
-                The Future of <span className="gradient-text">Digital Finance</span>
-              </motion.h1> */}
-            <TypingHeadingOnScroll
-              textBefore="Digital Marketing Agency"
-              textGradient="That Drives Real Business Growth"
-            />
-            {/* Subtitle */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.35 }}
-              className="mt-6 max-w-6xl text-lg leading-relaxed text-muted-foreground"
-            >
-              At GrowthVoice, we help businesses increase online visibility, drive qualified traffic, generate leads,
-              and grow revenue with data-driven digital marketing strategies. From startups to enterprises, we create
-              customized campaigns backed by market research, competitor analysis, and performance insights to maximize
-              ROI. At GrowthVoice, we help businesses increase online visibility, drive qualified traffic, generate
-              leads, and grow revenue with data-driven digital marketing strategies. From startups to enterprises, we
-              create customized campaigns backed by market research, competitor analysis, and performance insights to
-              maximize ROI.
-            </motion.p>
-            {/* CTAs */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="mt-10 flex flex-wrap items-center gap-4 justify-center items-center"
-            >
-              <div className="btn-primary-gradient inline-flex items-center gap-2">
-                Get Free Marketing Consultation <ArrowRight className="h-4 w-4" />
-              </div>
-              <button className="btn-outline-dark">Grow Your Business Today</button>
-            </motion.div>
+                At GrowthVoice, we help businesses increase online visibility, drive qualified traffic, generate leads,
+                and grow revenue with data-driven digital marketing strategies. From startups to enterprises, we create
+                customized campaigns backed by market research, competitor analysis, and performance insights to
+                maximize ROI. At GrowthVoice, we help businesses increase online visibility, drive qualified traffic,
+                generate leads, and grow revenue with data-driven digital marketing strategies. From startups to
+                enterprises, we create customized campaigns backed by market research, competitor analysis, and
+                performance insights to maximize ROI.
+              </motion.p>
+              {/* CTAs */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                className="mt-10 flex flex-wrap items-center gap-4 justify-center items-center"
+              >
+                <Link href="/#contact" className="btn-primary-gradient inline-flex items-center gap-2">
+                  Get Free Marketing Consultation <ArrowRight className="h-4 w-4" />
+                </Link>
+                <Link href="/#contact" className="btn-outline-dark">
+                  Grow Your Business Today
+                </Link>
+              </motion.div>
 
-            {/* Stats */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.65 }}
-              className="mt-14 flex flex-wrap gap-6 justify-center items-center"
-            >
-              {stats.map((stat) => (
-                <div key={stat.label}>
-                  <p className="stat-value">{stat.value}</p>
-                  <p className="stat-label">{stat.label}</p>
-                </div>
-              ))}
-            </motion.div>
-          </div>
+              {/* Stats */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.65 }}
+                className="mt-14 flex flex-wrap gap-6 justify-center items-center"
+              >
+                {stats.map((stat) => (
+                  <div key={stat.label}>
+                    <p className="stat-value">{stat.value}</p>
+                    <p className="stat-label">{stat.label}</p>
+                  </div>
+                ))}
+              </motion.div>
+            </div>
+          </ScrollReveal>
         </div>
+
+        {/* <div className="container mx-auto">
+          <ScrollReveal variant="fade-scale" delay={0.2}>
+            <BrandOrbit />
+          </ScrollReveal>
+        </div> */}
 
         {/* our services */}
         <div id="our-services" className="pt-12 scroll-mt-20">

@@ -76,10 +76,7 @@ const Testimonials = () => {
       className="py-24 overflow-hidden bg-gradient-to-br from-green-500/10 via-emerald-500/10 to-teal-500/10 scroll-mt-20"
     >
       <div className="container mb-14">
-        <ScrollReveal>
-          {/* <h2 className="font-display text-3xl md:text-5xl font-bold text-center text-foreground">
-            What Our Clients Say
-          </h2> */}
+        <ScrollReveal variant="slide" direction="up">
           <h2 className="mt-6 font-display text-center text-3xl font-bold leading-tight text-foreground md:text-5xl">
             Hear It From<span className="gradient-text"> Our Clients</span>
           </h2>
@@ -87,7 +84,8 @@ const Testimonials = () => {
       </div>
 
       {/* Horizontal infinite scroll */}
-      <div className="relative">
+      <ScrollReveal variant="slide" direction="right" delay={0.2}>
+        <div className="relative">
         {/* Fade edges */}
         <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-24 bg-gradient-to-r from-background to-transparent" />
         <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-24 bg-gradient-to-l from-background to-transparent" />
@@ -126,6 +124,7 @@ const Testimonials = () => {
           ))}
         </motion.div>
       </div>
+      </ScrollReveal>
     </section>
   );
 };

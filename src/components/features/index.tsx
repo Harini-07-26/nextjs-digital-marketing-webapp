@@ -39,7 +39,7 @@ export const Features: FC<IFeaturesProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <ScrollReveal>
+          <ScrollReveal variant="slide-blur">
             <h2 className="mt-6 font-display text-3xl font-bold leading-tight text-foreground md:text-5xl mb-4">
               {title} <span className="gradient-text">{gradiantTitle}</span>
             </h2>
@@ -50,7 +50,7 @@ export const Features: FC<IFeaturesProps> = ({
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature: any, index: number) => (
-            <ScrollReveal key={feature.title} delay={index * 0.1}>
+            <ScrollReveal key={feature.title} variant="slide-blur" delay={index * 0.1}>
               <div
                 className={`
                   group relative h-full overflow-hidden

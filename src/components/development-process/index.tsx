@@ -1,7 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
 import { Search, Compass, PenTool, Code2, ShieldCheck, Rocket, ArrowRight } from 'lucide-react';
-import { ScrollReveal } from '../scroll-reveal';
+import { ScrollReveal, ScrollRevealStagger } from '../scroll-reveal';
 
 const steps = [
   {
@@ -91,7 +91,7 @@ const DevelopmentProcess = () => {
             }}
           />
 
-          <div className="space-y-10 lg:space-y-16">
+          <ScrollRevealStagger staggerChildren={0.15} className="space-y-10 lg:space-y-16">
             {steps.map((s, i) => {
               const isLeft = i % 2 === 0;
               return (
@@ -182,7 +182,7 @@ const DevelopmentProcess = () => {
                 </div>
               );
             })}
-          </div>
+          </ScrollRevealStagger>
         </div>
 
         {/* Footer CTA */}
