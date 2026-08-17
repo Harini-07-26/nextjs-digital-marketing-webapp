@@ -1,6 +1,5 @@
 import { useState, type ComponentType } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X } from 'lucide-react';
 import {
   SiGoogle,
   SiGoogleanalytics,
@@ -23,7 +22,8 @@ import OpenAIIcon from '../icons/Open-Ai';
 import BingIcon from '../icons/Bing';
 import CanvaIcon from '../icons/Canva';
 import AHrefsIcon from '../icons/AHrefs';
-import MSClarityIcon from '../icons/MSClarity';
+import { ScreamingFrog } from '../icons/ScreamingFrog';
+import { CgWindows } from 'react-icons/cg';
 
 type Brand = {
   name: string;
@@ -97,7 +97,8 @@ const innerBrands: Brand[] = [
     short: 'SF',
     category: 'Technical SEO',
     tagline: 'Deep site crawls and technical SEO audits',
-    color: '84 61% 38%' // #539E2D (green frog)
+    color: '84 61% 38%', // #539E2D (green frog),
+    Icon: ScreamingFrog
   },
   {
     name: 'Microsoft Clarity',
@@ -105,7 +106,7 @@ const innerBrands: Brand[] = [
     category: 'Behaviour',
     tagline: 'Heatmaps and session recordings, free forever',
     color: '206 100% 40%', // #0078D4 (Microsoft blue)
-    Icon: MSClarityIcon
+    Icon: CgWindows
   },
   {
     name: 'HubSpot',
@@ -322,14 +323,16 @@ const BrandOrbit = () => {
   const [selected, setSelected] = useState<Brand | null>(null);
 
   return (
-    <section className="relative overflow-hidden py-24">
+    <section className="relative overflow-hidden py-12 mt-12">
       <div className="container relative">
         <div className="flex justify-center">
-          <span className="announcement-badge text-[11px] font-bold uppercase tracking-[0.25em] text-foreground">
-            Tools & platforms we work with
+          <span className="announcement-badge">
+            <span className="glow-dot" /> Tools & platforms we work with
           </span>
         </div>
-
+        <h2 className="mt-3 justify-center items-center text-center font-display text-3xl font-bold leading-tight text-foreground md:text-5xl mb-4">
+          Our <span className="gradient-text">Ecosystem</span>
+        </h2>
         <div className="relative mx-auto mt-12 aspect-square w-full max-w-[640px]">
           {/* orbit guides */}
           <div className="absolute left-1/2 top-1/2 h-[54%] w-[54%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-border/50" />
@@ -349,7 +352,6 @@ const BrandOrbit = () => {
             onSelect={setSelected}
             selected={selected}
           />
-
           {/* Center content */}
           <div className="pointer-events-none absolute left-1/2 top-1/2 w-[240px] -translate-x-1/2 -translate-y-1/2 text-center">
             <AnimatePresence mode="wait">

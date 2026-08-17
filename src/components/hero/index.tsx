@@ -302,11 +302,11 @@ export default function Hero() {
           </ScrollReveal>
         </div>
 
-        {/* <div className="container mx-auto">
+        <div className="container mx-auto">
           <ScrollReveal variant="fade-scale" delay={0.2}>
             <BrandOrbit />
           </ScrollReveal>
-        </div> */}
+        </div>
 
         {/* our services */}
         <div id="our-services" className="pt-12 scroll-mt-20">
