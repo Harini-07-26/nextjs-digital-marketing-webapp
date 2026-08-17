@@ -3,8 +3,6 @@
 import { motion } from 'framer-motion';
 import {
   ArrowRight,
-  Zap,
-  ShieldCheck,
   ArrowUpRight,
   CheckCircle2,
   Globe,
@@ -13,15 +11,13 @@ import {
   Sparkles,
   Target
 } from 'lucide-react';
-import Navbar from '../navbar';
-import FloatingCard from '../floating-card';
-import Image from 'next/image';
-import TypingTextMotion from '../typing-text-motion';
+
 import TypingHeadingOnScroll from '../typing-text-motion';
 import Features from '../features';
 import { whybusinessChoose } from '../home-page/data';
 import { ScrollReveal } from '../scroll-reveal';
 import BrandOrbit from '../brand-orbit.tsx';
+import Link from 'next/link';
 
 export default function Hero() {
   const stats = [
@@ -267,11 +263,11 @@ export default function Hero() {
               >
                 At GrowthVoice, we help businesses increase online visibility, drive qualified traffic, generate leads,
                 and grow revenue with data-driven digital marketing strategies. From startups to enterprises, we create
-                customized campaigns backed by market research, competitor analysis, and performance insights to maximize
-                ROI. At GrowthVoice, we help businesses increase online visibility, drive qualified traffic, generate
-                leads, and grow revenue with data-driven digital marketing strategies. From startups to enterprises, we
-                create customized campaigns backed by market research, competitor analysis, and performance insights to
-                maximize ROI.
+                customized campaigns backed by market research, competitor analysis, and performance insights to
+                maximize ROI. At GrowthVoice, we help businesses increase online visibility, drive qualified traffic,
+                generate leads, and grow revenue with data-driven digital marketing strategies. From startups to
+                enterprises, we create customized campaigns backed by market research, competitor analysis, and
+                performance insights to maximize ROI.
               </motion.p>
               {/* CTAs */}
               <motion.div
@@ -280,10 +276,12 @@ export default function Hero() {
                 transition={{ duration: 0.6, delay: 0.5 }}
                 className="mt-10 flex flex-wrap items-center gap-4 justify-center items-center"
               >
-                <div className="btn-primary-gradient inline-flex items-center gap-2">
+                <Link href="/#contact" className="btn-primary-gradient inline-flex items-center gap-2">
                   Get Free Marketing Consultation <ArrowRight className="h-4 w-4" />
-                </div>
-                <button className="btn-outline-dark">Grow Your Business Today</button>
+                </Link>
+                <Link href="/#contact" className="btn-outline-dark">
+                  Grow Your Business Today
+                </Link>
               </motion.div>
 
               {/* Stats */}
@@ -308,10 +306,6 @@ export default function Hero() {
           <ScrollReveal variant="fade-scale" delay={0.2}>
             <BrandOrbit />
           </ScrollReveal>
-        </div>
-
-        <div className="container mx-auto">
-          <BrandOrbit />
         </div>
 
         {/* our services */}

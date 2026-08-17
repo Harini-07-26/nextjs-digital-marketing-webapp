@@ -3,6 +3,8 @@ import Link from 'next/link';
 
 import { ScrollReveal } from '../scroll-reveal';
 import Image from 'next/image';
+import { SiX } from 'react-icons/si';
+import { BsInstagram, BsLinkedin } from 'react-icons/bs';
 
 export function Footer() {
   return (
@@ -26,24 +28,27 @@ export function Footer() {
                 performance optimization.
               </p>
               <div className="flex gap-4 justify-center text-center">
-                <a
-                  href="#"
-                  className="p-2 rounded-full border border-border bg-card text-muted-foreground hover:text-primary transition-colors"
+                <Link
+                  target="_blank"
+                  href={'https://x.com/growthvoice'}
+                  className="p-2 rounded-full border border-border bg-card text-muted-foreground hover:text-primary hover:bg-black transition-colors"
                 >
-                  <Twitter className="h-4 w-4" />
-                </a>
-                <a
-                  href="#"
-                  className="p-2 rounded-full border border-border bg-card text-muted-foreground hover:text-primary transition-colors"
+                  <SiX className="h-4 w-4" />
+                </Link>
+                <Link
+                  target="_blank"
+                  href={'https://www.instagram.com/growthvoice.official/'}
+                  className="p-2 rounded-full border border-border bg-card hover:bg-pink-400 text-muted-foreground hover:text-primary transition-colors"
                 >
-                  <Github className="h-4 w-4" />
-                </a>
-                <a
-                  href="#"
-                  className="p-2 rounded-full border border-border bg-card text-muted-foreground hover:text-primary transition-colors"
+                  <BsInstagram className="h-4 w-4" />
+                </Link>
+                <Link
+                  target="_blank"
+                  href={'https://www.linkedin.com/company/growth-voice'}
+                  className="p-2 rounded-full border border-border bg-card hover:bg-blue-900 text-muted-foreground hover:text-primary transition-colors"
                 >
-                  <Linkedin className="h-4 w-4" />
-                </a>
+                  <BsLinkedin className="h-4 w-4" />
+                </Link>
               </div>
             </div>
           </div>

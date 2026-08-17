@@ -15,9 +15,9 @@ const inter = Inter({
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
 export const metadata: Metadata = {
-  title: 'Growth Voice | Best Digital Marketing Company in India',
+  title: 'Best Digital Marketing Agency in Chennai | Growth Voice',
   description:
-    'Transform your business with India’s most awarded performance marketing agency. 500+ clients, 12 years, 10x ROI. Get your free strategy session now.',
+    'Transform your business with Chennai’s most awarded digital marketing agency. 500+ clients, 12 years, 10x ROI. Get your free strategy session now.',
   robots: {
     index: true,
     follow: true,

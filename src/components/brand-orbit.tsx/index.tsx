@@ -31,6 +31,7 @@ type Brand = {
   category: string;
   tagline: string;
   color: string;
+  activeColor?: string;
   Icon?: ComponentType<{ className?: string }>;
 };
 
@@ -40,7 +41,7 @@ const innerBrands: Brand[] = [
     short: 'G',
     category: 'Search & Ads',
     tagline: 'Search, Ads and the whole growth ecosystem',
-    color: '217 89% 55%',
+    color: '217 89% 61%', // #4285F4
     Icon: SiGoogle
   },
   {
@@ -48,7 +49,7 @@ const innerBrands: Brand[] = [
     short: 'GA4',
     category: 'Analytics',
     tagline: 'Event-based analytics and conversion tracking',
-    color: '33 95% 55%',
+    color: '24 100% 50%', // #FF6100 (GA4 orange)
     Icon: SiGoogleanalytics
   },
   {
@@ -56,7 +57,7 @@ const innerBrands: Brand[] = [
     short: 'GSC',
     category: 'SEO',
     tagline: 'Index coverage, queries and search performance',
-    color: '210 90% 52%',
+    color: '217 89% 61%', // #4285F4
     Icon: SiGooglesearchconsole
   },
   {
@@ -64,7 +65,7 @@ const innerBrands: Brand[] = [
     short: 'GTM',
     category: 'Tracking',
     tagline: 'Tag deployment without touching the codebase',
-    color: '205 85% 50%',
+    color: '44 100% 50%', // #FBBC04
     Icon: SiGoogletagmanager
   },
   {
@@ -72,7 +73,7 @@ const innerBrands: Brand[] = [
     short: 'B',
     category: 'Search',
     tagline: 'Microsoft search reach and Bing Webmaster Tools',
-    color: '190 90% 40%',
+    color: '206 100% 40%', // #0078D4
     Icon: BingIcon
   },
   {
@@ -80,7 +81,7 @@ const innerBrands: Brand[] = [
     short: 'SR',
     category: 'SEO Suite',
     tagline: 'Keyword research and competitive intelligence',
-    color: '20 95% 55%',
+    color: '21 100% 53%', // #FF642D
     Icon: SiSemrush
   },
   {
@@ -88,7 +89,7 @@ const innerBrands: Brand[] = [
     short: 'AH',
     category: 'SEO Suite',
     tagline: 'Backlink analysis and content gap discovery',
-    color: '215 80% 55%',
+    color: '216 100% 47%', // #0073EF
     Icon: AHrefsIcon
   },
   {
@@ -96,14 +97,14 @@ const innerBrands: Brand[] = [
     short: 'SF',
     category: 'Technical SEO',
     tagline: 'Deep site crawls and technical SEO audits',
-    color: '150 60% 40%'
+    color: '84 61% 38%' // #539E2D (green frog)
   },
   {
     name: 'Microsoft Clarity',
     short: 'MC',
     category: 'Behaviour',
     tagline: 'Heatmaps and session recordings, free forever',
-    color: '260 80% 60%',
+    color: '206 100% 40%', // #0078D4 (Microsoft blue)
     Icon: MSClarityIcon
   },
   {
@@ -111,7 +112,7 @@ const innerBrands: Brand[] = [
     short: 'HS',
     category: 'CRM',
     tagline: 'CRM, lifecycle marketing and automation',
-    color: '14 90% 58%',
+    color: '17 100% 46%', // #EB6123
     Icon: SiHubspot
   }
 ];
@@ -122,7 +123,7 @@ const outerBrands: Brand[] = [
     short: 'F',
     category: 'Social Ads',
     tagline: 'Meta ads at scale with pixel-perfect tracking',
-    color: '221 85% 50%',
+    color: '221 44% 41%', // #1877F2
     Icon: SiFacebook
   },
   {
@@ -130,7 +131,7 @@ const outerBrands: Brand[] = [
     short: 'IG',
     category: 'Social',
     tagline: 'Creative-first campaigns and creator collabs',
-    color: '330 80% 55%',
+    color: '330 68% 45%', // #C13584
     Icon: SiInstagram
   },
   {
@@ -138,7 +139,7 @@ const outerBrands: Brand[] = [
     short: 'IN',
     category: 'B2B',
     tagline: 'Account-based marketing for B2B pipelines',
-    color: '201 100% 35%',
+    color: '201 100% 35%', // #0A66C2
     Icon: FaLinkedin
   },
   {
@@ -146,7 +147,8 @@ const outerBrands: Brand[] = [
     short: 'X',
     category: 'Social',
     tagline: 'Real-time community building and reach',
-    color: '225 85% 60%',
+    color: '0 0% 50%', // gray at rest
+    activeColor: '0 0% 0%', // #000000 on hover/active
     Icon: SiX
   },
   {
@@ -154,7 +156,7 @@ const outerBrands: Brand[] = [
     short: 'P',
     category: 'Discovery',
     tagline: 'Visual discovery that drives commerce intent',
-    color: '351 78% 46%',
+    color: '0 76% 40%', // #E60023
     Icon: SiPinterest
   },
   {
@@ -162,7 +164,7 @@ const outerBrands: Brand[] = [
     short: 'R',
     category: 'Community',
     tagline: 'Niche communities and authentic conversations',
-    color: '16 100% 50%',
+    color: '16 100% 50%', // #FF4500
     Icon: SiReddit
   },
   {
@@ -170,7 +172,8 @@ const outerBrands: Brand[] = [
     short: 'M',
     category: 'Content',
     tagline: 'Long-form thought leadership distribution',
-    color: '225 85% 60%',
+    color: '0 0% 50%', // gray at rest
+    activeColor: '0 0% 0%', // #000000 on hover/active
     Icon: SiMedium
   },
   {
@@ -178,7 +181,7 @@ const outerBrands: Brand[] = [
     short: 'MC',
     category: 'Email',
     tagline: 'Lifecycle email campaigns and automations',
-    color: '48 95% 55%',
+    color: '46 100% 45%', // #FFE01B (yellow-gold)
     Icon: SiMailchimp
   },
   {
@@ -186,7 +189,7 @@ const outerBrands: Brand[] = [
     short: 'CV',
     category: 'Design',
     tagline: 'Fast, on-brand creative production',
-    color: '186 90% 45%',
+    color: '168 100% 38%', // #00C4B4
     Icon: CanvaIcon
   },
   {
@@ -194,7 +197,7 @@ const outerBrands: Brand[] = [
     short: 'AI',
     category: 'AI',
     tagline: 'AI copy, ideation and workflow acceleration',
-    color: '165 60% 40%',
+    color: '159 55% 38%', // #10A37F
     Icon: OpenAIIcon
   },
   {
@@ -202,7 +205,7 @@ const outerBrands: Brand[] = [
     short: 'GM',
     category: 'AI',
     tagline: 'Multimodal AI for research and creative',
-    color: '225 85% 60%',
+    color: '217 89% 61%', // #4285F4
     Icon: SiGooglegemini
   },
   {
@@ -210,10 +213,65 @@ const outerBrands: Brand[] = [
     short: 'CL',
     category: 'AI',
     tagline: 'Reasoning-heavy AI for strategy and analysis',
-    color: '22 65% 55%',
+    color: '22 72% 62%', // #D97757
     Icon: SiClaude
   }
 ];
+
+// ─── Brand logo button — tracks hover locally so we can drive inline styles ──
+const BrandButton = ({
+  brand,
+  size,
+  isActive,
+  onSelect
+}: {
+  brand: Brand;
+  size: number;
+  isActive: boolean;
+  onSelect: (b: Brand) => void;
+}) => {
+  const [hovered, setHovered] = useState(false);
+  const Icon = brand.Icon;
+
+  const highlighted = isActive || hovered;
+  const resolvedColor = highlighted && brand.activeColor ? brand.activeColor : brand.color;
+
+  return (
+    <button
+      type="button"
+      onClick={() => onSelect(brand)}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className="group pointer-events-auto relative block"
+      aria-label={brand.name}
+    >
+      <span
+        style={{
+          width: size,
+          height: size,
+          fontSize: size * (brand.short.length > 2 ? 0.26 : 0.34),
+          background: highlighted
+            ? `linear-gradient(140deg, hsl(${resolvedColor}), hsl(${resolvedColor} / 0.8))`
+            : `linear-gradient(140deg, hsl(${brand.color} / 0.45), hsl(${brand.color} / 0.25))`,
+          boxShadow: highlighted
+            ? `0 0 28px hsl(${resolvedColor} / 0.75), 0 0 8px hsl(${resolvedColor} / 0.5)`
+            : '0 4px 14px hsl(228 40% 2% / 0.5)',
+          filter: highlighted ? 'none' : 'grayscale(1)',
+          opacity: highlighted ? 1 : 0.65,
+          transform: highlighted ? 'scale(1.12)' : 'scale(1)',
+          transition: 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)'
+        }}
+        className="flex items-center justify-center rounded-full font-display font-bold text-white"
+      >
+        {Icon ? <Icon className="h-1/2 w-1/2" /> : brand.short}
+      </span>
+      {/* Tooltip */}
+      <span className="pointer-events-none absolute -top-8 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-md border border-border bg-card px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-foreground opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+        {brand.name}
+      </span>
+    </button>
+  );
+};
 
 const Ring = ({
   brands,
@@ -242,7 +300,6 @@ const Ring = ({
       const x = Math.cos(angle) * radius;
       const y = Math.sin(angle) * radius;
       const isActive = selected?.name === brand.name;
-      const Icon = brand.Icon;
       return (
         <div
           key={brand.name}
@@ -253,32 +310,7 @@ const Ring = ({
             animate={{ rotate: reverse ? 360 : -360 }}
             transition={{ duration, ease: 'linear', repeat: Infinity }}
           >
-            <button
-              type="button"
-              onClick={() => onSelect(brand)}
-              className="group pointer-events-auto relative block"
-              aria-label={brand.name}
-            >
-              <span
-                className={`flex items-center justify-center rounded-full font-display font-bold text-primary-foreground transition-all duration-300 ${
-                  isActive
-                    ? 'scale-110 opacity-100'
-                    : 'opacity-70 grayscale hover:scale-110 hover:opacity-100 hover:grayscale-0'
-                }`}
-                style={{
-                  width: size,
-                  height: size,
-                  fontSize: size * (brand.short.length > 2 ? 0.26 : 0.34),
-                  background: `linear-gradient(140deg, hsl(${brand.color}), hsl(${brand.color} / 0.65))`,
-                  boxShadow: isActive ? `0 0 26px hsl(${brand.color} / 0.7)` : '0 6px 18px hsl(228 40% 2% / 0.6)'
-                }}
-              >
-                {Icon ? <Icon className="h-1/2 w-1/2" /> : brand.short}
-              </span>
-              <span className="pointer-events-none absolute -top-8 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-md border border-border bg-card px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-foreground opacity-0 transition-opacity duration-200 group-hover:opacity-100">
-                {brand.name}
-              </span>
-            </button>
+            <BrandButton brand={brand} size={size} isActive={isActive} onSelect={onSelect} />
           </motion.div>
         </div>
       );
@@ -330,8 +362,8 @@ const BrandOrbit = () => {
                   transition={{ duration: 0.3 }}
                   className="pointer-events-auto"
                 >
-                  <h3 className="font-display text-2xl font-bold text-foreground">{selected.name}</h3>
-                  <p className="mt-1 text-sm font-semibold text-muted-foreground">{selected.category}</p>
+                  <h3 className="font-display text-3xl font-bold gradient-text">{selected.name}</h3>
+                  <p className="mt-1 text-sm font-semibold text-foreground">{selected.category}</p>
                   <p className="mt-2 text-sm leading-snug text-muted-foreground">{selected.tagline}</p>
                 </motion.div>
               ) : (
