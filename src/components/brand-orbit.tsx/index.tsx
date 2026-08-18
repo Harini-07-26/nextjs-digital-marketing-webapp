@@ -1,5 +1,6 @@
 import { useState, type ComponentType } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 import {
   SiGoogle,
   SiGoogleanalytics,
@@ -23,7 +24,6 @@ import BingIcon from '../icons/Bing';
 import CanvaIcon from '../icons/Canva';
 import AHrefsIcon from '../icons/AHrefs';
 import { ScreamingFrog } from '../icons/ScreamingFrog';
-import { CgWindows } from 'react-icons/cg';
 
 type Brand = {
   name: string;
@@ -32,7 +32,10 @@ type Brand = {
   tagline: string;
   color: string;
   activeColor?: string;
+  /** React component icon */
   Icon?: ComponentType<{ className?: string }>;
+  /** PNG/image src — use when no SVG icon is available */
+  imgSrc?: string;
 };
 
 const innerBrands: Brand[] = [
@@ -106,7 +109,7 @@ const innerBrands: Brand[] = [
     category: 'Behaviour',
     tagline: 'Heatmaps and session recordings, free forever',
     color: '206 100% 40%', // #0078D4 (Microsoft blue)
-    Icon: CgWindows
+    imgSrc: '/MSClarity.png'
   },
   {
     name: 'HubSpot',
@@ -264,7 +267,20 @@ const BrandButton = ({
         }}
         className="flex items-center justify-center rounded-full font-display font-bold text-white"
       >
-        {Icon ? <Icon className="h-1/2 w-1/2" /> : brand.short}
+        {brand.imgSrc ? (
+          <Image
+            src={brand.imgSrc}
+            alt={brand.name}
+            width={size}
+            height={size}
+            className="h-1/2 w-1/2 object-contain"
+            unoptimized
+          />
+        ) : Icon ? (
+          <Icon className="h-1/2 w-1/2" />
+        ) : (
+          brand.short
+        )}
       </span>
       {/* Tooltip */}
       <span className="pointer-events-none absolute -top-8 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-md border border-border bg-card px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-foreground opacity-0 transition-opacity duration-200 group-hover:opacity-100">
@@ -321,6 +337,24 @@ const Ring = ({
 
 const BrandOrbit = () => {
   const [selected, setSelected] = useState<Brand | null>(null);
+  // Track container width so all pixel values scale with it
+  const [orbitSize, setOrbitSize] = useState(560);
+
+  const setRef = (el: HTMLDivElement | null) => {
+    if (!el) return;
+    const update = () => setOrbitSize(Math.min(el.offsetWidth, 640));
+    update();
+    const ro = new ResizeObserver(update);
+    ro.observe(el);
+  };
+
+  // Design baseline = 640px — everything scales proportionally from there
+  const scale = orbitSize / 640;
+  const innerRadius = Math.round(172 * scale);
+  const outerRadius = Math.round(280 * scale);
+  const innerSize = Math.max(28, Math.round(56 * scale));
+  const outerSize = Math.max(30, Math.round(62 * scale));
+  const centerW = Math.max(120, Math.round(200 * scale));
 
   return (
     <section className="relative overflow-hidden py-12 mt-12">
@@ -333,7 +367,9 @@ const BrandOrbit = () => {
         <h2 className="mt-3 justify-center items-center text-center font-display text-3xl font-bold leading-tight text-foreground md:text-5xl mb-4">
           Our <span className="gradient-text">Ecosystem</span>
         </h2>
-        <div className="relative mx-auto mt-12 aspect-square w-full max-w-[640px]">
+
+        {/* aspect-square keeps height = width so the orbit never clips vertically */}
+        <div ref={setRef} className="relative mx-auto mt-12 aspect-square w-full max-w-[640px]">
           {/* orbit guides */}
           <div className="absolute left-1/2 top-1/2 h-[54%] w-[54%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-border/50" />
           <div className="absolute left-1/2 top-1/2 h-[88%] w-[88%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-border/30" />
@@ -342,18 +378,29 @@ const BrandOrbit = () => {
             style={{ background: 'radial-gradient(circle, hsl(var(--primary)), transparent 70%)' }}
           />
 
-          <Ring brands={innerBrands} radius={172} size={56} duration={44} onSelect={setSelected} selected={selected} />
+          <Ring
+            brands={innerBrands}
+            radius={innerRadius}
+            size={innerSize}
+            duration={44}
+            onSelect={setSelected}
+            selected={selected}
+          />
           <Ring
             brands={outerBrands}
-            radius={280}
-            size={62}
+            radius={outerRadius}
+            size={outerSize}
             duration={64}
             reverse
             onSelect={setSelected}
             selected={selected}
           />
-          {/* Center content */}
-          <div className="pointer-events-none absolute left-1/2 top-1/2 w-[240px] -translate-x-1/2 -translate-y-1/2 text-center">
+
+          {/* Center content — width and font sizes all scale with the orbit */}
+          <div
+            className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center"
+            style={{ width: centerW }}
+          >
             <AnimatePresence mode="wait">
               {selected ? (
                 <motion.div
@@ -364,9 +411,24 @@ const BrandOrbit = () => {
                   transition={{ duration: 0.3 }}
                   className="pointer-events-auto"
                 >
-                  <h3 className="font-display text-3xl font-bold gradient-text">{selected.name}</h3>
-                  <p className="mt-1 text-sm font-semibold text-foreground">{selected.category}</p>
-                  <p className="mt-2 text-sm leading-snug text-muted-foreground">{selected.tagline}</p>
+                  <h3
+                    className="font-display font-bold gradient-text leading-tight"
+                    style={{ fontSize: Math.max(12, Math.round(26 * scale)) }}
+                  >
+                    {selected.name}
+                  </h3>
+                  <p
+                    className="mt-1 font-semibold text-foreground"
+                    style={{ fontSize: Math.max(9, Math.round(12 * scale)) }}
+                  >
+                    {selected.category}
+                  </p>
+                  <p
+                    className="mt-1 leading-snug text-muted-foreground"
+                    style={{ fontSize: Math.max(8, Math.round(11 * scale)) }}
+                  >
+                    {selected.tagline}
+                  </p>
                 </motion.div>
               ) : (
                 <motion.div
@@ -376,9 +438,25 @@ const BrandOrbit = () => {
                   exit={{ opacity: 0, scale: 0.94 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <p className="font-display text-4xl font-bold gradient-text">2.5B+</p>
-                  <p className="mt-1 font-display text-2xl font-bold text-foreground">Impressions</p>
-                  <p className="mx-auto mt-3 max-w-[220px] text-sm text-muted-foreground">
+                  <p
+                    className="font-display font-bold gradient-text"
+                    style={{ fontSize: Math.max(20, Math.round(38 * scale)) }}
+                  >
+                    2.5B+
+                  </p>
+                  <p
+                    className="mt-1 font-display font-bold text-foreground"
+                    style={{ fontSize: Math.max(13, Math.round(22 * scale)) }}
+                  >
+                    Impressions
+                  </p>
+                  <p
+                    className="mx-auto mt-2 text-muted-foreground"
+                    style={{
+                      fontSize: Math.max(8, Math.round(11 * scale)),
+                      maxWidth: Math.round(180 * scale)
+                    }}
+                  >
                     Click on a platform logo to see how we use it in your growth stack.
                   </p>
                 </motion.div>
