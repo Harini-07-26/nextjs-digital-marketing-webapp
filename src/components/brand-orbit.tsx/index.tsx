@@ -102,6 +102,8 @@ const innerBrands: Brand[] = [
     tagline: 'Deep site crawls and technical SEO audits',
     color: '84 61% 38%', // #539E2D (green frog),
     Icon: ScreamingFrog
+    color: '84 61% 38%', // #539E2D (green frog),
+    Icon: ScreamingFrog
   },
   {
     name: 'Microsoft Clarity',
@@ -358,8 +360,11 @@ const BrandOrbit = () => {
 
   return (
     <section className="relative overflow-hidden py-12 mt-12">
+    <section className="relative overflow-hidden py-12 mt-12">
       <div className="container relative">
         <div className="flex justify-center">
+          <span className="announcement-badge">
+            <span className="glow-dot" /> Tools & platforms we work with
           <span className="announcement-badge">
             <span className="glow-dot" /> Tools & platforms we work with
           </span>
