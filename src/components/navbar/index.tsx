@@ -11,7 +11,8 @@ const navLinks = [
   { id: 2, href: '/#why-growthvoice', label: 'Why GrowthVoice' },
   { id: 4, href: '/#industries', label: 'Industries' },
   { id: 5, href: '/#testimonials', label: 'Testimonials' },
-  { id: 6, href: '/#contact', label: 'Contact Us' }
+  { id: 6, href: '/blog', label: 'Blog' },
+  { id: 7, href: '/#contact', label: 'Contact Us' }
 ];
 
 const Navbar = () => {
