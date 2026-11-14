@@ -25,7 +25,7 @@ export const blogPosts: BlogPost[] = [
     id: '1',
     slug: 'ai-powered-digital-marketing-strategies-2027',
     title: 'AI-Powered Digital Marketing: 10 Strategies for 2027',
-    author: 'John Doe',
+    author: 'Harini',
     date: 'November 14, 2026',
     image: '/blogs/ai-powered-digital-marketing-2027.png',
     commentsCount: 0,

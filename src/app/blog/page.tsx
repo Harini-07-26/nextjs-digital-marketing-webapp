@@ -8,11 +8,15 @@ export const metadata: Metadata = {
   title: 'Blogs & Insights | Best Digital Marketing Agency | Growth Voice',
   description:
     'Stay tuned for the latest insights on Crypto Marketing, Web3 Marketing, Crypto SEO, AEO, GEO, Community Building, KOL Marketing, Influencer Marketing, Crypto PR, and Token Launch Marketing.',
+  alternates: {
+    canonical: '/blog'
+  },
   openGraph: {
     title: 'Blogs & Insights | Growth Voice',
     description:
       'Stay tuned for the latest insights on Crypto Marketing, Web3 Marketing, Crypto SEO, AEO, GEO, Community Building, KOL Marketing, Influencer Marketing, Crypto PR, and Token Launch Marketing.',
-    type: 'website'
+    type: 'website',
+    url: '/blog'
   }
 };
 

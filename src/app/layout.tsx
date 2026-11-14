@@ -15,9 +15,28 @@ const inter = Inter({
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://growthvoice.in'),
   title: 'Best Digital Marketing Agency in Chennai | Growth Voice',
   description:
     'Transform your business with Chennai’s most awarded digital marketing agency. 500+ clients, 12 years, 10x ROI. Get your free strategy session now.',
+  alternates: {
+    canonical: '/'
+  },
+  openGraph: {
+    title: 'Best Digital Marketing Agency in Chennai | Growth Voice',
+    description:
+      'Transform your business with Chennai’s most awarded digital marketing agency. 500+ clients, 12 years, 10x ROI. Get your free strategy session now.',
+    url: 'https://growthvoice.in',
+    siteName: 'Growth Voice',
+    locale: 'en_IN',
+    type: 'website'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Best Digital Marketing Agency in Chennai | Growth Voice',
+    description:
+      'Transform your business with Chennai’s most awarded digital marketing agency. 500+ clients, 12 years, 10x ROI. Get your free strategy session now.'
+  },
   robots: {
     index: true,
     follow: true,
