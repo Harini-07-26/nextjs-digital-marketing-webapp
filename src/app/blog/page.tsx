@@ -7,14 +7,14 @@ import BlogListClient from '@/src/components/blog/BlogListClient';
 export const metadata: Metadata = {
   title: 'Blogs & Insights | Best Digital Marketing Agency | Growth Voice',
   description:
-    'Stay tuned for the latest insights on Crypto Marketing, Web3 Marketing, Crypto SEO, AEO, GEO, Community Building, KOL Marketing, Influencer Marketing, Crypto PR, and Token Launch Marketing.',
+    'Explore the latest trends, strategies, and insights in Digital Marketing, AI-Driven Marketing, SEO, AEO, GEO, Content Strategy, Social Media Growth, Paid Advertising, Influencer Marketing, Marketing Automation, and Customer Engagement.',
   alternates: {
     canonical: '/blog'
   },
   openGraph: {
     title: 'Blogs & Insights | Growth Voice',
     description:
-      'Stay tuned for the latest insights on Crypto Marketing, Web3 Marketing, Crypto SEO, AEO, GEO, Community Building, KOL Marketing, Influencer Marketing, Crypto PR, and Token Launch Marketing.',
+      'Explore the latest trends, strategies, and insights in Digital Marketing, AI-Driven Marketing, SEO, AEO, GEO, Content Strategy, Social Media Growth, Paid Advertising, Influencer Marketing, Marketing Automation, and Customer Engagement.',
     type: 'website',
     url: '/blog'
   }
@@ -62,8 +62,9 @@ export default function BlogListingPage() {
 
           {/* Subtitle */}
           <p className="mt-4 text-base sm:text-lg leading-relaxed text-muted-foreground max-w-3xl mx-auto font-normal">
-            Stay tuned for the latest insights on Crypto Marketing, Web3 Marketing, Crypto SEO, AEO, GEO, Community
-            Building, KOL Marketing, Influencer Marketing, Crypto PR, Token Launch Marketing, and more!
+            Explore the latest trends, strategies, and insights in Digital Marketing, AI-Driven Marketing, SEO, AEO,
+            GEO, Content Strategy, Social Media Growth, Paid Advertising, Influencer Marketing, Marketing Automation,
+            and Customer Engagement!
           </p>
 
           {/* CTA Button */}
