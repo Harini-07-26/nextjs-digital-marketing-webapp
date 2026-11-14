@@ -47,7 +47,7 @@ export default function BlogListingPage() {
           <div className="inline-flex items-center justify-center">
             <span className="announcement-badge">
               <span className="glow-dot" />
-              GrowthVoice Insights
+              Growth Voice Blogs
             </span>
           </div>
 

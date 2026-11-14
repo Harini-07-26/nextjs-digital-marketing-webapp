@@ -11,7 +11,7 @@ interface BlogListClientProps {
   posts: BlogPost[];
 }
 
-const categories = ['All Posts', 'Crypto Strategy', 'Web3 Marketing', 'Crypto SEO'];
+const categories = ['All Posts'];
 
 export default function BlogListClient({ posts }: BlogListClientProps) {
   const [selectedCategory, setSelectedCategory] = useState('All Posts');
@@ -25,8 +25,7 @@ export default function BlogListClient({ posts }: BlogListClientProps) {
   };
 
   const filteredPosts = posts.filter((post) => {
-    const matchesCategory =
-      selectedCategory === 'All Posts' || post.category === selectedCategory;
+    const matchesCategory = selectedCategory === 'All Posts' || post.category === selectedCategory;
     const matchesSearch =
       post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -147,7 +146,7 @@ export default function BlogListClient({ posts }: BlogListClientProps) {
                   {/* Comments Count */}
                   <div className="flex items-center gap-1.5 text-primary font-medium">
                     <MessageSquare className="h-4 w-4" />
-                    <span>{post.commentsCount} comments</span>
+                    <span>{post.commentsCount} Comments</span>
                   </div>
 
                   {/* Read More Link */}
@@ -155,7 +154,7 @@ export default function BlogListClient({ posts }: BlogListClientProps) {
                     href={`/blog/${post.slug}`}
                     className="inline-flex items-center gap-1.5 font-semibold text-primary transition-all duration-200 group-hover:gap-2.5 hover:brightness-110"
                   >
-                    <span>read more</span>
+                    <span>Read More</span>
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                 </div>
