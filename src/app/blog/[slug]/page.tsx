@@ -25,13 +25,19 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
+  const postUrl = `/blog/${post.slug}`;
+
   return {
     title: `${post.title} | Growth Voice`,
     description: post.excerpt,
+    alternates: {
+      canonical: postUrl
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,
       type: 'article',
+      url: postUrl,
       images: [
         {
           url: post.image,

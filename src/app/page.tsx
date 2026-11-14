@@ -1,5 +1,12 @@
+import type { Metadata } from 'next';
 import StructuredData from '../components/common/StructuredData';
 import HomePage from '../components/home-page';
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/'
+  }
+};
 
 const Index = () => {
   return (
