@@ -31,7 +31,7 @@ export default function BlogImage({
       <Image
         src={src}
         alt={alt}
-        fill={fill}
+        {...(fill ? { fill: true } : {})}
         sizes={sizes}
         priority={priority}
         className={`transition-opacity duration-500 ${

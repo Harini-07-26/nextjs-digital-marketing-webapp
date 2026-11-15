@@ -108,14 +108,14 @@ export default async function BlogPostDetailPage({ params }: PageProps) {
         </h1>
 
         {/* Featured Visual Banner with Skeleton Loader */}
-        <div className="relative w-full aspect-[16/11] overflow-hidden rounded-2xl border border-border/80 bg-card/70 shadow-2xl mb-8 group">
+        <div className="relative w-full overflow-hidden rounded-2xl border border-border/80 bg-card/70 shadow-2xl mb-8 group">
           <BlogImage
             src={post.image}
             alt={post.title}
-            fill
             priority
-            sizes="(max-width: 896px) 100vw, 896px"
-            className="object-contain sm:object-cover transition-transform duration-500 group-hover:scale-102"
+            width={1280}
+            height={720}
+            className="object-contain sm:object-cover transition-transform duration-500"
             containerClassName="w-full h-full"
           />
         </div>
@@ -154,23 +154,22 @@ export default async function BlogPostDetailPage({ params }: PageProps) {
           <div className="flex items-start gap-3">
             <Sparkles className="h-5 w-5 text-primary shrink-0 mt-0.5" />
             <div>
-              <h4 className="text-xs font-semibold tracking-wider uppercase text-primary mb-1">
-                Executive Summary
-              </h4>
-              <p className="text-sm sm:text-base text-foreground/90 leading-relaxed italic">
-                {post.excerpt}
-              </p>
+              <h4 className="text-xs font-semibold tracking-wider uppercase text-primary mb-1">Executive Summary</h4>
+              <p className="text-sm sm:text-base text-foreground/90 leading-relaxed italic">{post.excerpt}</p>
             </div>
           </div>
         </div>
 
         {/* Article Body Content */}
         <div className="text-[15px] sm:text-base md:text-[17px] leading-relaxed text-foreground/85 space-y-6">
-          {post.content.paragraphs.map((paragraph, index) => (
-            <p key={index} className="leading-relaxed">
-              {paragraph}
-            </p>
-          ))}
+          {post.content.paragraphs.map((paragraph, index) => {
+            const text = typeof paragraph === 'string' ? paragraph : paragraph.text;
+            return (
+              <p key={index} className="leading-relaxed">
+                {text}
+              </p>
+            );
+          })}
 
           {/* Structured Sections */}
           {post.content.sections?.map((section, sIndex) => (
@@ -180,22 +179,98 @@ export default async function BlogPostDetailPage({ params }: PageProps) {
                 {section.heading}
               </h2>
 
-              {section.body.map((p, pIndex) => (
-                <p key={pIndex} className="mb-4 leading-relaxed text-muted-foreground">
-                  {p}
-                </p>
-              ))}
+              {section.body.map((block, bIndex) => {
+                if (typeof block === 'string') {
+                  return (
+                    <p key={bIndex} className="mb-4 leading-relaxed text-muted-foreground">
+                      {block}
+                    </p>
+                  );
+                }
+
+                if (block.type === 'paragraph') {
+                  return (
+                    <p key={bIndex} className="mb-4 leading-relaxed text-muted-foreground">
+                      {block.text}
+                    </p>
+                  );
+                }
+
+                if (block.type === 'bold') {
+                  return (
+                    <p key={bIndex} className="font-semibold text-foreground mt-4 mb-2">
+                      {block.text}
+                    </p>
+                  );
+                }
+
+                if (block.type === 'list') {
+                  return (
+                    <div key={bIndex} className="space-y-3 my-4">
+                      {block.items.map((item, iIndex) => {
+                        const isObject = typeof item === 'object' && item !== null;
+                        return (
+                          <div key={iIndex} className="flex items-start gap-3">
+                            <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                            <div className="text-foreground/90 text-sm sm:text-base leading-relaxed">
+                              {isObject ? (
+                                <>
+                                  <strong className="font-semibold text-foreground">{item.title}: </strong>
+                                  <span className="text-muted-foreground">{item.text}</span>
+                                </>
+                              ) : (
+                                <span>{item}</span>
+                              )}
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  );
+                }
+
+                if (block.type === 'highlight') {
+                  return (
+                    <div
+                      key={bIndex}
+                      className="my-6 rounded-2xl border border-primary/30 bg-primary/5 p-5 backdrop-blur-md"
+                    >
+                      <div className="flex items-start gap-3">
+                        <Sparkles className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                        <div>
+                          <h4 className="text-xs font-semibold tracking-wider uppercase text-primary mb-1">
+                            {block.title}
+                          </h4>
+                          <p className="text-sm sm:text-base text-foreground/90 leading-relaxed italic">{block.text}</p>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                }
+
+                return null;
+              })}
 
               {section.list && (
                 <div className="space-y-3 my-4">
-                  {section.list.map((item, lIndex) => (
-                    <div key={lIndex} className="flex items-start gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                      <span className="text-foreground/90 text-sm sm:text-base leading-relaxed">
-                        {item}
-                      </span>
-                    </div>
-                  ))}
+                  {section.list.map((item, lIndex) => {
+                    const isObject = typeof item === 'object' && item !== null;
+                    return (
+                      <div key={lIndex} className="flex items-start gap-3">
+                        <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                        <div className="text-foreground/90 text-sm sm:text-base leading-relaxed">
+                          {isObject ? (
+                            <>
+                              <strong className="font-semibold text-foreground">{item.title}: </strong>
+                              <span className="text-muted-foreground">{item.text}</span>
+                            </>
+                          ) : (
+                            <span>{item}</span>
+                          )}
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
               )}
             </div>
@@ -210,7 +285,7 @@ export default async function BlogPostDetailPage({ params }: PageProps) {
                 key={tag}
                 className="rounded-full border border-border/80 bg-secondary/40 px-3.5 py-1 text-xs font-medium text-muted-foreground transition-colors hover:border-primary/50 hover:text-primary"
               >
-                #{tag}
+                {tag}
               </span>
             ))}
           </div>
@@ -255,8 +330,8 @@ export default async function BlogPostDetailPage({ params }: PageProps) {
                     <BlogImage
                       src={related.image}
                       alt={related.title}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 50vw"
+                      width={1280}
+                      height={720}
                       className="object-cover transition-transform duration-300 group-hover:scale-105"
                       containerClassName="w-full h-full"
                     />
