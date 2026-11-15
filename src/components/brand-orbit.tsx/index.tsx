@@ -364,8 +364,8 @@ const BrandOrbit = () => {
             <span className="glow-dot" /> Tools & platforms we work with
           </span>
         </div>
-        <h2 className="mt-3 justify-center items-center text-center font-display text-3xl font-bold leading-tight text-foreground md:text-5xl mb-4">
-          Our <span className="gradient-text">Ecosystem</span>
+        <h2 className="mt-3 justify-center items-center text-center font-display font-bold leading-tight text-foreground md:text-4xl mb-4">
+          Our Digital Marketing & <span className="gradient-text">Technology Ecosystem</span>
         </h2>
 
         {/* aspect-square keeps height = width so the orbit never clips vertically */}

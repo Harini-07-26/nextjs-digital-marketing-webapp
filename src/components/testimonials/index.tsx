@@ -77,8 +77,8 @@ const Testimonials = () => {
     >
       <div className="container mb-14">
         <ScrollReveal variant="slide" direction="up">
-          <h2 className="mt-6 font-display text-center text-3xl font-bold leading-tight text-foreground md:text-5xl">
-            Hear It From<span className="gradient-text"> Our Clients</span>
+          <h2 className="mt-6 font-display text-center font-bold leading-tight text-foreground md:text-4xl">
+            Client Success Stories from <span className="gradient-text">Our Digital Marketing Agency</span>
           </h2>
         </ScrollReveal>
       </div>
@@ -86,44 +86,46 @@ const Testimonials = () => {
       {/* Horizontal infinite scroll */}
       <ScrollReveal variant="slide" direction="right" delay={0.2}>
         <div className="relative">
-        {/* Fade edges */}
-        <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-24 bg-gradient-to-r from-background to-transparent" />
-        <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-24 bg-gradient-to-l from-background to-transparent" />
+          {/* Fade edges */}
+          <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-24 bg-gradient-to-r from-background to-transparent" />
+          <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-24 bg-gradient-to-l from-background to-transparent" />
 
-        <motion.div
-          className="flex gap-6"
-          animate={{ x: ['0%', '-50%'] }}
-          transition={{
-            x: {
-              repeat: Infinity,
-              repeatType: 'loop',
-              duration: 10,
-              ease: 'linear'
-            }
-          }}
-        >
-          {doubled.map((t, i) => (
-            <div key={i} className="animated-border-wrapper-subtle rounded-2xl p-[1px] shrink-0 w-[420px]">
-              <div className="rounded-2xl bg-card p-8 h-full flex flex-col gap-4">
-                {/* Badge */}
-                <span className={`text-xs font-semibold px-3 py-1 rounded-full w-fit ${t.badgeColor}`}>{t.badge}</span>
+          <motion.div
+            className="flex gap-6"
+            animate={{ x: ['0%', '-50%'] }}
+            transition={{
+              x: {
+                repeat: Infinity,
+                repeatType: 'loop',
+                duration: 10,
+                ease: 'linear'
+              }
+            }}
+          >
+            {doubled.map((t, i) => (
+              <div key={i} className="animated-border-wrapper-subtle rounded-2xl p-[1px] shrink-0 w-[420px]">
+                <div className="rounded-2xl bg-card p-8 h-full flex flex-col gap-4">
+                  {/* Badge */}
+                  <span className={`text-xs font-semibold px-3 py-1 rounded-full w-fit ${t.badgeColor}`}>
+                    {t.badge}
+                  </span>
 
-                {/* Stars */}
-                <StarRating count={t.stars} />
+                  {/* Stars */}
+                  <StarRating count={t.stars} />
 
-                {/* Quote */}
-                <p className="text-muted-foreground leading-relaxed flex-1">{t.quote}</p>
+                  {/* Quote */}
+                  <p className="text-muted-foreground leading-relaxed flex-1">{t.quote}</p>
 
-                {/* Author */}
-                <div className="mt-2">
-                  <p className="font-semibold text-foreground">{t.role}</p>
-                  <p className="text-sm text-muted-foreground">{t.company}</p>
+                  {/* Author */}
+                  <div className="mt-2">
+                    <p className="font-semibold text-foreground">{t.role}</p>
+                    <p className="text-sm text-muted-foreground">{t.company}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </motion.div>
-      </div>
+            ))}
+          </motion.div>
+        </div>
       </ScrollReveal>
     </section>
   );

@@ -21,14 +21,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!post) {
     return {
-      title: 'Blog Not Found | Growth Voice'
+      title: 'Blog Not Found'
     };
   }
 
   const postUrl = `/blog/${post.slug}`;
 
   return {
-    title: `${post.title} | Growth Voice`,
+    title: `${post.title} | Digital Marketing Agency in Chennai`,
     description: post.excerpt,
     alternates: {
       canonical: postUrl

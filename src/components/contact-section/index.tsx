@@ -78,7 +78,7 @@ const ContactSection = () => {
           <span className="announcement-badge">
             <span className="glow-dot" /> Contact Us
           </span>
-          <h2 className="mt-3 font-display text-center text-3xl font-bold text-foreground md:text-5xl">
+          <h2 className="mt-3 font-display text-center font-bold text-foreground md:text-4xl">
             Contact <span className="gradient-text">Us</span>
           </h2>
           <p className="text-lg mx-auto mt-4 max-w-xl text-muted-foreground">Let’s turn your goals into growth</p>
@@ -110,12 +110,6 @@ const ContactSection = () => {
               </div> */}
               {/* Contact Info */}
               <div className="space-y-5">
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Phone className="h-4 w-4 text-primary" />
-                  </div>
-                  <span className="text-foreground font-medium">+91 99947 18546</span>
-                </div>
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
                     <Mail className="h-4 w-4 text-primary" />

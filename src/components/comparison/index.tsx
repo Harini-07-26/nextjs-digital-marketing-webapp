@@ -46,11 +46,8 @@ const ComparisonSection = () => {
         {/* Header */}
         <ScrollReveal variant="slide" direction="up">
           <div className="text-center mb-14">
-            <span className="announcement-badge">
-              <span className="glow-dot" /> Why Choose Us
-            </span>
-            <h2 className="mt-4 font-display text-3xl font-bold leading-tight text-foreground md:text-5xl">
-              Not Your Average <span className="gradient-text">Marketing Agency</span>
+            <h2 className="mt-4 font-display font-bold leading-tight text-foreground md:text-4xl">
+              More Than a Digital Marketing Agency : <span className="gradient-text">Your Growth Partner</span>
             </h2>
             <p className="text-lg mx-auto mt-4 max-w-xl text-muted-foreground">
               See how Growth Voice stacks up against traditional marketing agencies.

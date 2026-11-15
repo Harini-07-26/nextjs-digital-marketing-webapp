@@ -16,14 +16,14 @@ const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://growthvoice.in'),
-  title: 'Best Digital Marketing Agency in Chennai | Growth Voice',
+  title: 'Digital Marketing Agency in Chennai',
   description:
     'Transform your business with Chennai’s most awarded digital marketing agency. 500+ clients, 12 years, 10x ROI. Get your free strategy session now.',
   alternates: {
     canonical: '/'
   },
   openGraph: {
-    title: 'Best Digital Marketing Agency in Chennai | Growth Voice',
+    title: 'Digital Marketing Agency in Chennai ',
     description:
       'Transform your business with Chennai’s most awarded digital marketing agency. 500+ clients, 12 years, 10x ROI. Get your free strategy session now.',
     url: 'https://growthvoice.in',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Best Digital Marketing Agency in Chennai | Growth Voice',
+    title: 'Digital Marketing Agency in Chennai',
     description:
       'Transform your business with Chennai’s most awarded digital marketing agency. 500+ clients, 12 years, 10x ROI. Get your free strategy session now.'
   },
