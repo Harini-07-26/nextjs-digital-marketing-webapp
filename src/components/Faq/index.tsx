@@ -66,7 +66,7 @@ const FAQSection = () => {
               <HelpCircle className="h-4 w-4 text-primary" />
               FAQs
             </span>
-            <h2 className="mt-5 font-display text-3xl font-bold text-foreground md:text-5xl">
+            <h2 className="mt-5 font-display font-bold text-foreground md:text-4xl">
               Question? <span className="gradient-text">Look here</span>
             </h2>
             <p className="text-lg mx-auto mt-4 max-w-2xl text-muted-foreground">
@@ -161,7 +161,6 @@ const FAQSection = () => {
                   <div>
                     <p className="text-sm text-muted-foreground">Your Growth, Our Mission</p>
                     <p className="font-display text-xl font-bold text-foreground">24/7 Service</p>
-                    <p className="text-sm text-muted-foreground">+91 99947 18546</p>
                   </div>
                 </div>
               </div>

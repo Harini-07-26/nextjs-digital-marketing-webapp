@@ -21,10 +21,10 @@ import Link from 'next/link';
 
 export default function Hero() {
   const stats = [
-    { value: '500+', label: 'PROJECTS DELIVERED' },
-    { value: '150+', label: 'HAPPY CLIENTS' },
-    { value: '50M+', label: 'IMPRESSIONS GENERATED' },
-    { value: '300%+', label: 'AVERAGE TRAFFIC GROWTH' }
+    { value: '50+', label: 'PROJECTS DELIVERED' },
+    { value: '40+', label: 'HAPPY CLIENTS' },
+    { value: '2M+', label: 'IMPRESSIONS GENERATED' },
+    { value: '100%', label: 'AVERAGE TRAFFIC GROWTH' }
   ];
 
   // const goals = [
@@ -292,7 +292,7 @@ export default function Hero() {
                 className="mt-14 flex flex-wrap gap-6 justify-center items-center"
               >
                 {stats.map((stat) => (
-                  <div key={stat.label}>
+                  <div key={stat.label} className="flex flex-col gap-4">
                     <p className="stat-value">{stat.value}</p>
                     <p className="stat-label">{stat.label}</p>
                   </div>
@@ -302,17 +302,11 @@ export default function Hero() {
           </ScrollReveal>
         </div>
 
-        <div className="container mx-auto">
-          <ScrollReveal variant="fade-scale" delay={0.2}>
-            <BrandOrbit />
-          </ScrollReveal>
-        </div>
-
         {/* our services */}
         <div id="our-services" className="pt-12 scroll-mt-20">
           <div className="justify-center items-center text-center">
-            <h2 className="mt-6 font-display text-3xl font-bold leading-tight text-foreground md:text-5xl mt-10 mb-4">
-              Our <span className="gradient-text">Services</span>
+            <h2 className="mt-6 font-display font-bold leading-tight text-foreground md:text-4xl mt-10 mb-4">
+              Our Digital Marketing <span className="gradient-text">Agency Services</span>
             </h2>
             <p className="mt-4 text-center text-muted-foreground max-w-4xl mx-auto text-lg leading-relaxed">
               We combine strategy, creativity, and data to build digital experiences that strengthen your brand and
@@ -368,11 +362,17 @@ export default function Hero() {
           </div>
         </div>
 
+        <div className="container mx-auto">
+          <ScrollReveal variant="fade-scale" delay={0.2}>
+            <BrandOrbit />
+          </ScrollReveal>
+        </div>
+
         <div id="why-growthvoice" className="scroll-mt-8">
           <Features
             variant="dark"
-            title="Why Businesses Choose"
-            gradiantTitle="GrowthVoice"
+            title="Why Choose GrowthVoice as"
+            gradiantTitle="Your Digital Marketing Agency?"
             description="Thousands of marketing agencies promise results. We focus on delivering measurable business outcomes."
             datatestId="why-businesses-choose-growthvoice"
             features={whybusinessChoose}

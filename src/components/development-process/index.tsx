@@ -64,13 +64,13 @@ const DevelopmentProcess = () => {
 
       <div className="container relative">
         {/* Header */}
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="mx-auto max-w-7xl text-center">
           <ScrollReveal>
             <span className="announcement-badge">
               <span className="glow-dot" /> How we build
             </span>
-            <h2 className="mt-6 font-display text-3xl font-bold leading-tight text-foreground md:text-5xl">
-              Our Development <span className="gradient-text">Process</span>
+            <h2 className="mt-6 font-display font-bold leading-tight text-foreground md:text-4xl">
+              Our Digital Marketing Strategy & <span className="gradient-text">Execution Process</span>
             </h2>
             <p className="mt-4 text-center text-muted-foreground max-w-4xl mx-auto text-lg leading-relaxed">
               A structured, transparent, and results-driven workflow — from the first conversation to post-launch scale.

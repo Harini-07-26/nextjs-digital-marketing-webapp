@@ -3,7 +3,7 @@ export const SITE_CONFIG = {
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://growthvoice.in',
   description:
     'Transform your business with Chennai’s most awarded digital marketing agency. 500+ clients, 12 years, 10x ROI. Get your free strategy session now.',
-  defaultTitle: 'Best Digital Marketing Agency in Chennai | Growth Voice'
+  defaultTitle: 'Best Digital Marketing Agency in Chennai'
 };
 
 export function getCanonicalUrl(path: string = ''): string {

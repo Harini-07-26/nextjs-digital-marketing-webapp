@@ -5,14 +5,14 @@ import { blogPosts } from '@/src/data/blogs';
 import BlogListClient from '@/src/components/blog/BlogListClient';
 
 export const metadata: Metadata = {
-  title: 'Blogs & Insights | Best Digital Marketing Agency | Growth Voice',
+  title: 'Blogs & Insights | Digital Marketing Agency in Chennai',
   description:
     'Explore the latest trends, strategies, and insights in Digital Marketing, AI-Driven Marketing, SEO, AEO, GEO, Content Strategy, Social Media Growth, Paid Advertising, Influencer Marketing, Marketing Automation, and Customer Engagement.',
   alternates: {
     canonical: '/blog'
   },
   openGraph: {
-    title: 'Blogs & Insights | Growth Voice',
+    title: 'Blogs & Insights',
     description:
       'Explore the latest trends, strategies, and insights in Digital Marketing, AI-Driven Marketing, SEO, AEO, GEO, Content Strategy, Social Media Growth, Paid Advertising, Influencer Marketing, Marketing Automation, and Customer Engagement.',
     type: 'website',

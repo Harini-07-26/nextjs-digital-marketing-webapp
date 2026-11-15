@@ -40,7 +40,7 @@ export const Features: FC<IFeaturesProps> = ({
         {/* Header */}
         <div className="text-center mb-16">
           <ScrollReveal variant="slide-blur">
-            <h2 className="mt-6 font-display text-3xl font-bold leading-tight text-foreground md:text-5xl mb-4">
+            <h2 className="mt-6 font-display font-bold leading-tight text-foreground md:text-4xl mb-4">
               {title} <span className="gradient-text">{gradiantTitle}</span>
             </h2>
             <p className={`${subtitleColor} text-lg max-w-2xl mx-auto`}>{description}</p>

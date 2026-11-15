@@ -33,32 +33,15 @@ const TypingHeadingOnScroll = ({ textBefore, textGradient }: ITypingTextProps) =
     <div ref={ref} className="mt-8 text-center">
       {/* Heading — h1 */}
       <motion.h1
-        className="font-display text-5xl font-bold leading-[1.1] tracking-tight sm:text-6xl lg:text-7xl"
+        className="font-display text-5xl font-bold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl"
         initial="hidden"
-        animate={controls}
-        variants={{
-          hidden: { opacity: 0, y: 20 },
-          visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-              duration: 0.6,
-              delay: 0.2,
-              staggerChildren: 0.05
-            }
-          }
-        }}
       >
-        {textBefore.split('').map((char, i) => (
-          <motion.span key={`normal-${i}`} variants={charVariants}>
-            {char}
-          </motion.span>
-        ))}
+        {textBefore}
       </motion.h1>
 
       {/* Subheading — p */}
       <motion.p
-        className="gradient-text text-3xl sm:text-4xl font-semibold mt-2"
+        className="gradient-text text-3xl sm:text-3xl font-semibold mt-2"
         initial="hidden"
         animate={controls}
         variants={{
