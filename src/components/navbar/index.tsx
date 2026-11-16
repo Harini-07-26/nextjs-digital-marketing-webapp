@@ -75,10 +75,9 @@ const Navbar = () => {
         absolute left-1/2 top-1/2
         -translate-x-1/2 -translate-y-1/2
         flex items-center gap-2.5
-
-        md:static
-        md:translate-x-0
-        md:translate-y-0
+        lg:static
+        lg:translate-x-0
+        lg:translate-y-0
       "
             onClick={() => {
               closeAiMenu();
@@ -92,25 +91,25 @@ const Navbar = () => {
               width={190}
               height={50}
               priority
-              className="h-auto w-[170px] md:w-[190px]"
+              className="h-auto w-[150px] sm:w-[170px] lg:w-[190px]"
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden flex-1 items-center justify-center gap-8 md:flex">
+          <nav className="hidden flex-1 items-center justify-center gap-4 lg:flex xl:gap-8">
             {navLinks.map((link) => (
-              <Link key={link.id} href={link.href} className="nav-link whitespace-nowrap" onClick={closeAiMenu}>
+              <Link key={link.id} href={link.href} className="nav-link text-xs xl:text-sm whitespace-nowrap" onClick={closeAiMenu}>
                 {link.label}
               </Link>
             ))}
           </nav>
 
           {/* Right Actions */}
-          <div className="ml-auto flex items-center gap-3">
+          <div className="ml-auto flex items-center gap-2.5 sm:gap-3">
             {/* Desktop Get Started */}
             <Link
               href="/#contact"
-              className="btn-primary-gradient hidden px-4 py-2.5 text-xs sm:px-6 sm:py-3 sm:text-sm md:inline-block"
+              className="btn-primary-gradient hidden px-4 py-2 text-xs sm:inline-block sm:px-5 sm:py-2.5 sm:text-sm lg:px-6 lg:py-3"
             >
               Get Started
             </Link>
@@ -118,7 +117,7 @@ const Navbar = () => {
             {/* Mobile Menu */}
             <button
               onClick={toggleMobileMenu}
-              className="flex cursor-pointer items-center justify-center rounded-xl border border-border/80 bg-secondary/40 p-2.5 text-foreground md:hidden"
+              className="flex cursor-pointer items-center justify-center rounded-xl border border-border/80 bg-secondary/40 p-2 sm:p-2.5 text-foreground lg:hidden"
               aria-label="Toggle Navigation Menu"
             >
               {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -136,7 +135,7 @@ const Navbar = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="fixed inset-0 top-16 z-40 bg-black/60 backdrop-blur-sm md:hidden"
+              className="fixed inset-0 top-16 z-40 bg-black/60 backdrop-blur-sm lg:hidden"
               onClick={closeMobileMenu}
               aria-hidden="true"
             />
@@ -146,20 +145,28 @@ const Navbar = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.25 }}
-              className="fixed left-0 right-0 top-16 z-50 border-b border-border bg-background/95 p-6 backdrop-blur-2xl md:hidden shadow-2xl"
+              className="fixed left-0 right-0 top-16 z-50 max-h-[calc(100vh-4rem)] overflow-y-auto border-b border-border bg-background/95 p-5 sm:p-6 backdrop-blur-2xl lg:hidden shadow-2xl"
             >
-              <nav className="flex flex-col gap-3">
+              <nav className="flex flex-col gap-2.5 sm:gap-3">
                 {navLinks.map((link) => (
                   <Link
                     key={link.id}
                     href={link.href}
                     onClick={closeMobileMenu}
-                    className="flex items-center justify-between rounded-xl border border-border/50 bg-card/40 px-4 py-3.5 text-base font-medium text-foreground transition-all hover:bg-secondary"
+                    className="flex items-center justify-between rounded-xl border border-border/50 bg-card/40 px-4 py-3 sm:py-3.5 text-sm sm:text-base font-medium text-foreground transition-all hover:bg-secondary"
                   >
                     <span>{link.label}</span>
                     <ChevronRight className="h-4 w-4 text-muted-foreground" />
                   </Link>
                 ))}
+                {/* Mobile Get Started Link */}
+                <Link
+                  href="/#contact"
+                  onClick={closeMobileMenu}
+                  className="btn-primary-gradient mt-2 text-center text-sm font-semibold py-3 sm:hidden"
+                >
+                  Get Started
+                </Link>
               </nav>
             </motion.div>
           </>

@@ -259,27 +259,30 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.35 }}
-                className="mt-6 max-w-6xl text-lg leading-relaxed text-muted-foreground"
+                className="mt-6 max-w-4xl text-sm sm:text-base md:text-lg leading-relaxed text-muted-foreground px-2"
               >
                 At GrowthVoice, we help businesses increase online visibility, drive qualified traffic, generate leads,
                 and grow revenue with data-driven digital marketing strategies. From startups to enterprises, we create
                 customized campaigns backed by market research, competitor analysis, and performance insights to
-                maximize ROI. At GrowthVoice, we help businesses increase online visibility, drive qualified traffic,
-                generate leads, and grow revenue with data-driven digital marketing strategies. From startups to
-                enterprises, we create customized campaigns backed by market research, competitor analysis, and
-                performance insights to maximize ROI.
+                maximize ROI.
               </motion.p>
               {/* CTAs */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
-                className="mt-10 flex flex-wrap items-center gap-4 justify-center items-center"
+                className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center gap-3 sm:gap-4 justify-center w-full px-4"
               >
-                <Link href="/#contact" className="btn-primary-gradient inline-flex items-center gap-2">
-                  Get Free Marketing Consultation <ArrowRight className="h-4 w-4" />
+                <Link
+                  href="/#contact"
+                  className="btn-primary-gradient inline-flex items-center justify-center gap-2 w-full sm:w-auto text-sm sm:text-base text-center"
+                >
+                  Get Free Marketing Consultation <ArrowRight className="h-4 w-4 shrink-0" />
                 </Link>
-                <Link href="/#contact" className="btn-outline-dark">
+                <Link
+                  href="/#contact"
+                  className="btn-outline-dark w-full sm:w-auto text-center justify-center text-sm sm:text-base"
+                >
                   Grow Your Business Today
                 </Link>
               </motion.div>
@@ -289,12 +292,15 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.65 }}
-                className="mt-14 flex flex-wrap gap-6 justify-center items-center"
+                className="mt-12 sm:mt-14 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 lg:gap-8 max-w-4xl mx-auto w-full px-2"
               >
                 {stats.map((stat) => (
-                  <div key={stat.label} className="flex flex-col gap-4">
-                    <p className="stat-value">{stat.value}</p>
-                    <p className="stat-label">{stat.label}</p>
+                  <div
+                    key={stat.label}
+                    className="flex flex-col items-center justify-center p-3 sm:p-4 rounded-xl bg-card/40 border border-border/60 sm:border-border/30 backdrop-blur-sm"
+                  >
+                    <p className="stat-value text-2xl sm:text-3xl md:text-4xl">{stat.value}</p>
+                    <p className="stat-label text-[10px] sm:text-xs text-center">{stat.label}</p>
                   </div>
                 ))}
               </motion.div>
@@ -304,21 +310,21 @@ export default function Hero() {
 
         {/* our services */}
         <div id="our-services" className="pt-12 scroll-mt-20">
-          <div className="justify-center items-center text-center">
-            <h2 className="mt-6 font-display font-bold leading-tight text-foreground md:text-4xl mt-10 mb-4">
+          <div className="justify-center items-center text-center px-4">
+            <h2 className="mt-6 font-display font-bold leading-tight text-foreground text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-10 mb-4">
               Our Digital Marketing <span className="gradient-text">Agency Services</span>
             </h2>
-            <p className="mt-4 text-center text-muted-foreground max-w-4xl mx-auto text-lg leading-relaxed">
+            <p className="mt-4 text-center text-muted-foreground max-w-4xl mx-auto text-sm sm:text-base md:text-lg leading-relaxed">
               We combine strategy, creativity, and data to build digital experiences that strengthen your brand and
               deliver meaningful business results.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 container px-4 sm:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 container">
             {goals.map((goal, idx) => {
               const Icon = goal.icon;
               return (
                 <ScrollReveal key={goal.id} delay={idx * 0.1}>
-                  <div className="relative group overflow-hidden rounded-3xl border border-border bg-card/40 p-8 hover:bg-card/70 hover:border-primary/40 transition-all duration-300 backdrop-blur-md flex flex-col justify-between h-full min-h-[380px]">
+                  <div className="relative group overflow-hidden rounded-2xl sm:rounded-3xl border border-border bg-card/40 p-5 sm:p-8 hover:bg-card/70 hover:border-primary/40 transition-all duration-300 backdrop-blur-md flex flex-col justify-between h-full min-h-[340px] sm:min-h-[380px]">
                     <div
                       className="absolute -top-12 -right-12 h-32 w-32 rounded-full opacity-0 group-hover:opacity-10 transition-opacity duration-500 blur-2xl"
                       style={{ backgroundColor: 'hsl(var(--primary))' }}

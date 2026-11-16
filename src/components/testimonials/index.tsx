@@ -75,9 +75,9 @@ const Testimonials = () => {
       id="testimonials"
       className="py-24 overflow-hidden bg-gradient-to-br from-green-500/10 via-emerald-500/10 to-teal-500/10 scroll-mt-20"
     >
-      <div className="container mb-14">
+      <div className="container mb-10 sm:mb-14">
         <ScrollReveal variant="slide" direction="up">
-          <h2 className="mt-6 font-display text-center font-bold leading-tight text-foreground md:text-4xl">
+          <h2 className="mt-6 font-display text-center font-bold leading-tight text-foreground text-2xl sm:text-3xl md:text-4xl lg:text-5xl px-2">
             Client Success Stories from <span className="gradient-text">Our Digital Marketing Agency</span>
           </h2>
         </ScrollReveal>
@@ -87,26 +87,29 @@ const Testimonials = () => {
       <ScrollReveal variant="slide" direction="right" delay={0.2}>
         <div className="relative">
           {/* Fade edges */}
-          <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-24 bg-gradient-to-r from-background to-transparent" />
-          <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-24 bg-gradient-to-l from-background to-transparent" />
+          <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-8 sm:w-16 md:w-24 bg-gradient-to-r from-background to-transparent" />
+          <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-8 sm:w-16 md:w-24 bg-gradient-to-l from-background to-transparent" />
 
           <motion.div
-            className="flex gap-6"
+            className="flex gap-4 sm:gap-6"
             animate={{ x: ['0%', '-50%'] }}
             transition={{
               x: {
                 repeat: Infinity,
                 repeatType: 'loop',
-                duration: 10,
+                duration: 16,
                 ease: 'linear'
               }
             }}
           >
             {doubled.map((t, i) => (
-              <div key={i} className="animated-border-wrapper-subtle rounded-2xl p-[1px] shrink-0 w-[420px]">
-                <div className="rounded-2xl bg-card p-8 h-full flex flex-col gap-4">
+              <div
+                key={i}
+                className="animated-border-wrapper-subtle rounded-2xl p-[1px] shrink-0 w-[280px] sm:w-[340px] md:w-[380px] lg:w-[420px]"
+              >
+                <div className="rounded-2xl bg-card p-5 sm:p-6 md:p-8 h-full flex flex-col gap-3 sm:gap-4">
                   {/* Badge */}
-                  <span className={`text-xs font-semibold px-3 py-1 rounded-full w-fit ${t.badgeColor}`}>
+                  <span className={`text-[11px] sm:text-xs font-semibold px-2.5 sm:px-3 py-1 rounded-full w-fit ${t.badgeColor}`}>
                     {t.badge}
                   </span>
 
@@ -114,12 +117,12 @@ const Testimonials = () => {
                   <StarRating count={t.stars} />
 
                   {/* Quote */}
-                  <p className="text-muted-foreground leading-relaxed flex-1">{t.quote}</p>
+                  <p className="text-muted-foreground text-xs sm:text-sm md:text-base leading-relaxed flex-1">{t.quote}</p>
 
                   {/* Author */}
-                  <div className="mt-2">
-                    <p className="font-semibold text-foreground">{t.role}</p>
-                    <p className="text-sm text-muted-foreground">{t.company}</p>
+                  <div className="mt-1 sm:mt-2">
+                    <p className="font-semibold text-sm sm:text-base text-foreground">{t.role}</p>
+                    <p className="text-xs sm:text-sm text-muted-foreground">{t.company}</p>
                   </div>
                 </div>
               </div>
