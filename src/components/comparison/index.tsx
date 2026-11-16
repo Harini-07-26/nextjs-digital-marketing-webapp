@@ -45,11 +45,11 @@ const ComparisonSection = () => {
       <div className="container relative px-4 sm:px-6">
         {/* Header */}
         <ScrollReveal variant="slide" direction="up">
-          <div className="text-center mb-14">
-            <h2 className="mt-4 font-display font-bold leading-tight text-foreground md:text-4xl">
+          <div className="text-center mb-10 sm:mb-14 px-2">
+            <h2 className="mt-4 font-display font-bold leading-tight text-foreground text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
               More Than a Digital Marketing Agency : <span className="gradient-text">Your Growth Partner</span>
             </h2>
-            <p className="text-lg mx-auto mt-4 max-w-xl text-muted-foreground">
+            <p className="text-sm sm:text-base md:text-lg mx-auto mt-4 max-w-xl text-muted-foreground">
               See how Growth Voice stacks up against traditional marketing agencies.
             </p>
           </div>
@@ -57,19 +57,19 @@ const ComparisonSection = () => {
 
         {/* Table with animated border */}
         <ScrollReveal variant="slide" direction="left">
-          <div className="mx-auto max-w-4xl">
+          <div className="mx-auto max-w-4xl overflow-x-auto">
             {/* Animated border wrapper */}
-            <div className="animated-border-wrapper rounded-2xl p-[2px]">
+            <div className="animated-border-wrapper rounded-2xl p-[2px] min-w-[340px]">
               <div className="rounded-2xl bg-card/90 backdrop-blur-md overflow-hidden">
                 {/* Table header */}
-                <div className="grid grid-cols-3 border-b border-border px-3 sm:px-6 py-4 gap-2">
-                  <span className="text-[11px] sm:text-xs font-semibold tracking-widest text-muted-foreground uppercase">
+                <div className="grid grid-cols-3 border-b border-border px-3 sm:px-6 py-3.5 sm:py-4 gap-2">
+                  <span className="text-[10px] sm:text-xs font-semibold tracking-widest text-muted-foreground uppercase">
                     Capability
                   </span>
-                  <span className="text-center text-xs sm:text-sm font-semibold text-muted-foreground">
+                  <span className="text-center text-[11px] sm:text-sm font-semibold text-muted-foreground">
                     Traditional Agency
                   </span>
-                  <span className="text-center font-display text-xs sm:text-sm font-bold text-primary">
+                  <span className="text-center font-display text-[11px] sm:text-sm font-bold text-primary">
                     Growth Voice
                   </span>
                 </div>
@@ -82,11 +82,11 @@ const ComparisonSection = () => {
                     direction={i % 2 === 0 ? 'right' : 'left'}
                     delay={i * 0.06}
                   >
-                    <div className="group grid grid-cols-3 items-center border-b border-border/60 px-3 sm:px-6 py-3.5 gap-2 transition-colors hover:bg-secondary/60">
+                    <div className="group grid grid-cols-3 items-center border-b border-border/60 px-3 sm:px-6 py-3 sm:py-3.5 gap-2 transition-colors hover:bg-secondary/60">
                       <span className="text-xs sm:text-sm font-semibold text-foreground">{row.feature}</span>
-                      <span className="text-center text-xs sm:text-sm text-muted-foreground">{row.traditional}</span>
+                      <span className="text-center text-[11px] sm:text-sm text-muted-foreground">{row.traditional}</span>
                       <div className="flex justify-center">
-                        <span className="rounded-lg bg-primary/15 border border-primary/30 px-2.5 sm:px-3 py-1 text-xs sm:text-sm font-semibold text-primary text-center">
+                        <span className="rounded-lg bg-primary/15 border border-primary/30 px-2 sm:px-3 py-0.5 sm:py-1 text-[11px] sm:text-sm font-semibold text-primary text-center">
                           {row.growthVoice}
                         </span>
                       </div>

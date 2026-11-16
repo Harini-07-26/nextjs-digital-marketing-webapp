@@ -52,13 +52,13 @@ const industries = [
 const IndustriesWeServe = () => {
   return (
     <section id="industries" className="bg-background py-20 transition-colors duration-300 scroll">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal variant="blur-up">
-          <h2 className="mt-6 font-display text-center font-bold leading-tight text-foreground md:text-4xl">
+          <h2 className="mt-6 font-display text-center font-bold leading-tight text-foreground text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
             Industries We Help Grow Through <span className="gradient-text">Digital Marketing</span>
           </h2>
 
-          <p className="mt-4 text-center text-muted-foreground max-w-4xl mx-auto text-lg leading-relaxed">
+          <p className="mt-4 text-center text-muted-foreground max-w-4xl mx-auto text-sm sm:text-base md:text-lg leading-relaxed px-2">
             We serve a diverse range of industries including retail, real estate, travel & tourism, healthcare,
             education, e-commerce, startups, media, government & public, nonprofits & NGOs, logistics, manufacturing,
             finance, on-demand, automotive, gaming, advertising, food & beverages, legal services, sports, fitness, and
@@ -69,7 +69,7 @@ const IndustriesWeServe = () => {
         {/* Grid */}
         <ScrollRevealStagger
           staggerChildren={0.05}
-          className="mt-14 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6"
+          className="mt-10 sm:mt-14 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 md:gap-6"
         >
           {industries.map((item) => (
             <ScrollReveal key={item.name} variant="blur-up">

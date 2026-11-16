@@ -57,7 +57,7 @@
 }
 
 .container {
-  @apply mx-auto w-full max-w-[1380px];
+  @apply mx-auto w-full max-w-[1380px] px-4 sm:px-6 lg:px-8;
 }
 
 @layer utilities {

@@ -33,7 +33,7 @@ const TypingHeadingOnScroll = ({ textBefore, textGradient }: ITypingTextProps) =
     <div ref={ref} className="mt-8 text-center">
       {/* Heading — h1 */}
       <motion.h1
-        className="font-display text-5xl font-bold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl"
+        className="font-display text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.15] tracking-tight px-2"
         initial="hidden"
       >
         {textBefore}
@@ -41,7 +41,7 @@ const TypingHeadingOnScroll = ({ textBefore, textGradient }: ITypingTextProps) =
 
       {/* Subheading — p */}
       <motion.p
-        className="gradient-text text-3xl sm:text-3xl font-semibold mt-2"
+        className="gradient-text text-lg sm:text-2xl md:text-3xl lg:text-4xl font-semibold mt-2 px-2"
         initial="hidden"
         animate={controls}
         variants={{

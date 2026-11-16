@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import { Search, Compass, PenTool, Code2, ShieldCheck, Rocket, ArrowRight } from 'lucide-react';
 import { ScrollReveal, ScrollRevealStagger } from '../scroll-reveal';
+import Link from 'next/link';
 
 const steps = [
   {
@@ -64,15 +65,15 @@ const DevelopmentProcess = () => {
 
       <div className="container relative">
         {/* Header */}
-        <div className="mx-auto max-w-7xl text-center">
+        <div className="mx-auto max-w-7xl text-center px-2">
           <ScrollReveal>
             <span className="announcement-badge">
               <span className="glow-dot" /> How we build
             </span>
-            <h2 className="mt-6 font-display font-bold leading-tight text-foreground md:text-4xl">
+            <h2 className="mt-6 font-display font-bold leading-tight text-foreground text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
               Our Digital Marketing Strategy & <span className="gradient-text">Execution Process</span>
             </h2>
-            <p className="mt-4 text-center text-muted-foreground max-w-4xl mx-auto text-lg leading-relaxed">
+            <p className="mt-4 text-center text-muted-foreground max-w-4xl mx-auto text-sm sm:text-base md:text-lg leading-relaxed">
               A structured, transparent, and results-driven workflow — from the first conversation to post-launch scale.
               Six phases engineered for quality, velocity, and long-term success.
             </p>
@@ -80,7 +81,7 @@ const DevelopmentProcess = () => {
         </div>
 
         {/* Vertical rail with staggered cards */}
-        <div className="relative mx-auto mt-20 max-w-6xl">
+        <div className="relative mx-auto mt-12 sm:mt-16 lg:mt-20 max-w-6xl">
           {/* Center rail (desktop) */}
           <div
             aria-hidden
@@ -91,7 +92,7 @@ const DevelopmentProcess = () => {
             }}
           />
 
-          <ScrollRevealStagger staggerChildren={0.15} className="space-y-10 lg:space-y-16">
+          <ScrollRevealStagger staggerChildren={0.15} className="space-y-6 sm:space-y-10 lg:space-y-16">
             {steps.map((s, i) => {
               const isLeft = i % 2 === 0;
               return (
@@ -114,7 +115,7 @@ const DevelopmentProcess = () => {
                     <motion.div
                       whileHover={{ y: -4 }}
                       transition={{ type: 'spring', stiffness: 200, damping: 20 }}
-                      className="group relative overflow-hidden rounded-3xl border border-border bg-card/70 p-7 backdrop-blur-xl md:p-8"
+                      className="group relative overflow-hidden rounded-2xl sm:rounded-3xl border border-border bg-card/70 p-5 sm:p-7 md:p-8 backdrop-blur-xl"
                     >
                       {/* Rotating gradient border on hover */}
                       <div
@@ -130,26 +131,30 @@ const DevelopmentProcess = () => {
                         }}
                       />
 
-                      <div className="relative flex items-start gap-5">
+                      <div className="relative flex flex-col sm:flex-row items-start gap-4 sm:gap-5">
                         {/* Step chip */}
                         <div className="relative shrink-0">
-                          <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/25 to-[hsl(var(--hero-gradient-end))]/20 ring-1 ring-primary/30">
-                            <s.icon className="h-6 w-6 text-primary" />
+                          <div className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/25 to-[hsl(var(--hero-gradient-end))]/20 ring-1 ring-primary/30">
+                            <s.icon className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
                           </div>
-                          <span className="absolute -right-2 -top-2 flex h-7 min-w-7 items-center justify-center rounded-full border border-border bg-background px-2 font-display text-xs font-bold text-foreground">
+                          <span className="absolute -right-2 -top-2 flex h-6 min-w-6 sm:h-7 sm:min-w-7 items-center justify-center rounded-full border border-border bg-background px-1.5 sm:px-2 font-display text-[10px] sm:text-xs font-bold text-foreground">
                             {String(i + 1).padStart(2, '0')}
                           </span>
                         </div>
 
                         <div className="min-w-0 flex-1">
-                          <h3 className="font-display text-xl font-semibold text-foreground md:text-2xl">{s.title}</h3>
-                          <p className="mt-2 text-sm leading-relaxed text-muted-foreground md:text-base">{s.desc}</p>
+                          <h3 className="font-display text-lg sm:text-xl font-semibold text-foreground md:text-2xl">
+                            {s.title}
+                          </h3>
+                          <p className="mt-2 text-xs sm:text-sm leading-relaxed text-muted-foreground md:text-base">
+                            {s.desc}
+                          </p>
 
-                          <div className="mt-5 flex flex-wrap gap-2">
+                          <div className="mt-4 sm:mt-5 flex flex-wrap gap-1.5 sm:gap-2">
                             {s.tags.map((t) => (
                               <span
                                 key={t}
-                                className="rounded-full border border-border bg-background/60 px-3 py-1 text-xs text-muted-foreground"
+                                className="rounded-full border border-border bg-background/60 px-2.5 sm:px-3 py-0.5 sm:py-1 text-[11px] sm:text-xs text-muted-foreground"
                               >
                                 {t}
                               </span>
@@ -187,16 +192,21 @@ const DevelopmentProcess = () => {
 
         {/* Footer CTA */}
         <ScrollReveal delay={0.1}>
-          <div className="mx-auto mt-16 flex max-w-3xl flex-col items-center justify-between gap-4 rounded-2xl border border-border bg-card/60 p-6 backdrop-blur md:flex-row">
+          <div className="mx-auto mt-12 sm:mt-16 flex max-w-3xl flex-col items-center justify-between gap-5 rounded-2xl border border-border bg-card/60 p-5 sm:p-6 backdrop-blur text-center md:text-left md:flex-row">
             <div>
-              <p className="font-display text-lg font-semibold text-foreground">Start Growing Your Brand Today</p>
-              <p className="text-sm text-muted-foreground">
+              <p className="font-display text-base sm:text-lg font-semibold text-foreground">
+                Start Growing Your Brand Today
+              </p>
+              <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">
                 Book a discovery call and get a tailored roadmap within a week.
               </p>
             </div>
-            <button className="btn-primary-gradient inline-flex items-center gap-2 text-sm">
-              Grow Your Business Today <ArrowRight className="h-4 w-4" />
-            </button>
+            <Link
+              href="/#contact"
+              className="btn-primary-gradient inline-flex items-center justify-center gap-2 text-sm w-full md:w-auto shrink-0"
+            >
+              Grow Your Business Today <ArrowRight className="h-4 w-4 shrink-0" />
+            </Link>
           </div>
         </ScrollReveal>
       </div>

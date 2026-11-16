@@ -60,26 +60,26 @@ const FAQSection = () => {
 
       <div className="container relative">
         {/* Header */}
-        <div className="mb-14 text-center">
+        <div className="mb-10 sm:mb-14 text-center px-2">
           <ScrollReveal variant="fade">
             <span className="announcement-badge">
               <HelpCircle className="h-4 w-4 text-primary" />
               FAQs
             </span>
-            <h2 className="mt-5 font-display font-bold text-foreground md:text-4xl">
+            <h2 className="mt-5 font-display font-bold text-foreground text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
               Question? <span className="gradient-text">Look here</span>
             </h2>
-            <p className="text-lg mx-auto mt-4 max-w-2xl text-muted-foreground">
+            <p className="text-sm sm:text-base md:text-lg mx-auto mt-4 max-w-2xl text-muted-foreground">
               Everything you need to know about working with Growth Voice. Can't find the answer? Our team is online.
             </p>
           </ScrollReveal>
         </div>
 
         {/* Content Grid */}
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
+        <div className="grid grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-12">
           {/* FAQ Accordion */}
           <div className="lg:col-span-7">
-            <div className="space-y-4">
+            <div className="space-y-3.5 sm:space-y-4">
               {faqs.map((faq, i) => {
                 const isOpen = openIndex === i;
                 return (
@@ -93,17 +93,17 @@ const FAQSection = () => {
                     >
                       <button
                         onClick={() => toggle(i)}
-                        className="flex w-full items-center justify-between px-6 py-5 text-left"
+                        className="flex w-full items-center justify-between px-4 sm:px-6 py-4 sm:py-5 text-left"
                       >
-                        <span className="font-display text-base font-semibold text-foreground md:text-lg">
+                        <span className="font-display text-sm sm:text-base md:text-lg font-semibold text-foreground pr-2">
                           {faq.question}
                         </span>
                         <span
-                          className={`ml-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-all duration-300 ${
+                          className={`ml-2 sm:ml-4 flex h-7 w-7 sm:h-8 sm:w-8 shrink-0 items-center justify-center rounded-full transition-all duration-300 ${
                             isOpen ? 'bg-primary text-primary-foreground' : 'bg-secondary text-muted-foreground'
                           }`}
                         >
-                          {isOpen ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
+                          {isOpen ? <Minus className="h-3.5 w-3.5 sm:h-4 sm:w-4" /> : <Plus className="h-3.5 w-3.5 sm:h-4 sm:w-4" />}
                         </span>
                       </button>
 
@@ -115,8 +115,8 @@ const FAQSection = () => {
                             exit={{ height: 0, opacity: 0 }}
                             transition={{ duration: 0.3, ease: 'easeInOut' }}
                           >
-                            <div className="border-t border-border/60 px-6 pb-5 pt-3">
-                              <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
+                            <div className="border-t border-border/60 px-4 sm:px-6 pb-4 sm:pb-5 pt-3">
+                              <p className="text-muted-foreground text-xs sm:text-sm md:text-base leading-relaxed">{faq.answer}</p>
                             </div>
                           </motion.div>
                         )}
@@ -129,23 +129,23 @@ const FAQSection = () => {
           </div>
 
           {/* Right Side Cards */}
-          <div className="flex flex-col gap-6 lg:col-span-5">
+          <div className="flex flex-col gap-4 sm:gap-6 lg:col-span-5">
             <ScrollReveal delay={0.1}>
               {/* Contact Card */}
-              <div className="relative overflow-hidden rounded-3xl border border-border bg-card/60 p-8 backdrop-blur">
+              <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-border bg-card/60 p-6 sm:p-8 backdrop-blur">
                 {/* Subtle animated gradient border overlay */}
                 <div className="animated-border-wrapper-subtle absolute inset-[-2px] -z-10 rounded-3xl opacity-20" />
 
                 <div className="relative flex flex-col items-center text-center">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/15">
-                    <MessageCircle className="h-8 w-8 text-primary" />
+                  <div className="flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-2xl bg-primary/15">
+                    <MessageCircle className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
                   </div>
-                  <h3 className="mt-5 font-display text-xl font-bold text-foreground">You have different questions?</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">
+                  <h3 className="mt-4 sm:mt-5 font-display text-lg sm:text-xl font-bold text-foreground">You have different questions?</h3>
+                  <p className="mt-2 text-xs sm:text-sm text-muted-foreground">
                     Our team will answer all your questions. We ensure a quick response.
                   </p>
-                  <Link href="/#contact">
-                    <button className="btn-primary-gradient mt-6 text-sm">Contact Us</button>
+                  <Link href="/#contact" className="w-full sm:w-auto">
+                    <button className="btn-primary-gradient mt-5 sm:mt-6 text-sm w-full sm:w-auto">Contact Us</button>
                   </Link>
                 </div>
               </div>
@@ -153,14 +153,14 @@ const FAQSection = () => {
 
             <ScrollReveal delay={0.2}>
               {/* 24/7 Service Card */}
-              <div className="rounded-3xl border border-border bg-card/40 p-6 backdrop-blur">
-                <div className="flex items-center gap-4">
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-primary/15">
-                    <Phone className="h-6 w-6 text-primary" />
+              <div className="rounded-2xl sm:rounded-3xl border border-border bg-card/40 p-5 sm:p-6 backdrop-blur">
+                <div className="flex items-center gap-3.5 sm:gap-4">
+                  <div className="flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-full bg-primary/15">
+                    <Phone className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground">Your Growth, Our Mission</p>
-                    <p className="font-display text-xl font-bold text-foreground">24/7 Service</p>
+                    <p className="text-xs sm:text-sm text-muted-foreground">Your Growth, Our Mission</p>
+                    <p className="font-display text-lg sm:text-xl font-bold text-foreground">24/7 Service</p>
                   </div>
                 </div>
               </div>

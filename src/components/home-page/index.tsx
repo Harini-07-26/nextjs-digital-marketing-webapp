@@ -8,7 +8,7 @@ import Testimonials from '../testimonials';
 
 const HomePage = () => {
   return (
-    <div className="p-2">
+    <div className="w-full overflow-x-hidden">
       <Hero />
       <IndustriesWeServe />
       {/* <ServicesSection /> */}

@@ -12,7 +12,7 @@ const Index = () => {
   return (
     <>
       <StructuredData />
-      <div className="min-h-screen bg-background my-10">
+      <div className="min-h-screen bg-background pt-16 sm:pt-20">
         <HomePage />
       </div>
     </>
