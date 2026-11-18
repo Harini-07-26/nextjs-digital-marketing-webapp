@@ -40,10 +40,12 @@
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 5rem;
+    overflow-x: clip;
   }
 
   body {
     @apply bg-background text-foreground transition-colors duration-300;
+    overflow-x: clip;
   }
 }
 
