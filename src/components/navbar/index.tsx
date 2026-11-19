@@ -20,33 +20,33 @@ const serviceItems: ServiceMenuItem[] = [
   },
   {
     title: 'GEO Services',
-    href: '/#our-services',
+    href: '/services#services-catalog',
     icon: Globe
   },
   {
     title: 'PPC Advertising',
-    href: '/#our-services',
+    href: '/services#services-catalog',
     icon: Target
   },
   {
     title: 'Social Media Marketing',
-    href: '/#our-services',
+    href: '/services#services-catalog',
     icon: Megaphone
   },
   {
     title: 'Content Marketing',
-    href: '/#our-services',
+    href: '/services#services-catalog',
     icon: FileText
   },
   {
     title: 'Web Development',
-    href: '/#our-services',
+    href: '/services#services-catalog',
     icon: Code2
   }
 ];
 
 const navLinks = [
-  { id: 1, href: '/#our-services', label: 'Our Services' },
+  { id: 1, href: '/services', label: 'Our Services' },
   { id: 2, href: '/#why-growthvoice', label: 'Why GrowthVoice' },
   { id: 4, href: '/#industries', label: 'Industries' },
   { id: 5, href: '/#testimonials', label: 'Testimonials' },
@@ -59,6 +59,29 @@ const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const servicesDropdownRef = useRef<HTMLDivElement>(null);
+  const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleMouseEnter = () => {
+    if (hoverTimeoutRef.current) {
+      clearTimeout(hoverTimeoutRef.current);
+      hoverTimeoutRef.current = null;
+    }
+    setServicesOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    hoverTimeoutRef.current = setTimeout(() => {
+      setServicesOpen(false);
+    }, 200);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (hoverTimeoutRef.current) {
+        clearTimeout(hoverTimeoutRef.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme') as 'dark' | 'light' | null;
@@ -157,10 +180,19 @@ const Navbar = () => {
             {navLinks.map((link) => {
               if (link.id === 1) {
                 return (
-                  <div key={link.id} className="relative" ref={servicesDropdownRef}>
-                    <button
-                      type="button"
-                      onClick={() => setServicesOpen((prev) => !prev)}
+                  <div
+                    key={link.id}
+                    className="relative"
+                    ref={servicesDropdownRef}
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                  >
+                    <Link
+                      href="/services"
+                      onClick={() => {
+                        setServicesOpen(false);
+                        closeMobileMenu();
+                      }}
                       className={`nav-link text-xs xl:text-sm whitespace-nowrap flex items-center gap-1.5 transition-colors cursor-pointer py-1.5 px-2 rounded-lg ${
                         servicesOpen ? 'text-primary font-semibold' : ''
                       }`}
@@ -173,7 +205,7 @@ const Navbar = () => {
                           servicesOpen ? 'rotate-180 text-primary' : 'text-foreground/70'
                         }`}
                       />
-                    </button>
+                    </Link>
 
                     {/* Services Dropdown Options Menu */}
                     <AnimatePresence>
@@ -297,6 +329,14 @@ const Navbar = () => {
                               transition={{ duration: 0.25 }}
                               className="overflow-hidden border-t border-border/40 bg-background/50 px-3 py-3"
                             >
+                              <Link
+                                href="/services"
+                                onClick={closeMobileMenu}
+                                className="flex items-center justify-between rounded-lg bg-primary/10 border border-primary/20 px-3 py-2 text-xs font-semibold text-primary mb-2.5 transition-colors hover:bg-primary/20"
+                              >
+                                <span>Explore All Services Page</span>
+                                <ChevronRight className="h-3.5 w-3.5" />
+                              </Link>
                               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                                 {serviceItems.map((item) => {
                                   const Icon = item.icon;

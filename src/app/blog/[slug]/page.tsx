@@ -248,6 +248,46 @@ export default async function BlogPostDetailPage({ params }: PageProps) {
                   );
                 }
 
+                if (block.type === 'table') {
+                  return (
+                    <div
+                      key={bIndex}
+                      className="my-6 overflow-x-auto rounded-2xl border border-border/70 bg-card/60 backdrop-blur-md shadow-lg"
+                    >
+                      <table className="w-full text-left text-sm">
+                        <thead className="border-b border-border/80 bg-secondary/60 text-foreground font-semibold">
+                          <tr>
+                            {block.headers.map((header, hIdx) => (
+                              <th
+                                key={hIdx}
+                                className="px-5 py-3.5 text-xs font-bold uppercase tracking-wider text-primary"
+                              >
+                                {header}
+                              </th>
+                            ))}
+                          </tr>
+                        </thead>
+                        <tbody className="divide-y divide-border/40 text-muted-foreground">
+                          {block.rows.map((row, rIdx) => (
+                            <tr key={rIdx} className="hover:bg-secondary/30 transition-colors">
+                              {row.map((cell, cIdx) => (
+                                <td
+                                  key={cIdx}
+                                  className={`px-5 py-3.5 ${
+                                    cIdx === 0 ? 'font-medium text-foreground whitespace-nowrap' : 'leading-relaxed'
+                                  }`}
+                                >
+                                  {cell}
+                                </td>
+                              ))}
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  );
+                }
+
                 return null;
               })}
 
