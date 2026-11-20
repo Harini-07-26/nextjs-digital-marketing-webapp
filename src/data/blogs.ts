@@ -21,7 +21,13 @@ export interface BlogHighlightBlock {
   text: string;
 }
 
-export type BlogContentBlock = BlogParagraphBlock | BlogBoldBlock | BlogListBlock | BlogHighlightBlock;
+export interface BlogTableBlock {
+  type: 'table';
+  headers: string[];
+  rows: string[][];
+}
+
+export type BlogContentBlock = BlogParagraphBlock | BlogBoldBlock | BlogListBlock | BlogHighlightBlock | BlogTableBlock;
 
 export interface BlogSection {
   heading: string;
@@ -55,7 +61,7 @@ export const blogPosts: BlogPost[] = [
     slug: 'ai-powered-digital-marketing-strategies-2027',
     title: 'AI-Powered Digital Marketing: 10 Strategies for 2027',
     author: 'Harini',
-    date: 'November 14, 2026',
+    date: 'November 19, 2026',
     image: '/blogs/ai_powered_digital_marketing_10_strategies_for_2027.jpg',
     commentsCount: 0,
     category: 'Digital Marketing',
@@ -819,6 +825,428 @@ export const blogPosts: BlogPost[] = [
             {
               type: 'paragraph',
               text: 'At Growth Voice, we believe the future of digital marketing belongs to businesses that combine technology, creativity, and smart strategies to achieve sustainable growth. Start exploring AI-powered digital marketing today and prepare your business for the opportunities of 2027.'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: '2',
+    slug: 'how-zero-click-searches-are-changing-digital-marketing',
+    title: 'How Zero-Click Searches Are Changing Digital Marketing',
+    author: 'Harini',
+    date: 'November 19, 2026',
+    image: '/blogs/how_zero_click_searches_are_changing_digital_marketing.jpg',
+    commentsCount: 0,
+    category: 'SEO Strategy',
+    readTime: '9 min read',
+
+    excerpt:
+      'Explore how zero-click searches are changing digital marketing and discover SEO strategies to improve brand visibility, search presence, and organic growth.',
+
+    tags: [
+      'Zero-Click Searches',
+      'SEO Strategy',
+      'Digital Marketing',
+      'AI Overviews',
+      'Search Visibility',
+      'SERP Features',
+      'Featured Snippets',
+      'Brand Authority',
+      'Organic Growth'
+    ],
+
+    content: {
+      paragraphs: [
+        {
+          type: 'paragraph',
+          text: 'The way people search for information online is changing. Traditionally, users entered a search query, reviewed the results, clicked a website, and explored its content to find an answer. Today, many searches end without a website visit. Users can find the information they need directly on search engine results pages (SERPs) through featured snippets, knowledge panels, local business listings, AI Overviews, and other search features.'
+        },
+        {
+          type: 'paragraph',
+          text: 'This behavior is known as a zero-click search. It occurs when users receive the information they are looking for directly within search results without clicking through to an external website.'
+        },
+        {
+          type: 'paragraph',
+          text: 'For businesses, this development is changing how digital marketing success is measured. Website traffic and keyword rankings are still important, but they no longer represent the complete picture of online visibility. Brand exposure, search impressions, authority, customer engagement, and conversions across different channels are becoming increasingly important.'
+        },
+        {
+          type: 'paragraph',
+          text: 'As search engines introduce more AI-powered features and conversational experiences, businesses need to rethink their SEO and digital marketing strategies. Understanding zero-click searches can help brands maintain visibility, build trust, and reach potential customers even when they do not receive an immediate website visit.'
+        },
+        {
+          type: 'paragraph',
+          text: 'In this blog, we will examine how zero-click searches are changing digital marketing and the strategies businesses can use to adapt.'
+        }
+      ],
+      sections: [
+        {
+          heading: 'What Are Zero-Click Searches?',
+          body: [
+            {
+              type: 'paragraph',
+              text: 'Zero-click searches happen when users find the information they need directly on a search engine results page without visiting an external website. Instead of clicking through multiple search results, they can access answers, business information, definitions, and other details within the search interface.'
+            },
+            {
+              type: 'paragraph',
+              text: 'Search engines provide different features to make information more accessible and reduce the effort required to find answers. Some common examples include:'
+            },
+            {
+              type: 'list',
+              items: [
+                {
+                  title: 'Featured Snippets',
+                  text: 'Highlighted answers displayed near the top of search results, often extracted from relevant web pages.'
+                },
+                {
+                  title: 'Knowledge Panels',
+                  text: 'Information boxes displaying details about businesses, brands, people, and other entities.'
+                },
+                {
+                  title: 'People Also Ask',
+                  text: 'Expandable questions that provide additional information related to a user’s search.'
+                },
+                {
+                  title: 'Local Search Results',
+                  text: 'Business listings showing addresses, reviews, operating hours, contact details, and directions.'
+                },
+                {
+                  title: 'AI Overviews',
+                  text: 'AI-generated summaries that combine information from multiple sources to answer certain search queries.'
+                },
+                {
+                  title: 'Calculator and Conversion Tools',
+                  text: 'Direct answers to mathematical calculations, currency conversions, and measurement-related searches.'
+                }
+              ]
+            },
+            {
+              type: 'paragraph',
+              text: 'For example, when someone searches for "What is digital marketing?", Google may display a direct explanation through a featured snippet or AI-powered search feature. The user can understand the concept without visiting a digital marketing website.'
+            },
+            {
+              type: 'paragraph',
+              text: 'Similarly, someone searching for "digital marketing agencies near me" may compare business names, ratings, locations, and contact details directly within local search results.'
+            },
+            {
+              type: 'highlight',
+              title: 'Strategic Context',
+              text: 'These experiences make searching more convenient for users. However, they also create new challenges for businesses that traditionally depend on organic website clicks to attract visitors.'
+            }
+          ]
+        },
+        {
+          heading: 'Why Are Zero-Click Searches Increasing?',
+          body: [
+            {
+              type: 'paragraph',
+              text: 'The growth of zero-click searches is connected to changing user expectations and improvements in search engine technology. People increasingly expect quick, relevant answers without navigating through several websites. Several developments are contributing to this shift:'
+            },
+            {
+              type: 'list',
+              items: [
+                {
+                  title: 'Growing Demand for Instant Information',
+                  text: 'Users want immediate answers to simple questions. They may not need to visit a website to find a business address, check a definition, or understand a basic concept. Search engines respond to this demand by displaying useful information directly within their results.'
+                },
+                {
+                  title: 'Expansion of AI-Powered Search',
+                  text: 'Artificial intelligence is changing how search engines understand queries and organize information. AI Overviews and conversational search experiences can summarize information from multiple sources, helping users explore complex topics without opening several web pages.'
+                },
+                {
+                  title: 'Improved Search Engine Features',
+                  text: 'Featured snippets, knowledge panels, local packs, and other SERP features have made search results more informative. These features allow users to complete simple information-gathering tasks directly on the search results page.'
+                },
+                {
+                  title: 'Increasing Mobile Search Usage',
+                  text: 'Mobile users often prefer quick information because they are searching while travelling, shopping, working, or completing everyday activities. Direct answers and interactive search features make these experiences more convenient.'
+                },
+                {
+                  title: 'More Conversational Search Behavior',
+                  text: 'Users increasingly search with complete questions instead of short keyword phrases. Queries such as "Which digital marketing strategy works best for small businesses?" encourage search engines to provide direct, contextually relevant information.'
+                }
+              ]
+            },
+            {
+              type: 'paragraph',
+              text: 'Together, these developments are transforming search engines from simple website discovery tools into information and decision-making platforms.'
+            }
+          ]
+        },
+        {
+          heading: 'How Zero-Click Searches Are Changing Digital Marketing',
+          body: [
+            {
+              type: 'paragraph',
+              text: 'Zero-click searches are influencing several areas of digital marketing, including SEO, content marketing, brand positioning, and customer acquisition. Businesses can no longer depend entirely on website visits to measure their search performance. Here are the major changes taking place:'
+            },
+            {
+              type: 'list',
+              items: [
+                {
+                  title: 'SEO Is Moving Beyond Traditional Rankings',
+                  text: 'Previously, businesses focused heavily on securing the top positions in organic search results. Today, appearing in featured snippets, AI Overviews, knowledge panels, and other search features can also influence brand visibility. SEO strategies need to consider the complete search results page rather than focusing exclusively on traditional rankings.'
+                },
+                {
+                  title: 'Brand Visibility Is Becoming More Important',
+                  text: 'Users may see a company’s name or website as a source in search results without visiting it immediately. Repeated exposure can help build familiarity and brand recognition. Businesses need to establish a consistent presence across relevant search queries and digital platforms.'
+                },
+                {
+                  title: 'Organic Traffic Is Becoming More Competitive',
+                  text: 'When search engines answer questions directly, fewer users may need to visit external websites. This can affect traffic for informational keywords, particularly when the query requires only a short answer. Businesses must identify keywords that create opportunities for deeper engagement, product discovery, and conversions.'
+                },
+                {
+                  title: 'Content Marketing Needs More Strategic Planning',
+                  text: 'Publishing large volumes of generic blog posts is less effective as a standalone strategy. Businesses need original research, practical insights, expert opinions, and detailed resources that provide value beyond basic information already available in search results.'
+                },
+                {
+                  title: 'Customer Journeys Are Becoming Less Predictable',
+                  text: 'A potential customer may discover a brand through an AI Overview, search for its name later, view social media content, and eventually visit its website directly. This means marketers need to consider multiple touchpoints instead of attributing every conversion to the last website click.'
+                }
+              ]
+            }
+          ]
+        },
+        {
+          heading: 'The Impact of Zero-Click Searches on SEO and Organic Traffic',
+          body: [
+            {
+              type: 'paragraph',
+              text: 'One of the biggest concerns surrounding zero-click searches is their potential impact on organic website traffic. Businesses invest in search engine optimization to improve visibility and attract visitors. However, when search engines provide direct answers, users may find less reason to click through to individual websites.'
+            },
+            {
+              type: 'highlight',
+              title: 'Industry Research Benchmark (Search Engine Land / SparkToro)',
+              text: 'A 2026 study reported by Search Engine Land, based on SparkToro research using Similarweb clickstream data, found that 68.01% of Google searches in the United States during the first four months of 2026 ended without a click (compared to 60.45% in 2024). This highlights the growing importance of evaluating search visibility beyond website traffic alone.'
+            },
+            {
+              type: 'paragraph',
+              text: 'However, zero-click searches do not mean that SEO has lost its value. Instead, businesses need to understand which types of search queries are more likely to generate website visits and which primarily create brand exposure. For example, a user searching for "What is email marketing?" may find a direct answer without visiting a website. However, someone searching for "best email marketing software for ecommerce businesses" may want to compare features, pricing, integrations, and product capabilities. This creates different optimization opportunities:'
+            },
+            {
+              type: 'list',
+              items: [
+                {
+                  title: 'Informational Keywords',
+                  text: 'Help build brand awareness, topical authority, and high-volume visibility across search results.'
+                },
+                {
+                  title: 'Commercial Keywords',
+                  text: 'Attract qualified prospects actively researching, comparing products, and evaluating solutions.'
+                },
+                {
+                  title: 'Transactional Keywords',
+                  text: 'Capture users ready to purchase, book a demo, or submit high-intent business enquiries.'
+                },
+                {
+                  title: 'Branded Keywords',
+                  text: 'Ensure users searching directly for your business find accurate, authoritative, and compelling information.'
+                },
+                {
+                  title: 'Long-Tail Keywords',
+                  text: 'Attract visitors looking for nuanced, detailed solutions where direct snippets cannot provide the complete answer.'
+                }
+              ]
+            },
+            {
+              type: 'paragraph',
+              text: 'Businesses should also review Search Console impressions, click-through rates, landing page performance, and conversions to understand how their organic visibility is changing. The goal is not simply to recover every lost click. It is to attract visitors who have a stronger reason to engage with your business.'
+            }
+          ]
+        },
+        {
+          heading: 'How AI Overviews and Generative Search Are Accelerating Zero-Click Behavior',
+          body: [
+            {
+              type: 'paragraph',
+              text: 'Artificial intelligence is one of the major developments influencing modern search behavior. Google AI Overviews and AI Mode can provide synthesized answers to complex questions, reducing the need for users to open several websites to gather information.'
+            },
+            {
+              type: 'paragraph',
+              text: 'For digital marketers, this introduces a new challenge: creating content that remains valuable when search engines summarize information directly on their platforms.'
+            },
+            {
+              type: 'paragraph',
+              text: 'Consider someone searching for "How can small businesses improve online visibility?" An AI-powered search experience may summarize several recommendations, such as SEO, social media marketing, content creation, and paid advertising. A business that publishes only basic definitions may have limited differentiation. However, a website containing original research, detailed implementation examples, industry-specific recommendations, and practical insights offers additional value.'
+            },
+            {
+              type: 'paragraph',
+              text: 'Businesses should consider the following approaches to stay ahead in generative search:'
+            },
+            {
+              type: 'list',
+              items: [
+                {
+                  title: 'Create Original and Useful Content',
+                  text: 'Publish information that provides something beyond commonly available explanations. Include practical examples, first-hand experience, expert contributions, and relevant industry insights.'
+                },
+                {
+                  title: 'Build Topical Authority',
+                  text: 'Cover important subjects comprehensively through connected service pages, guides, case studies, and supporting articles. This helps establish a clear relationship between your brand and its areas of expertise.'
+                },
+                {
+                  title: 'Improve Content Structure',
+                  text: 'Use descriptive headings, concise explanations, informative lists, and relevant supporting details. Organize information so readers and search algorithms can quickly understand important concepts.'
+                },
+                {
+                  title: 'Strengthen Technical SEO',
+                  text: 'Ensure that important pages can be crawled, indexed, and accessed by search engines. Maintain appropriate internal links, mobile usability, Core Web Vitals, and website performance.'
+                },
+                {
+                  title: 'Develop Brand Credibility',
+                  text: 'Maintain consistent business information, demonstrate expertise, and earn relevant industry references that strengthen your brand’s digital presence.'
+                }
+              ]
+            },
+            {
+              type: 'paragraph',
+              text: 'Google’s official guidance confirms that traditional SEO fundamentals remain relevant for AI Overviews and AI Mode. It does not require special AI-specific markup or a separate optimization system to qualify for these experiences.'
+            }
+          ]
+        },
+        {
+          heading: 'Zero-Click Search Optimization Strategies for Businesses',
+          body: [
+            {
+              type: 'paragraph',
+              text: 'Businesses need a more comprehensive search strategy to maintain visibility in an environment where users increasingly find information without clicking through to websites. The following 8 strategies can help improve your brand’s presence across search experiences:'
+            },
+            {
+              type: 'list',
+              items: [
+                {
+                  title: '1. Optimize Content for Featured Snippets',
+                  text: 'Identify relevant questions your audience frequently searches for and provide clear, direct answers. Use descriptive headings, short explanations, numbered steps, and informative lists where appropriate. This can improve your content’s suitability for featured snippet opportunities.'
+                },
+                {
+                  title: '2. Strengthen Local SEO Visibility',
+                  text: 'Optimize your Google Business Profile with accurate business details, services, categories, operating hours, photographs, and contact information. Encourage genuine customer reviews and maintain consistent NAP information across relevant directories.'
+                },
+                {
+                  title: '3. Develop Question-Based Content',
+                  text: 'Create useful content around customer questions, concerns, comparisons, and purchasing decisions. Instead of targeting only short keywords, cover relevant conversational queries and long-tail searches that reflect how people actually look for solutions.'
+                },
+                {
+                  title: '4. Improve Brand Search Visibility',
+                  text: 'Build brand recognition through consistent content publishing, digital PR, social media marketing, industry participation, and relevant third-party mentions. A recognizable brand encourages users to search for your business directly.'
+                },
+                {
+                  title: '5. Optimize Content for AI Search Experiences',
+                  text: 'Create reliable, well-structured, and original information that addresses user needs. Make sure important content is accessible to search engines and supported by relevant examples, evidence, and expert insights.'
+                },
+                {
+                  title: '6. Use Structured Data Correctly',
+                  text: 'Implement relevant schema markup, such as Organization, LocalBusiness, Product, Article, and FAQPage when appropriate. Structured data helps search engines interpret eligible page information accurately.'
+                },
+                {
+                  title: '7. Build a Strong Multichannel Presence',
+                  text: 'Don’t depend exclusively on Google organic search. Use social media, email marketing, video platforms, digital PR, and other relevant channels to maintain brand visibility across different stages of the customer journey.'
+                },
+                {
+                  title: '8. Create Content That Encourages Deeper Engagement',
+                  text: 'Publish detailed guides, comparison pages, case studies, calculators, downloadable resources, and other useful assets. These formats give users a compelling reason to visit your website when a short search summary is not enough.'
+                }
+              ]
+            }
+          ]
+        },
+        {
+          heading: 'How to Measure Digital Marketing Performance Beyond Website Clicks',
+          body: [
+            {
+              type: 'paragraph',
+              text: 'When zero-click searches become more common, businesses need to expand how they measure SEO and digital marketing performance. Website traffic remains an important metric, but it should not be the only indicator of campaign success. Consider tracking these performance indicators:'
+            },
+            {
+              type: 'table',
+              headers: ['Performance Metric', 'What It Measures'],
+              rows: [
+                ['Search Impressions', 'How frequently your website appears in search results'],
+                ['Brand Mentions', 'How often your business is referenced across digital platforms'],
+                ['Search Visibility', 'Your website’s presence across relevant search queries'],
+                ['Click-Through Rate (CTR)', 'The percentage of impressions that generate clicks'],
+                ['Branded Searches', 'How frequently users search for your business or brand'],
+                ['Organic Conversions', 'Leads, purchases, and enquiries from organic search'],
+                ['Assisted Conversions', 'How organic search contributes to conversions across multiple touchpoints'],
+                ['Engagement Metrics', 'How visitors interact with your website content']
+              ]
+            },
+            {
+              type: 'paragraph',
+              text: 'Google Search Console can help monitor search impressions, clicks, and CTR, while Google Analytics 4 can provide insights into website engagement and conversions.'
+            },
+            {
+              type: 'highlight',
+              title: 'Visitor Quality in AI Search',
+              text: 'It is also important to evaluate the quality of organic visitors. Google has reported that clicks from search results containing AI Overviews can be higher quality, with visitors more likely to spend additional time on the destination website.'
+            },
+            {
+              type: 'paragraph',
+              text: 'By combining search performance data with business analytics, marketers can develop a more accurate understanding of how zero-click searches influence brand discovery and customer acquisition.'
+            }
+          ]
+        },
+        {
+          heading: 'The Future of Digital Marketing in a Zero-Click Search Environment',
+          body: [
+            {
+              type: 'paragraph',
+              text: 'Zero-click searches are likely to remain an important part of the evolving digital marketing landscape. As search engines introduce more AI-powered experiences, users will continue to find information through summaries, recommendations, interactive features, and conversational search. For businesses, this means adapting to a marketing environment where visibility and engagement can happen before a website visit. Future digital marketing strategies will increasingly focus on:'
+            },
+            {
+              type: 'list',
+              items: [
+                {
+                  title: 'Brand Authority',
+                  text: 'Building recognizable brands that users trust, remember, and actively search for by name.'
+                },
+                {
+                  title: 'AI Search Visibility',
+                  text: 'Creating useful content that can be discovered and referenced across AI-powered search experiences.'
+                },
+                {
+                  title: 'Entity Optimization',
+                  text: 'Maintaining consistent brand, product, and business information across relevant digital platforms.'
+                },
+                {
+                  title: 'Original Content',
+                  text: 'Publishing research, expert insights, case studies, and practical resources that offer unique value.'
+                },
+                {
+                  title: 'Multichannel Marketing',
+                  text: 'Connecting SEO, social media, email marketing, video marketing, and digital PR.'
+                },
+                {
+                  title: 'Conversion Optimization',
+                  text: 'Improving website experiences to turn relevant visitors into customers.'
+                },
+                {
+                  title: 'Customer Experience',
+                  text: 'Delivering useful information and consistent interactions throughout the buying journey.'
+                }
+              ]
+            },
+            {
+              type: 'paragraph',
+              text: 'Businesses that adapt early can build stronger digital visibility without depending entirely on traditional organic clicks.'
+            }
+          ]
+        },
+        {
+          heading: 'Conclusion',
+          body: [
+            {
+              type: 'paragraph',
+              text: 'Zero-click searches are changing digital marketing by shifting attention from website traffic alone toward broader search visibility, brand recognition, and customer engagement. Featured snippets, local search results, knowledge panels, and AI-powered search experiences are influencing how users discover information and interact with businesses.'
+            },
+            {
+              type: 'paragraph',
+              text: 'For marketers, the solution is not to abandon traditional SEO but to expand it. Businesses need to create original content, strengthen brand authority, optimize for evolving search experiences, and measure performance through meaningful business outcomes.'
+            },
+            {
+              type: 'paragraph',
+              text: 'GrowthVoice helps businesses adapt to these changes through strategic SEO, content marketing, technical optimization, and AI-ready search strategies. By combining established digital marketing practices with emerging search opportunities, businesses can build a stronger online presence and generate sustainable growth.'
             }
           ]
         }

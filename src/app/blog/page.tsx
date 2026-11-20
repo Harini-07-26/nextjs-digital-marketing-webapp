@@ -56,12 +56,12 @@ export default function BlogListingPage() {
           </div>
 
           {/* Heading */}
-          <h1 className="mt-6 font-display text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-foreground">
+          <h1 className="mt-6 font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground">
             Our <span className="gradient-text">Blogs</span>
           </h1>
 
           {/* Subtitle */}
-          <p className="mt-4 text-base sm:text-lg leading-relaxed text-muted-foreground max-w-3xl mx-auto font-normal">
+          <p className="mt-4 text-sm sm:text-base md:text-lg leading-relaxed text-muted-foreground max-w-3xl mx-auto font-normal">
             Explore the latest trends, strategies, and insights in Digital Marketing, AI-Driven Marketing, SEO, AEO,
             GEO, Content Strategy, Social Media Growth, Paid Advertising, Influencer Marketing, Marketing Automation,
             and Customer Engagement!

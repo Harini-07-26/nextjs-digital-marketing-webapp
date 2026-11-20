@@ -11,9 +11,8 @@ interface BlogListClientProps {
   posts: BlogPost[];
 }
 
-const categories = ['All Posts'];
-
 export default function BlogListClient({ posts }: BlogListClientProps) {
+  const categories = ['All Posts', ...(Array.from(new Set(posts.map((p) => p.category).filter(Boolean))) as string[])];
   const [selectedCategory, setSelectedCategory] = useState('All Posts');
   const [searchQuery, setSearchQuery] = useState('');
   const [isPending, startTransition] = useTransition();
