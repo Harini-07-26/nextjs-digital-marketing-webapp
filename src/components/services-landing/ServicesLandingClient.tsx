@@ -3,14 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import {
-  ArrowRight,
-  CheckCircle2,
-  ChevronRight,
-  Sparkles,
-  LayoutGrid,
-  CreditCard
-} from 'lucide-react';
+import { ArrowRight, CheckCircle2, ChevronRight, Sparkles, LayoutGrid, CreditCard } from 'lucide-react';
 
 import {
   digitalMarketingServices,
@@ -25,8 +18,7 @@ export default function ServicesLandingClient() {
   const [selectedServiceId, setSelectedServiceId] = useState<string>(digitalMarketingServices[0].id);
   const [activeAudienceIndex, setActiveAudienceIndex] = useState<number>(0);
 
-  const activeService =
-    digitalMarketingServices.find((s) => s.id === selectedServiceId) || digitalMarketingServices[0];
+  const activeService = digitalMarketingServices.find((s) => s.id === selectedServiceId) || digitalMarketingServices[0];
 
   const activeAudience = businessNeedsAudiences[activeAudienceIndex];
 
@@ -91,15 +83,15 @@ export default function ServicesLandingClient() {
               className="mt-6 space-y-4 text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto"
             >
               <p>
-                Your business needs more than an online presence to compete in a crowded digital market. It
-                needs a clear strategy to reach the right audience, communicate its value, and turn interest
-                into meaningful business opportunities.
+                Your business needs more than an online presence to compete in a crowded digital market. It needs a
+                clear strategy to reach the right audience, communicate its value, and turn interest into meaningful
+                business opportunities.
               </p>
               <p className="hidden sm:block">
-                At GrowthVoice, we bring together strategy, creativity, technology, and performance insights
-                to help businesses grow online. From improving search visibility and running targeted
-                advertising campaigns to building stronger social media connections and creating
-                conversion-focused websites, we focus on activities that support your business goals.
+                At GrowthVoice, we bring together strategy, creativity, technology, and performance insights to help
+                businesses grow online. From improving search visibility and running targeted advertising campaigns to
+                building stronger social media connections and creating conversion-focused websites, we focus on
+                activities that support your business goals.
               </p>
             </motion.div>
 
@@ -168,10 +160,9 @@ export default function ServicesLandingClient() {
               Our Digital <span className="gradient-text">Marketing Services</span>
             </h2>
             <p className="mt-4 text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
-              Every business has different marketing requirements. Some need stronger search visibility,
-              while others want to generate immediate enquiries or build an active online community.
-              GrowthVoice offers connected marketing services that address these needs and support your
-              business at different stages of growth.
+              Every business has different marketing requirements. Some need stronger search visibility, while others
+              want to generate immediate enquiries or build an active online community. GrowthVoice offers connected
+              marketing services that address these needs and support your business at different stages of growth.
             </p>
 
             {/* Dynamic View Switcher Pills */}
@@ -255,9 +246,7 @@ export default function ServicesLandingClient() {
                           </div>
                           <p
                             className={`text-sm sm:text-base font-bold transition-colors mt-0.5 ${
-                              isSelected
-                                ? 'text-foreground'
-                                : 'text-foreground/80 group-hover:text-foreground'
+                              isSelected ? 'text-foreground' : 'text-foreground/80 group-hover:text-foreground'
                             }`}
                           >
                             {service.title}
@@ -341,9 +330,7 @@ export default function ServicesLandingClient() {
                           <p className="text-xs font-bold uppercase tracking-wider text-primary mb-1">
                             Primary Strategic Objective:
                           </p>
-                          <p className="text-xs sm:text-sm text-foreground/90 font-medium">
-                            {activeService.objective}
-                          </p>
+                          <p className="text-xs sm:text-sm text-foreground/90 font-medium">{activeService.objective}</p>
                         </div>
 
                         {/* Inclusions checklist */}
@@ -371,7 +358,7 @@ export default function ServicesLandingClient() {
                       {/* Bottom action bar */}
                       <div className="mt-8 pt-6 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between gap-4">
                         <Link
-                          href="#contact"
+                          href={activeService?.dedicatedUrl || ''}
                           className="btn-primary-gradient w-full sm:w-auto px-6 py-3 text-xs sm:text-sm font-semibold flex items-center justify-center gap-2 group cursor-pointer"
                         >
                           <span>Explore {activeService.title}</span>
@@ -423,9 +410,7 @@ export default function ServicesLandingClient() {
                         </span>
                       </div>
 
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-primary">
-                        {service.tag}
-                      </span>
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-primary">{service.tag}</span>
                       <h3 className="font-display text-lg font-bold text-foreground mt-1 mb-3 group-hover:text-primary transition-colors leading-tight">
                         {service.title}
                       </h3>
@@ -476,9 +461,9 @@ export default function ServicesLandingClient() {
               Our Approach to <span className="gradient-text">Digital Growth</span>
             </h2>
             <p className="mt-4 text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
-              A successful marketing strategy should connect individual activities rather than treat every
-              channel as a separate effort. GrowthVoice follows a structured approach that keeps your
-              business objectives at the centre of every decision.
+              A successful marketing strategy should connect individual activities rather than treat every channel as a
+              separate effort. GrowthVoice follows a structured approach that keeps your business objectives at the
+              centre of every decision.
             </p>
           </div>
 
@@ -503,19 +488,13 @@ export default function ServicesLandingClient() {
                     <div className="w-full lg:w-1/2">
                       <div className="rounded-3xl border border-border bg-card/50 p-6 sm:p-8 backdrop-blur-xl transition-all duration-300 hover:border-primary/50 hover:bg-card/80 hover:shadow-xl">
                         <div className="flex items-center justify-between mb-4">
-                          <span className="font-display text-2xl font-extrabold text-primary">
-                            Phase {step.number}
-                          </span>
+                          <span className="font-display text-2xl font-extrabold text-primary">Phase {step.number}</span>
                           <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 border border-primary/20 text-primary">
                             <Icon className="h-5 w-5" />
                           </div>
                         </div>
-                        <h3 className="font-display text-lg sm:text-xl font-bold text-foreground mb-3">
-                          {step.title}
-                        </h3>
-                        <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                          {step.description}
-                        </p>
+                        <h3 className="font-display text-lg sm:text-xl font-bold text-foreground mb-3">{step.title}</h3>
+                        <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">{step.description}</p>
                       </div>
                     </div>
 
@@ -548,9 +527,9 @@ export default function ServicesLandingClient() {
               Why Choose <span className="gradient-text">GrowthVoice?</span>
             </h2>
             <p className="mt-4 text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
-              Choosing a marketing partner means finding a team that understands your business priorities
-              and can translate them into practical action. GrowthVoice focuses on combining strategic
-              planning with consistent execution.
+              Choosing a marketing partner means finding a team that understands your business priorities and can
+              translate them into practical action. GrowthVoice focuses on combining strategic planning with consistent
+              execution.
             </p>
           </div>
 
@@ -566,12 +545,8 @@ export default function ServicesLandingClient() {
                     <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 border border-primary/20 text-primary mb-4">
                       <Icon className="h-6 w-6" />
                     </div>
-                    <h3 className="font-display text-lg font-bold text-foreground mb-2.5">
-                      {benefit.title}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                      {benefit.description}
-                    </p>
+                    <h3 className="font-display text-lg font-bold text-foreground mb-2.5">{benefit.title}</h3>
+                    <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">{benefit.description}</p>
                   </div>
                 </div>
               );
@@ -581,8 +556,8 @@ export default function ServicesLandingClient() {
           {/* Summary callout quote */}
           <div className="mt-12 rounded-3xl border border-primary/20 bg-primary/5 p-6 sm:p-8 backdrop-blur-sm text-center max-w-3xl mx-auto">
             <p className="text-sm sm:text-base text-foreground font-medium leading-relaxed">
-              &ldquo;Our aim is to help your business make better use of its digital channels and build a
-              marketing foundation that can support long-term growth.&rdquo;
+              &ldquo;Our aim is to help your business make better use of its digital channels and build a marketing
+              foundation that can support long-term growth.&rdquo;
             </p>
           </div>
         </div>
@@ -602,9 +577,9 @@ export default function ServicesLandingClient() {
               Digital Marketing for <span className="gradient-text">Different Business Needs</span>
             </h2>
             <p className="mt-4 text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
-              Marketing priorities vary depending on the type of business, its customers, and its growth
-              stage. A startup may need to establish brand awareness, while an established company may want to
-              improve lead quality or expand into new markets.
+              Marketing priorities vary depending on the type of business, its customers, and its growth stage. A
+              startup may need to establish brand awareness, while an established company may want to improve lead
+              quality or expand into new markets.
             </p>
           </div>
 
@@ -623,7 +598,7 @@ export default function ServicesLandingClient() {
                       : 'bg-card/50 text-muted-foreground border-border/70 hover:bg-card hover:text-foreground'
                   }`}
                 >
-                  <span>{aud.title.split(' ')[0]} {aud.title.split(' ')[1] || ''}</span>
+                  <span>{aud?.shortName}</span>
                 </button>
               );
             })}
@@ -708,18 +683,17 @@ export default function ServicesLandingClient() {
               Build Your Marketing Strategy
             </span>
             <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
-              Build a Marketing Strategy Around{' '}
-              <span className="gradient-text">Your Business Goals</span>
+              Build a Marketing Strategy Around <span className="gradient-text">Your Business Goals</span>
             </h2>
             <div className="mt-4 space-y-3 text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
               <p>
-                Digital growth does not happen through isolated campaigns or short-term promotional
-                activities. It comes from understanding your audience, choosing the right channels,
-                delivering consistent communication, and improving your approach over time.
+                Digital growth does not happen through isolated campaigns or short-term promotional activities. It comes
+                from understanding your audience, choosing the right channels, delivering consistent communication, and
+                improving your approach over time.
               </p>
               <p className="font-medium text-foreground/90">
-                Ready to take the next step? Let’s discuss your business goals, understand your current
-                challenges, and identify the marketing activities that can help move your business forward.
+                Ready to take the next step? Let’s discuss your business goals, understand your current challenges, and
+                identify the marketing activities that can help move your business forward.
               </p>
             </div>
           </div>

@@ -341,7 +341,7 @@ export default function Hero() {
                       </div>
 
                       {/* Card Content */}
-                      <h3 className="mt-6 font-display text-2xl font-bold text-foreground">{goal.title}</h3>
+                      <h3 className="mt-6 font-display text-lg sm:text-xl font-bold text-foreground">{goal.title}</h3>
                       <p className="mt-3 text-muted-foreground text-sm leading-relaxed">{goal.desc}</p>
 
                       {/* Highlights */}

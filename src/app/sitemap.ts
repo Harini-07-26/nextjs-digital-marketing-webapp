@@ -19,7 +19,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.95
     },
     {
-      url: `${baseUrl}/seo-services`,
+      url: `${baseUrl}/services`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9
+    },
+    {
+      url: `${baseUrl}/services/seo`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.9

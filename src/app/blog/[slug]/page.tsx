@@ -103,7 +103,7 @@ export default async function BlogPostDetailPage({ params }: PageProps) {
         </div>
 
         {/* Article Title (Positioned Above Image) */}
-        <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold leading-tight tracking-tight text-foreground mb-6">
+        <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-foreground mb-6">
           {post.title}
         </h1>
 
@@ -161,11 +161,11 @@ export default async function BlogPostDetailPage({ params }: PageProps) {
         </div>
 
         {/* Article Body Content */}
-        <div className="text-[15px] sm:text-base md:text-[17px] leading-relaxed text-foreground/85 space-y-6">
+        <div className="text-base leading-relaxed text-foreground/85 space-y-6">
           {post.content.paragraphs.map((paragraph, index) => {
             const text = typeof paragraph === 'string' ? paragraph : paragraph.text;
             return (
-              <p key={index} className="leading-relaxed">
+              <p key={index} className="leading-relaxed text-muted-foreground">
                 {text}
               </p>
             );
@@ -174,7 +174,7 @@ export default async function BlogPostDetailPage({ params }: PageProps) {
           {/* Structured Sections */}
           {post.content.sections?.map((section, sIndex) => (
             <div key={sIndex} className="pt-6">
-              <h2 className="font-display text-xl sm:text-2xl font-bold text-foreground mb-4 flex items-center gap-2.5">
+              <h2 className="font-display text-lg sm:text-xl font-bold text-foreground mb-4 flex items-center gap-2.5">
                 <span className="h-6 w-1 rounded-full bg-primary" />
                 {section.heading}
               </h2>
@@ -212,14 +212,14 @@ export default async function BlogPostDetailPage({ params }: PageProps) {
                         return (
                           <div key={iIndex} className="flex items-start gap-3">
                             <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                            <div className="text-foreground/90 text-sm sm:text-base leading-relaxed">
+                            <div className="leading-relaxed text-foreground/90">
                               {isObject ? (
                                 <>
                                   <strong className="font-semibold text-foreground">{item.title}: </strong>
                                   <span className="text-muted-foreground">{item.text}</span>
                                 </>
                               ) : (
-                                <span>{item}</span>
+                                <span className="text-muted-foreground">{item}</span>
                               )}
                             </div>
                           </div>
@@ -241,7 +241,7 @@ export default async function BlogPostDetailPage({ params }: PageProps) {
                           <h4 className="text-xs font-semibold tracking-wider uppercase text-primary mb-1">
                             {block.title}
                           </h4>
-                          <p className="text-sm sm:text-base text-foreground/90 leading-relaxed italic">{block.text}</p>
+                          <p className="leading-relaxed italic text-foreground/90">{block.text}</p>
                         </div>
                       </div>
                     </div>
@@ -298,14 +298,14 @@ export default async function BlogPostDetailPage({ params }: PageProps) {
                     return (
                       <div key={lIndex} className="flex items-start gap-3">
                         <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                        <div className="text-foreground/90 text-sm sm:text-base leading-relaxed">
+                        <div className="leading-relaxed text-foreground/90">
                           {isObject ? (
                             <>
                               <strong className="font-semibold text-foreground">{item.title}: </strong>
                               <span className="text-muted-foreground">{item.text}</span>
                             </>
                           ) : (
-                            <span>{item}</span>
+                            <span className="text-muted-foreground">{item}</span>
                           )}
                         </div>
                       </div>
@@ -356,7 +356,7 @@ export default async function BlogPostDetailPage({ params }: PageProps) {
         {/* Related Articles Section */}
         {relatedPosts.length > 0 && (
           <div className="mt-16 border-t border-border/60 pt-12">
-            <h2 className="font-display text-2xl sm:text-3xl font-bold text-foreground mb-8">
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8">
               Related <span className="gradient-text">Articles</span>
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">

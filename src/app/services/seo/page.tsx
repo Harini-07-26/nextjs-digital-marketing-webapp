@@ -8,13 +8,13 @@ export const metadata: Metadata = {
   description:
     'Partner with GrowthVoice, a professional SEO company, to boost search visibility, attract qualified website traffic, and turn organic visitors into customers.',
   alternates: {
-    canonical: '/seo-services'
+    canonical: '/services/seo'
   },
   openGraph: {
     title: 'SEO Company for Higher Rankings & Organic Growth',
     description:
       'Partner with GrowthVoice, a professional SEO company, to boost search visibility, attract qualified website traffic, and turn organic visitors into customers.',
-    url: 'https://growthvoice.in/seo-services',
+    url: 'https://growthvoice.in/services/seo',
     type: 'website',
     siteName: 'GrowthVoice'
   },
@@ -81,7 +81,7 @@ export default function SeoServicesPage() {
         '@type': 'ListItem',
         position: 2,
         name: 'SEO Services',
-        item: 'https://growthvoice.in/seo-services'
+        item: 'https://growthvoice.in/services/seo'
       }
     ]
   };

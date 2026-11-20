@@ -549,7 +549,7 @@ export default function SeoServicesClient() {
                       <span className="text-[11px] font-bold uppercase tracking-wider text-primary/80">
                         Execution Phase {currentStep.number} of 06
                       </span>
-                      <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-foreground">
+                      <h3 className="font-display text-lg sm:text-xl font-bold text-foreground">
                         {currentStep.title}
                       </h3>
                     </div>

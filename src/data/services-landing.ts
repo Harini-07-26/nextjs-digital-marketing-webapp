@@ -49,6 +49,7 @@ export interface WhyChooseBenefit {
 export interface BusinessNeedAudience {
   title: string;
   description: string;
+  shortName: string;
   icon: React.ElementType;
   badge: string;
   keyTactics: string[];
@@ -77,7 +78,7 @@ export const digitalMarketingServices: ServiceDetail[] = [
       'Authority Building & Natural Backlinks',
       'AI Search & Google Overviews Optimization'
     ],
-    dedicatedUrl: '/seo-services'
+    dedicatedUrl: '/services/seo'
   },
   {
     id: 'ppc',
@@ -135,8 +136,7 @@ export const digitalMarketingServices: ServiceDetail[] = [
       'We develop content plans based on your business goals, audience questions, and market opportunities. This can include website pages, blogs, articles, case studies, guides, email content, and other formats suited to your communication strategy.',
       'Every piece of content is created with a clear purpose, whether it is to explain a solution, answer a common question, demonstrate expertise, or support a buying decision.'
     ],
-    objective:
-      'Educate potential customers, demonstrate industry authority, and support confident buying decisions.',
+    objective: 'Educate potential customers, demonstrate industry authority, and support confident buying decisions.',
     icon: FileText,
     tag: 'Authority & Value',
     inclusions: [
@@ -227,8 +227,7 @@ export const digitalMarketingServices: ServiceDetail[] = [
       'Our online reputation management services help businesses monitor their online presence and respond to feedback in a professional and consistent manner. We identify relevant review channels, support review response planning, and help maintain accurate brand information across important platforms.',
       'We also consider how customer experiences are reflected in your website and other digital channels. By encouraging genuine feedback and addressing concerns constructively, your business can build greater credibility.'
     ],
-    objective:
-      'Build greater public credibility, protect brand perception, and strengthen customer trust over time.',
+    objective: 'Build greater public credibility, protect brand perception, and strengthen customer trust over time.',
     icon: ShieldCheck,
     tag: 'Trust & Credibility',
     inclusions: [
@@ -296,8 +295,7 @@ export const whyChooseBenefits: WhyChooseBenefit[] = [
   },
   {
     title: 'Audience-Focused Communication',
-    description:
-      "We shape messaging around your customers' real needs, interests, and decision-making process.",
+    description: "We shape messaging around your customers' real needs, interests, and decision-making process.",
     icon: Users
   },
   {
@@ -324,6 +322,7 @@ export const whyChooseBenefits: WhyChooseBenefit[] = [
 export const businessNeedsAudiences: BusinessNeedAudience[] = [
   {
     title: 'Startups and New Businesses',
+    shortName: 'Startups Businesses',
     description:
       'Establish your brand identity, build an initial online presence, and reach potential customers with high velocity.',
     icon: Rocket,
@@ -332,6 +331,7 @@ export const businessNeedsAudiences: BusinessNeedAudience[] = [
   },
   {
     title: 'Small and Medium Businesses',
+    shortName: 'Small Businesses',
     description:
       'Improve local or industry visibility, attract qualified enquiries, and create dependable, consistent marketing activities.',
     icon: Building2,
@@ -340,6 +340,7 @@ export const businessNeedsAudiences: BusinessNeedAudience[] = [
   },
   {
     title: 'B2B Companies',
+    shortName: 'B2B Companies',
     description:
       'Reach key decision-makers through targeted content, search visibility, thought leadership, and lead generation campaigns.',
     icon: Briefcase,
@@ -348,6 +349,7 @@ export const businessNeedsAudiences: BusinessNeedAudience[] = [
   },
   {
     title: 'E-commerce Businesses',
+    shortName: 'E-commerce Businesses',
     description:
       'Promote products, optimize category and shopping discovery, streamline checkout experiences, and encourage repeat purchases.',
     icon: ShoppingBag,
@@ -356,6 +358,7 @@ export const businessNeedsAudiences: BusinessNeedAudience[] = [
   },
   {
     title: 'Professional Service Providers',
+    shortName: 'Professional Service',
     description:
       'Communicate specialized expertise, build digital credibility, and generate relevant consultation enquiries and client bookings.',
     icon: ShieldCheck,
@@ -364,6 +367,7 @@ export const businessNeedsAudiences: BusinessNeedAudience[] = [
   },
   {
     title: 'Growing Enterprises',
+    shortName: 'Growing Enterprises',
     description:
       'Coordinate multiple marketing channels, manage brand governance, and strengthen performance across different customer segments.',
     icon: Layers,

@@ -15,7 +15,7 @@ interface ServiceMenuItem {
 const serviceItems: ServiceMenuItem[] = [
   {
     title: 'SEO Services',
-    href: '/seo-services',
+    href: '/services/seo',
     icon: Search
   },
   {
