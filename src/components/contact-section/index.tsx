@@ -112,6 +112,12 @@ const ContactSection = () => {
               <div className="space-y-5">
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Phone className="h-4 w-4 text-primary" />
+                  </div>
+                  <span className="text-foreground font-medium">+91 63806 52819</span>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
                     <Mail className="h-4 w-4 text-primary" />
                   </div>
                   <span className="text-foreground font-medium">contact@growthvoice.in</span>
